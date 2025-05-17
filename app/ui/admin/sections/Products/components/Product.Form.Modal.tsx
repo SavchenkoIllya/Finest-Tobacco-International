@@ -17,7 +17,7 @@ export const ProductModal = ({
       withBlur={false}
       open={open}
       onClose={onClose}
-      contentWrapperClasses={"!bg-white"}
+      contentWrapperClasses={"!bg-white max-h-[50%]"}
     >
       <FormProduct id={1} />
     </Modal>

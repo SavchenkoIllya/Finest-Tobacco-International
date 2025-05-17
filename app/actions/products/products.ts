@@ -102,6 +102,10 @@ const getProductsWithTranslations = async (conditions: SQL<unknown>[]) => {
   return formatProductsWithLocales(result);
 };
 
+// export async function getAllProducts(){
+//
+// }
+
 export async function getFilteredProductsWithTranslations(
   filters?: ProductFilters,
 ) {
