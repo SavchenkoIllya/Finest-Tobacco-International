@@ -1,6 +1,6 @@
 "use client";
 import { LandingSections } from "@/app/lib";
-import { BackgroundImage, ContactsList, Input, Textarea } from "@/app/ui";
+import { ContactsList, Input, Textarea } from "@/app/ui";
 import { MapComponent } from "@/app/ui/landing/components/Map";
 
 export const ContactsSection = () => {
@@ -69,7 +69,7 @@ export const ContactsSection = () => {
 
       <div className={"mb-8"}>
         <h5 className={"h1 uppercase !text-sm"}>
-          Copyright © 24 All rights reserved - VK Tobacco
+          Copyright © 24 All rights reserved - Finest Tobacco
         </h5>
       </div>
     </section>

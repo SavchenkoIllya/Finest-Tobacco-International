@@ -4,17 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40dba1e8-ed36-4cd0-9b97-019cbff1421c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="40dba1e8-ed36-4cd0-9b97-019cbff1421c" name="Changes" comment="Landing layout. wip: minor fixes and upgrades">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/landing/sections/StaticCataogue/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/landing/sections/Contacts/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/sections/Contacts/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/landing/sections/Hero/components/ScrollButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/sections/Hero/components/ScrollButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/landing/sections/Hero/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/sections/Hero/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dockerfile" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;SavchenkoIllya&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/SavchenkoIllya/Finest-Tobacco-International.git&quot;,
+    &quot;accountId&quot;: &quot;4a412965-82de-4eec-8425-6dc0488018b0&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -30,6 +54,8 @@
   "keyToString": {
     "Node.js.postcss.config.mjs.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/savchenkoi/Documents/Work/FZE/Trading/finest-tobacco-ig/app",
     "node.js.detected.package.eslint": "true",
@@ -90,8 +116,18 @@
       <workItem from="1747182363831" duration="10090000" />
       <workItem from="1747335009682" duration="782000" />
       <workItem from="1747383560148" duration="6000" />
-      <workItem from="1747425537641" duration="8104000" />
+      <workItem from="1747425537641" duration="9916000" />
+      <workItem from="1747475738764" duration="1090000" />
     </task>
+    <task id="LOCAL-00001" summary="initial commit for finest-tobacco-ig">
+      <option name="closed" value="true" />
+      <created>1747433994290</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1747433994290</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,5 +143,13 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CODE_SMELLS_PROFILE" value="Project Default" />
+    <MESSAGE value="initial commit for finest-tobacco-ig" />
+    <MESSAGE value="Landing layout. wip: minor fixes and upgrades" />
+    <option name="LAST_COMMIT_MESSAGE" value="Landing layout. wip: minor fixes and upgrades" />
+    <option name="NON_MODAL_COMMIT_POSTPONE_SLOW_CHECKS" value="false" />
   </component>
 </project>
