@@ -9,8 +9,8 @@ export async function StaticCataloguePage(props: HomePageProps) {
   const locale = (await props.params).lang;
 
   const filters: ProductFilters = {
-    category: searchParams?.categories ?? "",
-    brand: searchParams?.brands ?? "",
+    category: searchParams?.category ?? "",
+    brand: searchParams?.brand ?? "",
     query: searchParams?.query ?? "",
     locale: locale ?? "en",
   };

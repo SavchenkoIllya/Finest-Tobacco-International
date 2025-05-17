@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { ReactNode } from "react";
 
-const robotoSans = Roboto({
-  variable: "--bebas-neue-sans",
+const montserrat = Montserrat({
   subsets: ["latin"],
+  variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function AdminLayout({ children }: { children: ReactNode }) {
   return (
     <html lang={"en"}>
-      <body className={`${robotoSans.variable} antialiased overflow-hidden`}>
+      <body className={`${montserrat.variable} antialiased overflow-hidden`}>
         <main className={"dashboard_bg"}>{children}</main>;
       </body>
     </html>

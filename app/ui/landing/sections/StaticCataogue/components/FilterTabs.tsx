@@ -2,11 +2,9 @@
 import { cn, MenuFilterProps, useUrlParams } from "@/app/ui";
 
 export const FilterTabs = ({ menuFilters }: MenuFilterProps) => {
-  const { getParam, setParam } = useUrlParams(0);
+  const { getParam, setParam, removeParam } = useUrlParams(0);
   const brandParam = getParam("brand");
   const categoryParam = getParam("category");
-
-  console.log(categoryParam);
 
   return (
     <div>
@@ -15,7 +13,13 @@ export const FilterTabs = ({ menuFilters }: MenuFilterProps) => {
           <button
             className={"cursor-pointer"}
             key={brand}
-            onClick={() => setParam("brand", brand)}
+            onClick={() => {
+              if (brandParam === brand.toLowerCase()) {
+                removeParam("brand");
+                return;
+              }
+              setParam("brand", brand);
+            }}
           >
             <h4
               className={cn(
@@ -35,7 +39,13 @@ export const FilterTabs = ({ menuFilters }: MenuFilterProps) => {
             <button
               className={"cursor-pointer"}
               key={category}
-              onClick={() => setParam("category", category)}
+              onClick={() => {
+                if (categoryParam === category.toLowerCase()) {
+                  removeParam("category");
+                  return;
+                }
+                setParam("category", category);
+              }}
             >
               <h4
                 className={cn(

@@ -10,8 +10,6 @@ export async function ProductsList({
   filters: ProductFilters;
 }>) {
   const products = await getFilteredProductsWithTranslations(filters);
-  // console.log(filters);
-
   return (
     <div className="p-8 flex flex-wrap gap-8 justify-center">
       <FilterLabelContainer />

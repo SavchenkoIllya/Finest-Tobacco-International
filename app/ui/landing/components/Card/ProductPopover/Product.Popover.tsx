@@ -1,5 +1,5 @@
 "use client";
-import { getProductById } from "@/app/actions";
+import { getProductWithLocalesById } from "@/app/actions";
 import { ProductsWithLocales } from "@/app/db/types";
 import { SearchParamsNames } from "@/app/lib";
 import { Modal, ProductPopoverContent, useUrlParams } from "@/app/ui";
@@ -23,7 +23,9 @@ export const ProductPopover = ({ open, onClose }: ProductPopoverProps) => {
 
   useEffect(() => {
     const getProductByIdRequest = async () => {
-      const productResponse = await getProductById(Number(productId));
+      const productResponse = await getProductWithLocalesById(
+        Number(productId),
+      );
       setProduct(productResponse);
     };
 

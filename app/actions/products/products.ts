@@ -111,7 +111,29 @@ export async function getFilteredProductsWithTranslations(
   return response;
 }
 
-export async function getProductById(id: number) {
+export async function getProductsById(id: Product["select"]["id"]) {
+  const result: Product["select"][] | null = await db
+    .select()
+    .from(productsTable)
+    .where(eq(productsTable.id, id));
+
+  if (!result) return [];
+
+  return result[0];
+}
+
+export async function getLocalesByProductId(id: Product["select"]["id"]) {
+  const result: ProductTranslation["select"][] | null = await db
+    .select()
+    .from(productTranslationsTable)
+    .where(eq(productTranslationsTable.product_id, id));
+
+  if (!result) return [];
+
+  return result;
+}
+
+export async function getProductWithLocalesById(id: Product["select"]["id"]) {
   const result: ProductsWithTranslations[] | null = await db
     .select({
       product: productsTable,
