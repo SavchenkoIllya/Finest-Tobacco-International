@@ -1,7 +1,6 @@
 import {
   About,
   AgeModal,
-  CatalogueSection,
   ContactsSection,
   Header,
   Hero,
@@ -9,6 +8,7 @@ import {
   Production,
   ScrollIndicator,
 } from "@/app/ui";
+import { StaticCataloguePage } from "@/app/ui/landing/sections/StaticCataogue";
 
 export type HomePageProps = Readonly<{
   searchParams?: Promise<HomePageSearchParams>;
@@ -24,7 +24,11 @@ export default function Home(props: HomePageProps) {
         <Header />
         <Hero />
         <About />
-        <CatalogueSection
+        {/*<CatalogueSection*/}
+        {/*  searchParams={props.searchParams}*/}
+        {/*  params={props.params}*/}
+        {/*/>*/}
+        <StaticCataloguePage
           searchParams={props.searchParams}
           params={props.params}
         />

@@ -13,7 +13,7 @@ export const ProductValueWithTitle = ({
 }: ProductValueWithTitleProps) => {
   return (
     <div>
-      <p className={"text-secondary text-xl font-bold"}>{title}</p>
+      <p className={"text-xl font-bold"}>{title}</p>
       <ProductProperty text={text ?? undefined} icon={icon} />
     </div>
   );

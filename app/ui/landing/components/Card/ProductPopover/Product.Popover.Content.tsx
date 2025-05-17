@@ -22,7 +22,7 @@ export const ProductPopoverContent = ({
           <h4 className="text-2xl font-bold text-black">
             {product?.locales?.[0].title}
           </h4>
-          <p className="text-lg text-secondary">{product?.category}</p>
+          <p className="text-lg">{product?.category}</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
