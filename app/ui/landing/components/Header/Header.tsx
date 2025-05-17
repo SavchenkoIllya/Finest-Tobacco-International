@@ -25,11 +25,16 @@ export function Header() {
         <div className="flex items-center justify-between mx-8 my-4">
           <SliderNavigation />
           <div>
-            <img src="/logo.svg" alt="Tobacco & cigarettes trading logo" height={60} width={200} />
+            <img
+              src="/logo.svg"
+              alt="Tobacco & cigarettes trading logo"
+              height={60}
+              width={200}
+            />
           </div>
           <div className={"flex gap-4"}>
             <div className={"hidden md:block"}>
-              <ContactsList showFull={false} />
+              <ContactsList showFull={false} wrapperClasses={"flex gap-2"} />
             </div>
             <LanguageSwitch />
           </div>

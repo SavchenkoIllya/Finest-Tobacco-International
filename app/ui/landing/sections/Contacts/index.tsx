@@ -62,8 +62,9 @@ export const ContactsSection = () => {
 
       <div className={"my-8"}>
         <ContactsList
-          wrapperClasses={"flex gap-8 items-center"}
-          withSeparator
+          wrapperClasses={"flex gap-2 items-center"}
+          showFull={false}
+          // withSeparator
         />
       </div>
 

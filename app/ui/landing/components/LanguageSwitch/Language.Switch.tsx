@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import {cn} from "@/app/ui";
+import { cn } from "@/app/ui";
 
 type Language = {
   code: string;
@@ -66,16 +66,21 @@ export const LanguageSwitch = () => {
       </button>
 
       <div
-        className={cn(`
+        className={cn(
+          `
           absolute right-0 mt-4 bg-secondary/20 backdrop-blur-sm
           min-w-12 rounded shadow-lg z-10 overflow-hidden
           transition-all duration-200 origin-top-right`,
-          open ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none")}
+          open
+            ? "opacity-100 scale-100"
+            : "opacity-0 scale-95 pointer-events-none",
+        )}
       >
         <div className="">
           {languages.map((language) => (
             <button
               key={language.code}
+              disabled={currentLang === language.code}
               onClick={() => handleLanguageChange(language.code)}
               className={`
               cursor-pointer

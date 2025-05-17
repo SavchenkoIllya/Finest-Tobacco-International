@@ -19,7 +19,7 @@ export const ProductPopoverContent = ({
 
       <div className="flex flex-col gap-4 w-full">
         <div className="border-b-2 border-accent pb-2">
-          <h4 className="text-2xl font-bold text-black">
+          <h4 className="text-4xl font-bold text-black">
             {product?.locales?.[0].title}
           </h4>
           <p className="text-lg">{product?.category}</p>

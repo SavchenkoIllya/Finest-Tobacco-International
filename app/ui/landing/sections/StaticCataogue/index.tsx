@@ -6,7 +6,7 @@ import { LandingSections } from "@/app/lib";
 
 export async function StaticCataloguePage(props: HomePageProps) {
   const searchParams = await props.searchParams;
-  const locale = await props.params.lang;
+  const locale = (await props.params).lang;
 
   const filters: ProductFilters = {
     category: searchParams?.categories ?? "",
@@ -27,7 +27,7 @@ export async function StaticCataloguePage(props: HomePageProps) {
     <section id={LandingSections.CATALOGUE} className="container mx-auto mb-40">
       <div className={"flex flex-col items-center justify-center gap-8"}>
         <h2 className={"h1"}>Catalogue</h2>
-        <div className={"self-start ml-20"}>
+        <div className={"self-start mx-8 md:mx-20 overflow-hidden"}>
           <FilterTabs menuFilters={menuFilters} />
         </div>
         <ProductsList filters={filters} />
