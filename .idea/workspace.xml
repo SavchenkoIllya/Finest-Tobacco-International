@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40dba1e8-ed36-4cd0-9b97-019cbff1421c" name="Changes" comment="Landing layout and Admin app. wip: minor fixes and products form">
-      <change afterPath="$PROJECT_DIR$/app/actions/products/add.ts" afterDir="false" />
+    <list default="true" id="40dba1e8-ed36-4cd0-9b97-019cbff1421c" name="Changes" comment="Admin app. wip: token verification update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/actions/products/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/products/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/actions/products/products.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/products/products.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/Products/components/Form.Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/sections/Products/components/Form.Product.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/Products/components/Product.Form.Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/sections/Products/components/Product.Form.Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/actions/authentication.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/authentication.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/admin/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/admin/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/middleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/landing/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/components/Header/Header.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,39 +52,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Node.js.postcss.config.mjs.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/savchenkoi/Documents/Work/FZE/Trading/finest-tobacco-ig/app",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/Users/savchenkoi/Documents/Work/FZE/Trading/finest-tobacco-ig/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "/Users/savchenkoi/Documents/Work/FZE/Trading/finest-tobacco-ig/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.postcss.config.mjs.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/savchenkoi/Documents/Work/FZE/Trading/finest-tobacco-ig/app&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/savchenkoi/Documents/Work/FZE/Trading/finest-tobacco-ig/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/savchenkoi/Documents/Work/FZE/Trading/finest-tobacco-ig/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/[lang]" />
       <recent name="$PROJECT_DIR$/app/ui/admin/sections/Products/components" />
       <recent name="$PROJECT_DIR$/app/dashboard/admin/products" />
       <recent name="$PROJECT_DIR$/public/images" />
@@ -123,7 +125,8 @@
       <workItem from="1747425537641" duration="9916000" />
       <workItem from="1747475738764" duration="8634000" />
       <workItem from="1747487244917" duration="2705000" />
-      <workItem from="1747495092823" duration="11019000" />
+      <workItem from="1747495092823" duration="11321000" />
+      <workItem from="1747519613286" duration="4004000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit for finest-tobacco-ig">
       <option name="closed" value="true" />
@@ -165,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747506506363</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Admin app. wip: Product form basic view">
+      <option name="closed" value="true" />
+      <created>1747508423521</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747508423521</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,7 +201,9 @@
     <MESSAGE value="Landing layout. wip: minio fix, catalogue rework" />
     <MESSAGE value="Landing layout. wip: minio fixes" />
     <MESSAGE value="Landing layout and Admin app. wip: minor fixes and products form" />
-    <option name="LAST_COMMIT_MESSAGE" value="Landing layout and Admin app. wip: minor fixes and products form" />
+    <MESSAGE value="Admin app. wip: Product form basic view" />
+    <MESSAGE value="Admin app. wip: token verification update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin app. wip: token verification update" />
     <option name="NON_MODAL_COMMIT_POSTPONE_SLOW_CHECKS" value="false" />
   </component>
 </project>

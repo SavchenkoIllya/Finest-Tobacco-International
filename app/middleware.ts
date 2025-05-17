@@ -18,6 +18,10 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  if (pathname === "/dashboard") {
+    return NextResponse.next();
+  }
+
   // Определяем предпочтительный язык из заголовка
   const acceptLanguage = request.headers.get("accept-language");
   const preferredLocale = acceptLanguage

@@ -2,8 +2,8 @@ import { COOKIES_NAMES, NAVBAR_WIDTH } from "@/app/lib";
 import { Breadcrumbs } from "@/app/ui/admin";
 import AdminNavbar from "@/app/ui/admin/components/Navbar/AdminNavbar";
 import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 import { Fragment, ReactNode } from "react";
+import { confirmJWT } from "@/app/actions";
 
 export default async function AdminDashboardLayout({
   children,
@@ -12,10 +12,7 @@ export default async function AdminDashboardLayout({
 }>) {
   const cookieStore = await cookies();
   const auth = cookieStore.get(COOKIES_NAMES.AUTH_TOKEN);
-
-  if (!auth?.value) {
-    redirect("/dashboard");
-  }
+  await confirmJWT(auth?.value);
 
   return (
     <Fragment>

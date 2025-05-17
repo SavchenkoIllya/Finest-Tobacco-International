@@ -39,6 +39,17 @@ async function authUser(
   return { token };
 }
 
+export async function confirmJWT(token?: string) {
+  try {
+    jwt.verify(token ?? "", process.env.JWT_SECRET!);
+
+    return true;
+  } catch (e) {
+    console.error(e);
+    redirect("/");
+  }
+}
+
 export async function login(prevState: string | undefined, formData: FormData) {
   const email = formData.get("email") as string | null;
   const password = formData.get("password") as string | null;
