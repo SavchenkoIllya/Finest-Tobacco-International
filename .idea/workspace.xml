@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="40dba1e8-ed36-4cd0-9b97-019cbff1421c" name="Changes" comment="Admin app. wip: token verification update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/actions/authentication.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/authentication.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/admin/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/admin/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/middleware.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/landing/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/landing/sections/StaticCataogue/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/sections/StaticCataogue/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +121,10 @@
       <workItem from="1747475738764" duration="8634000" />
       <workItem from="1747487244917" duration="2705000" />
       <workItem from="1747495092823" duration="11321000" />
-      <workItem from="1747519613286" duration="4004000" />
+      <workItem from="1747519613286" duration="4069000" />
+      <workItem from="1747563970514" duration="170000" />
+      <workItem from="1747566166800" duration="3154000" />
+      <workItem from="1747578517036" duration="850000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit for finest-tobacco-ig">
       <option name="closed" value="true" />
@@ -176,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747508423521</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Admin app. wip: token verification update">
+      <option name="closed" value="true" />
+      <created>1747526155019</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1747526155019</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

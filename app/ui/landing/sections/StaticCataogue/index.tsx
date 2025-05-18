@@ -26,7 +26,11 @@ export async function StaticCataloguePage(props: HomePageProps) {
   return (
     <section id={LandingSections.CATALOGUE} className="container mx-auto mb-40">
       <div className={"flex flex-col items-center justify-center gap-8"}>
-        <h2 className={"h1"}>Catalogue</h2>
+        <h2 className={"h1"}>Brands</h2>
+        <p>
+          Our brands make up a core of our portfolio. Each has its own heritage,
+          taste, uniqueness.
+        </p>
         <div className={"self-start mx-8 md:mx-20 overflow-hidden"}>
           <FilterTabs menuFilters={menuFilters} />
         </div>
