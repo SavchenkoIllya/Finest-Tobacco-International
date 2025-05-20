@@ -9,7 +9,7 @@ export const ContactsSection = () => {
       id={LandingSections.CONTACTS}
       className={"relative flex flex-col justify-center items-center w-full"}
     >
-      <h1 className={"h1 mt-8"}>Contacts</h1>
+      <h1 className={"h1 mt-8"}>Contact us</h1>
 
       <div className={"flex flex-col md:flex-row w-full max-w-6xl px-4"}>
         <div

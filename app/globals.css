@@ -52,3 +52,42 @@ h1, h2, h3, h4, h5, h6 {
 .dashboard_button_info {
   @apply text-white bg-blue-500 px-4 py-2 rounded-4xl cursor-pointer hover:bg-blue-700 transition-all duration-200
 }
+
+@layer components {
+  .border-wrapper {
+    position: relative;
+  }
+
+  /* Верхняя граница */
+  .border-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10px;
+    right: 10px;
+    height: 2px;
+    background-color: theme('colors.accent');
+  }
+
+  /* Левая граница */
+  .border-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 0;
+    width: 2px;
+    background-color: theme('colors.accent');
+  }
+
+  /* Правая граница — нужна ещё одна обёртка внутри или use inline element */
+  .border-wrapper-right {
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    right: 0;
+    width: 2px;
+    background-color: theme('colors.accent');
+    content: "";
+  }
+}

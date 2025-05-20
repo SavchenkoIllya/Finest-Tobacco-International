@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="40dba1e8-ed36-4cd0-9b97-019cbff1421c" name="Changes" comment="Admin app. wip: token verification update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/landing/sections/StaticCataogue/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/sections/StaticCataogue/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/landing/components/InfoCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/components/InfoCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/landing/sections/About/components/InfoGrid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/sections/About/components/InfoGrid.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/landing/sections/About/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/sections/About/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/landing/sections/Contacts/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/sections/Contacts/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +129,10 @@
       <workItem from="1747563970514" duration="170000" />
       <workItem from="1747566166800" duration="3154000" />
       <workItem from="1747578517036" duration="850000" />
+      <workItem from="1747599800065" duration="21000" />
+      <workItem from="1747689564546" duration="13000" />
+      <workItem from="1747736281143" duration="117000" />
+      <workItem from="1747736401418" duration="1452000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit for finest-tobacco-ig">
       <option name="closed" value="true" />
@@ -182,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747526155019</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Admin app. wip: token verification update">
+      <option name="closed" value="true" />
+      <created>1747599815193</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1747599815193</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
