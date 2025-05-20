@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40dba1e8-ed36-4cd0-9b97-019cbff1421c" name="Changes" comment="Landing app. wip: about us rework">
-      <change afterPath="$PROJECT_DIR$/public/images/catchphrase.webp" afterDir="false" />
+    <list default="true" id="40dba1e8-ed36-4cd0-9b97-019cbff1421c" name="Changes" comment="Landing app. wip: minor visual fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/db/schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/landing/components/InfoCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/components/InfoCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/landing/sections/About/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/sections/About/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/landing/sections/Production/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/sections/Production/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/Image1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/Image2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/Pattern_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/Pattern_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/earth.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/photo_2025-05-07_10-58-50.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/landing/sections/StaticCataogue/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/sections/StaticCataogue/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +129,7 @@
       <workItem from="1747599800065" duration="21000" />
       <workItem from="1747689564546" duration="13000" />
       <workItem from="1747736281143" duration="117000" />
-      <workItem from="1747736401418" duration="3175000" />
+      <workItem from="1747736401418" duration="4240000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit for finest-tobacco-ig">
       <option name="closed" value="true" />
@@ -212,7 +203,31 @@
       <option name="project" value="LOCAL" />
       <updated>1747737992228</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Landing app. wip: minor visual fixes">
+      <option name="closed" value="true" />
+      <created>1747740807307</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1747740807307</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Landing app. wip: schema rework - wip">
+      <option name="closed" value="true" />
+      <created>1747740839686</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1747740839686</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Landing app. wip: minor visual fixes">
+      <option name="closed" value="true" />
+      <created>1747740849949</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1747740849949</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +255,9 @@
     <MESSAGE value="Admin app. wip: Product form basic view" />
     <MESSAGE value="Admin app. wip: token verification update" />
     <MESSAGE value="Landing app. wip: about us rework" />
-    <option name="LAST_COMMIT_MESSAGE" value="Landing app. wip: about us rework" />
+    <MESSAGE value="Landing app. wip: schema rework - wip" />
+    <MESSAGE value="Landing app. wip: minor visual fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Landing app. wip: minor visual fixes" />
     <option name="NON_MODAL_COMMIT_POSTPONE_SLOW_CHECKS" value="false" />
   </component>
 </project>

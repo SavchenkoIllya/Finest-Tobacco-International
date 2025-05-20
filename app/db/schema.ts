@@ -19,6 +19,7 @@ export const productsTable = pgTable("products", {
   tar: varchar({ length: 255 }),
   filter_parameters: varchar({ length: 255 }),
   image_url: text(),
+  // active: boolean().default(true),
 });
 
 export const productTranslationsTable = pgTable("product_translations", {
@@ -37,4 +38,11 @@ export const featuresTable = pgTable("features", {
   id: integer().primaryKey().generatedAlwaysAsIdentity(),
   name: varchar({ length: 255 }).notNull(),
   active: boolean().default(false),
+});
+
+export const contactsTable = pgTable("contacts", {
+  id: integer().primaryKey().generatedAlwaysAsIdentity(),
+  name: varchar({ length: 255 }).notNull(),
+  link: varchar({ length: 255 }).notNull(),
+  active: boolean().default(true),
 });
