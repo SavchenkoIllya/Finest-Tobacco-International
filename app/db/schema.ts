@@ -1,4 +1,4 @@
-import { integer, pgTable, text, varchar } from "drizzle-orm/pg-core";
+import { integer, pgTable, text, varchar, boolean } from "drizzle-orm/pg-core";
 
 export const usersTable = pgTable("users", {
   id: integer().primaryKey().generatedAlwaysAsIdentity(),
@@ -31,4 +31,10 @@ export const productTranslationsTable = pgTable("product_translations", {
   subtitle: varchar({ length: 255 }).notNull(),
   description: text(),
   blend: varchar({ length: 255 }),
+});
+
+export const featuresTable = pgTable("features", {
+  id: integer().primaryKey().generatedAlwaysAsIdentity(),
+  name: varchar({ length: 255 }).notNull(),
+  active: boolean().default(false),
 });
