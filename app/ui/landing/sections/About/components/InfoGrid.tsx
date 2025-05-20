@@ -11,13 +11,16 @@ export const pillars: InfoCardProps[] = [
 
 export const InfoGrid = () => {
   const cards = pillars.map((pillar, i) => (
-    <div key={`${pillar.title}-${i}`} className={"relative border-wrapper"}>
+    <div
+      key={`${pillar.title}-${i}`}
+      className={"relative border-wrapper w-[250px] h-[172px]"}
+    >
       <InfoCard title={pillar.title} label={pillar.label} />
     </div>
   ));
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-0 border-accent mt-20">
+    <div className="mx-auto grid max-md:grid-cols-2 max-lg:grid-cols-3 grid-cols-4 w-fit place-items-center">
       {cards}
     </div>
   );

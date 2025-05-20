@@ -54,24 +54,25 @@ export const AgeModal = () => {
         <div
           className={cn(
             "w-full h-full flex flex-col md:flex-row justify-center items-center gap-8",
-            "bg-primary/70",
+            "bg-secondary",
             "w-fit h-fit p-20 rounded-4xl",
             "from-0% to-60%",
             "shadow-secondary/50 shadow-2xl",
           )}
         >
           <div className={"max-w-2xl"}>
-            <h1 className={"h1 !text-accent"}>Hello dear Visitor</h1>
+            <h1 className={"h1 !text-accent"}>Age Verification Required</h1>
             <p>
-              You are about to visit site regarding tobacco and smoking content,
-              by clicking you are going to otsosat moyu valinu
+              This website contains information about tobacco products and is
+              intended only for adults. You must be 18 years of age or older to
+              enter. By clicking &#34;Enter,&#34; you confirm that you are at
+              least 18 years old and agree to comply with your local laws
+              regarding tobacco use.
             </p>
             <div className={"mt-4 flex justify-between"}>
               <button
                 onClick={handleClose}
-                className={
-                  "button !bg-secondary !text-primary !hover:bg-secondary !w-full"
-                }
+                className={"button !bg-primary !text-secondary !w-full"}
               >
                 Go
               </button>
