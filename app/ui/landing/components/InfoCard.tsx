@@ -8,7 +8,7 @@ export const InfoCard = ({ title, label }: InfoCardProps) => {
     <div
       className={`relative overflow-hidden flex flex-col items-center justify-center px-4 py-4 group h-full`}
     >
-      <div className="relative flex flex-col gap-1">
+      <div className="flex flex-col gap-1 mb-10">
         <h3 className="h2 !text-3xl">{title}</h3>
         <p className="text-primary max-w-[250px]">{label}</p>
       </div>

@@ -12,22 +12,19 @@ export function About() {
           <h2 className={"h1"}>Tradition. Quality. Affordability.</h2>
         </div>
 
-        <div className="flex gap-8">
-          <p className="flex-1 text-justify">
+        <div className="columns-2 gap-8 text-justify">
+          <p>
             We are a passionate tobacco manufacturer committed to delivering
             high-quality, affordable cigarettes for adult smokers. With more
             than a decade of expertise, our company blends time-honored tobacco
             traditions with modern innovation to create products that stand out
-            in both taste and reliability.
-          </p>
-          <p className="flex-1 text-justify">
-            While our brand may not yet be widely known, we are driven by a
-            clear philosophy: every smoker deserves access to quality without
-            compromise. We focus on craftsmanship, consistency, and honest
-            pricing — values that define who we are and what we offer. Proudly
-            serving both domestic and international markets, we continue to
-            expand our reach while maintaining the integrity and care that go
-            into every product we make.
+            in both taste and reliability. While our brand may not yet be widely
+            known, we are driven by a clear philosophy: every smoker deserves
+            access to quality without compromise. We focus on craftsmanship,
+            consistency, and honest pricing — values that define who we are and
+            what we offer. Proudly serving both domestic and international
+            markets, we continue to expand our reach while maintaining the
+            integrity and care that go into every product we make.
           </p>
         </div>
       </div>
