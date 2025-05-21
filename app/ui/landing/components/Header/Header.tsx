@@ -3,6 +3,8 @@ import { cn, LanguageSwitch } from "@/app/ui";
 import { ContactsList, SliderNavigation } from "@/app/ui/landing/components";
 
 export function Header() {
+  const isLanguageEnabled = false;
+
   return (
     <header
       className={cn(
@@ -24,7 +26,7 @@ export function Header() {
             <div className={"hidden md:block"}>
               <ContactsList showFull={false} wrapperClasses={"flex gap-2"} />
             </div>
-            <LanguageSwitch />
+            {isLanguageEnabled && <LanguageSwitch />}
           </div>
         </div>
       </div>

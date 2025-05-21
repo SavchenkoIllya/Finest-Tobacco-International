@@ -16,6 +16,8 @@ export type HomePageProps = Readonly<{
 }>;
 
 export default function Home(props: HomePageProps) {
+  const isCatalogueEnabled = false;
+
   return (
     <main className={"overflow-hidden"}>
       <AgeModal />
@@ -24,10 +26,12 @@ export default function Home(props: HomePageProps) {
         <Header />
         <Hero />
         <About />
-        <StaticCataloguePage
-          searchParams={props.searchParams}
-          params={props.params}
-        />
+        {isCatalogueEnabled && (
+          <StaticCataloguePage
+            searchParams={props.searchParams}
+            params={props.params}
+          />
+        )}
         <Production />
         <ContactsSection />
       </div>

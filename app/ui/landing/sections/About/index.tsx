@@ -3,9 +3,9 @@ import { InfoGrid } from "@/app/ui/landing/sections/About/components/InfoGrid";
 
 export function About() {
   return (
-    <section id={LandingSections.ABOUT} className="container mx-auto">
+    <section id={LandingSections.ABOUT} className="container mx-auto my-20">
       <div
-        className={"max-lg:flex-col flex gap-8 max-md:px-4 my-20 items-center"}
+        className={"max-lg:flex-col flex gap-8 max-md:px-4 mb-20 items-center"}
       >
         <div className="flex flex-col justify-center md:text-nowrap self-start">
           <h2 className={"h1"}>our promise:</h2>

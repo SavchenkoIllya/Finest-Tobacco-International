@@ -5,9 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40dba1e8-ed36-4cd0-9b97-019cbff1421c" name="Changes" comment="Landing app. wip: minor visual fixes">
+      <change afterPath="$PROJECT_DIR$/app/ui/admin/components/forms/fields/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/admin/components/forms/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/admin/components/forms/products/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/admin/components/forms/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icons/facebook.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icons/linkedin.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/landing/sections/StaticCataogue/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/sections/StaticCataogue/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/[lang]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[lang]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/admin/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/Products/components/Form.Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/sections/Products/components/Form.Product.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/Products/components/Product.Form.Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/sections/Products/components/Product.Form.Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/landing/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/landing/components/Header/Navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/components/Header/Navigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/landing/sections/About/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/sections/About/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/landing/sections/Contacts/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/sections/Contacts/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/icons/mail.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/icons/mail.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/icons/whatsapp.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/icons/whatsapp.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +144,10 @@
       <workItem from="1747599800065" duration="21000" />
       <workItem from="1747689564546" duration="13000" />
       <workItem from="1747736281143" duration="117000" />
-      <workItem from="1747736401418" duration="4240000" />
+      <workItem from="1747736401418" duration="4509000" />
+      <workItem from="1747779243231" duration="4810000" />
+      <workItem from="1747812595399" duration="9000" />
+      <workItem from="1747822670091" duration="870000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit for finest-tobacco-ig">
       <option name="closed" value="true" />
@@ -227,7 +245,31 @@
       <option name="project" value="LOCAL" />
       <updated>1747740849949</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Landing app. wip: schema rework">
+      <option name="closed" value="true" />
+      <created>1747742067611</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1747742067611</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Landing app. wip: minor visual fixes">
+      <option name="closed" value="true" />
+      <created>1747780539770</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1747780539770</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Landing app. wip: minor visual fixes">
+      <option name="closed" value="true" />
+      <created>1747780682024</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1747780682024</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,6 +298,7 @@
     <MESSAGE value="Admin app. wip: token verification update" />
     <MESSAGE value="Landing app. wip: about us rework" />
     <MESSAGE value="Landing app. wip: schema rework - wip" />
+    <MESSAGE value="Landing app. wip: schema rework" />
     <MESSAGE value="Landing app. wip: minor visual fixes" />
     <option name="LAST_COMMIT_MESSAGE" value="Landing app. wip: minor visual fixes" />
     <option name="NON_MODAL_COMMIT_POSTPONE_SLOW_CHECKS" value="false" />

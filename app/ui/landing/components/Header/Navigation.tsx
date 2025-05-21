@@ -3,7 +3,7 @@ import { cn, NavigationItem } from "@/app/ui";
 
 const SECTIONS_DICTIONARY: { [K in LandingSections]?: string } = {
   [LandingSections.ABOUT]: "About us",
-  [LandingSections.CATALOGUE]: "Catalogue",
+  // [LandingSections.CATALOGUE]: "Catalogue",
   [LandingSections.CONTACTS]: "Contacts",
 };
 

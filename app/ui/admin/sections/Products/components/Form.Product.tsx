@@ -6,8 +6,6 @@ import {
   getProductsById,
 } from "@/app/actions";
 import { Product, ProductTranslation } from "@/app/db/types";
-import localFont from "next/dist/compiled/@next/font/dist/local";
-import { locales } from "@/app/lib/i18nConfig";
 
 interface ProductFormModalProps {
   id?: Product["select"]["id"];

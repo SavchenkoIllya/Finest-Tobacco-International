@@ -7,7 +7,9 @@ export const ContactsSection = () => {
   return (
     <section
       id={LandingSections.CONTACTS}
-      className={"relative flex flex-col justify-center items-center w-full"}
+      className={
+        "relative container mx-auto flex flex-col justify-center items-center w-full"
+      }
     >
       <h1 className={"h1 mt-8"}>Contact us</h1>
 
@@ -60,18 +62,22 @@ export const ContactsSection = () => {
         </div>
       </div>
 
-      <div className={"my-8"}>
-        <ContactsList
-          wrapperClasses={"flex gap-2 items-center"}
-          showFull={false}
-          // withSeparator
-        />
-      </div>
+      <div className="grid grid-cols-3 items-center m-8 w-[100%]">
+        {/* Левая часть — контакты */}
+        <div className="justify-self-start">
+          <ContactsList
+            wrapperClasses="flex gap-2 items-center"
+            showFull={false}
+          />
+        </div>
 
-      <div className={"mb-8"}>
-        <h5 className={"h1 uppercase !text-sm"}>
+        {/* Центр — копирайт */}
+        <h5 className="h1 uppercase !text-sm text-center justify-self-center">
           Copyright © 24 All rights reserved - Finest Tobacco
         </h5>
+
+        {/* Правая часть — пустая, выравнивает остальное */}
+        <div></div>
       </div>
     </section>
   );

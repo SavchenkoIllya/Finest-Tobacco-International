@@ -19,7 +19,7 @@ export const ProductModal = ({
       onClose={onClose}
       contentWrapperClasses={"!bg-white max-h-[50%]"}
     >
-      <FormProduct id={1} />
+      <FormProduct />
     </Modal>
   );
 };

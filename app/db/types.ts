@@ -15,6 +15,16 @@ export type ProductTranslation = {
   insert: typeof tables.productTranslationsTable.$inferInsert;
 };
 
+export type Features = {
+  select: typeof tables.featuresTable.$inferSelect;
+  insert: typeof tables.featuresTable.$inferInsert;
+};
+
+export type Contacts = {
+  select: typeof tables.contactsTable.$inferSelect;
+  insert: typeof tables.contactsTable.$inferInsert;
+};
+
 export type ProductsWithLocales = {
   select: Product["select"] & {
     locales?: ProductTranslation["select"][];
