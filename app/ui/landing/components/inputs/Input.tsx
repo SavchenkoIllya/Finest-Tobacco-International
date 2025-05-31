@@ -9,6 +9,8 @@ interface SearchInputProps {
   icon?: ReactNode;
   defaultValue?: string;
   type?: HTMLInputElement["type"];
+  name?: string;
+  error?: string[];
 }
 
 export const Input = ({
@@ -17,22 +19,27 @@ export const Input = ({
   placeholder = "Search...",
   icon,
   defaultValue,
+  error,
   ...props
 }: SearchInputProps) => {
   const variantStyles =
-    variant === "black"
-      ? "text-primary border-primary placeholder-primary"
-      : "text-secondary border-secondary placeholder-secondary";
+      {
+       black: "text-primary border-primary placeholder-primary",
+       white: "text-secondary border-secondary placeholder-secondary",
+       error:"text-red-500 border-red-500 placeholder-red-300",
+      }
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value);
   };
 
   return (
+      <div className={"w-full flex flex-col gap-2"}>
     <div
       className={cn(
         "border flex px-4 py-2 gap-2 w-full",
-        variantStyles,
+        variantStyles[variant],
+        error && variantStyles.error
       )}
     >
       <input
@@ -45,5 +52,11 @@ export const Input = ({
       />
       {icon}
     </div>
+        {error?.map((error, i) => (
+            <p key={error + i} className={"text-red-500"}>
+              {error}
+            </p>
+        ))}
+      </div>
   );
 };

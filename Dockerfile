@@ -1,7 +1,7 @@
 FROM node:20.10-alpine
+
 LABEL authors="savchenkoi"
 
-# Set working directory
 WORKDIR /usr/app
 
 # Install PM2 globally

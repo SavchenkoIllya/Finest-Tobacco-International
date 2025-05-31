@@ -8,7 +8,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 w-[100dvw] z-20 transition-all duration-300 bg-secondary border-b-2 border-primary",
+        "fixed top-0 w-[100dvw] z-30 transition-all duration-300 bg-secondary border-b-2 border-primary",
       )}
     >
       <div className="relative z-10">

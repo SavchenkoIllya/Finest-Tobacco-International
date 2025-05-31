@@ -4,12 +4,12 @@
   --color-accent: #000000;
   --color-primary: #000000;
   /*--color-secondary: #EAE4D5*/
-  --color-secondary: #f8f4eb
+  --color-secondary: #ede6d7
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: #f8f4eb;
+  background-color: #ede6d7;
 }
 
 *{

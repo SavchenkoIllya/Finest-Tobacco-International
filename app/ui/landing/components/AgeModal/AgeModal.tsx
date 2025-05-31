@@ -58,6 +58,7 @@ export const AgeModal = () => {
             "w-fit h-fit p-20 rounded-4xl",
             "from-0% to-60%",
             "shadow-secondary/50 shadow-2xl",
+            "max-md:w-full max-md:h-full rounded-none",
           )}
         >
           <div className={"max-w-2xl"}>
@@ -69,7 +70,7 @@ export const AgeModal = () => {
               least 18 years old and agree to comply with your local laws
               regarding tobacco use.
             </p>
-            <div className={"mt-4 flex justify-between"}>
+            <div className={cn("mt-4 flex justify-between", "max-md:flex-col max-md:gap-4")}>
               <button
                 onClick={handleClose}
                 className={"button !bg-primary !text-secondary !w-full"}

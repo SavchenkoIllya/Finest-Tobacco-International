@@ -2,8 +2,15 @@
 import { LandingSections } from "@/app/lib";
 import { ContactsList, Input, Textarea } from "@/app/ui";
 import { MapComponent } from "@/app/ui/landing/components/Map";
+import {useActionState} from "react";
+import {sendEmail} from "@/app/actions/sendEmail";
 
 export const ContactsSection = () => {
+  const [formState, formAction, isPending] = useActionState(
+      sendEmail,
+      undefined,
+  );
+
   return (
     <section
       id={LandingSections.CONTACTS}
@@ -20,8 +27,8 @@ export const ContactsSection = () => {
           }
         >
           <form
+            action={formAction}
             className={"space-y-4 p-4 md:p-8"}
-            onSubmit={(e) => e.preventDefault()}
           >
             <div className={"flex flex-col md:flex-row items-center gap-2"}>
               <Input
@@ -29,12 +36,16 @@ export const ContactsSection = () => {
                 variant={"black"}
                 onChange={() => {}}
                 type={"text"}
+                name={"name"}
+                error={formState?.errors?.["name"]}
               />
               <Input
-                placeholder={"Phone"}
+                  placeholder={"Phone"}
                 variant={"black"}
                 type={"phone"}
                 onChange={() => {}}
+                name={"phone"}
+                error={formState?.errors?.["phone"]}
               />
             </div>
             <Input
@@ -42,11 +53,28 @@ export const ContactsSection = () => {
               type={"email"}
               variant={"black"}
               onChange={() => {}}
+              name={"email"}
+              error={formState?.errors?.["email"]}
             />
-            <Textarea variant={"black"} onChange={() => {}} />
+            <Textarea
+                inputProps={{
+                  name: "details"
+                }}
+                variant={"black"}
+                onChange={() => {}}
+                error={formState?.errors?.["details"]}
+            />
+
+            {formState?.errors?.["server"]?.map((error)=> (
+                <p key={"details-"+error} className={"text-red-500"}>{error}</p>
+            ))}
+
+            {formState?.successMessage && <p className={"text-emerald-500"}>{formState?.successMessage}</p>}
+
             <button
               type={"submit"}
               className={"button !w-full !bg-primary !text-secondary"}
+              disabled={isPending}
             >
               Contact us
             </button>
