@@ -36,6 +36,6 @@ export const productTableConfig: ColumnDef<ProductsWithLocales["select"]>[] = [
     key: "image_url",
     label: "Image",
     sortable: true,
-    render: (value) => <ImageProduct image_url={value} />,
+    render: (value) => <ImageProduct image_url={value as string} />,
   },
 ];
