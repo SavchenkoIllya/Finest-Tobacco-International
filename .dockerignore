@@ -19,6 +19,7 @@ logs
 # Docker
 Dockerfile*
 docker-compose*
+certbot/
 
 # OS
 .DS_Store
