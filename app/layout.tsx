@@ -6,7 +6,7 @@ export default async function GlobalLayout({
   params,
 }: Readonly<{
   children: ReactNode;
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }>) {
   const { lang } = await params;
 
