@@ -21,7 +21,7 @@ RUN chown -R node:node /usr/app
 COPY --chown=node:node . .
 
 # Build app
-#RUN npm run build
+RUN npm run build
 
 # Expose the listening port
 EXPOSE 3000
