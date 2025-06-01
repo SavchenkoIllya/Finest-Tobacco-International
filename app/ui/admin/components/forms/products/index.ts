@@ -14,6 +14,7 @@ export const productsFormFields: { [K in keyof Product["select"]]: ReactNode } =
     tar: "",
     filter_parameters: "",
     image_url: "",
+    active: true,
   };
 
 export const productsFormDefaultFields: Product["insert"] = {
@@ -27,6 +28,7 @@ export const productsFormDefaultFields: Product["insert"] = {
   tar: "",
   filter_parameters: "",
   image_url: "",
+  active: true,
 };
 
 export const localFormFields: {
