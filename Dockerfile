@@ -1,34 +1,30 @@
-FROM node:20.10-alpine
-
-LABEL authors="savchenkoi"
+FROM node:20.10-alpine AS builder
 
 WORKDIR /usr/app
 
-# Install PM2 globally
-RUN npm install --global pm2
+COPY package*.json ./
+RUN npm install
 
-# Copy "package.json" and "package-lock.json" before other files
-# Utilise Docker cache to save re-installing dependencies if unchanged
-COPY ./package*.json ./
-
-# Install dependencies
-RUN npm config set unsafe-perm true
-RUN npm install --silent
-
-# Copy all files
 COPY . .
 
-# Change ownership to the non-root user
-RUN chown -R node /app
-
-# Build app
 RUN npm run build
 
-# Expose the listening port
-EXPOSE 3000
+
+# --- Production stage ---
+FROM node:20.10-alpine
+
+WORKDIR /usr/app
+
+# Установим только runtime-зависимости и PM2
+RUN npm install --global pm2
+
+COPY --from=builder /usr/app/package*.json ./
+COPY --from=builder /usr/app/node_modules ./node_modules
+COPY --from=builder /usr/app/.next ./.next
+COPY --from=builder /usr/app/public ./public
 
 USER node
 
-# Launch app with PM2
-CMD [ "pm2-runtime", "start", "npm", "--", "run", "dev" ]
+EXPOSE 3000
 
+CMD ["pm2-runtime", "npm", "--", "start"]

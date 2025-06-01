@@ -1,0 +1,29 @@
+# Node
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Next.js
+.next
+out
+
+# Logs
+*.log
+logs
+*.tsbuildinfo
+
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile*
+docker-compose*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.vscode
+.idea
