@@ -10,7 +10,7 @@ export const productTableConfig: ColumnDef<ProductsWithLocales["select"]>[] = [
     key: "id",
     label: "ID",
     sortable: true,
-    render: (value) => <LinkProduct id={value} />,
+    render: (value) => <LinkProduct id={value as number} />,
   },
   {
     key: "brand",

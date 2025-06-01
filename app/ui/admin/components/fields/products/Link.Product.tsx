@@ -5,7 +5,7 @@ import Link from "next/link";
 export const LinkProduct = ({
   id,
 }: {
-  id?: ProductsWithLocales["select"]["id"];
+  id: ProductsWithLocales["select"]["id"];
 }) => {
   if (!id) return null;
 
