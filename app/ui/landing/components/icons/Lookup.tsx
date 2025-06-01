@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const Lookup = () => {
-  return <img src={"/icons/search.svg"} alt={"Search icon"} />;
+  return <Image src={"/icons/search.svg"} alt={"Search icon"} />;
 };

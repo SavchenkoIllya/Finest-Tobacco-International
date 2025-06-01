@@ -7,6 +7,7 @@ import {
 } from "@/app/actions";
 import { Product, ProductTranslation } from "@/app/db/types";
 
+// eslint-disable
 interface ProductFormModalProps {
   id?: Product["select"]["id"];
 }

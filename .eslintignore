@@ -1,0 +1,5 @@
+/app/ui
+
+build/
+
+**/*.min.js

@@ -24,7 +24,11 @@ export const Production = () => {
             belief that choice, authenticity, and legacy matter in a changing
             world.
           </p>
-          <img className={"size-150"} src={"/images/catchphrase.webp"} />
+          <img
+            className={"size-150"}
+            src={"/images/catchphrase.webp"}
+            alt={"catchphrase"}
+          />
         </div>
       </div>
     </section>

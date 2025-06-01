@@ -10,7 +10,7 @@ interface ProductFormModalProps {
 export const ProductModal = ({
   open,
   onClose,
-  onSubmit,
+  // onSubmit,
 }: ProductFormModalProps) => {
   return (
     <Modal
