@@ -11,7 +11,7 @@ export const products: Product["insert"][] = [
     nicotine: "1.1mg",
     tar: "10mg",
     filter_parameters: "Standard filter",
-    image_url: "https://example.com/product1.jpg",
+    image_url: "bacio sunset.jpg",
     active: true,
   },
   {
@@ -24,7 +24,7 @@ export const products: Product["insert"][] = [
     nicotine: "1.3mg",
     tar: "12mg",
     filter_parameters: "Premium filter",
-    image_url: "https://example.com/product2.jpg",
+    image_url: "bacio sunset.jpg",
     active: true,
   },
   {
@@ -37,7 +37,7 @@ export const products: Product["insert"][] = [
     nicotine: "2.5mg",
     tar: "15mg",
     filter_parameters: "Special filter",
-    image_url: "https://example.com/product3.jpg",
+    image_url: "bacio sunset.jpg",
     active: true,
   },
   {
@@ -50,7 +50,7 @@ export const products: Product["insert"][] = [
     nicotine: "2.8mg",
     tar: "18mg",
     filter_parameters: "Luxury filter",
-    image_url: "https://example.com/product4.jpg",
+    image_url: "bacio sunset.jpg",
     active: true,
   },
 ];

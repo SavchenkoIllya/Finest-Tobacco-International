@@ -4,19 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40dba1e8-ed36-4cd0-9b97-019cbff1421c" name="Changes" comment="Landing app. wip: minor visual fixes">
-      <change afterPath="$PROJECT_DIR$/app/db/scripts/mocked.Contacts.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/db/scripts/mocked.Features.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/db/scripts/uploads/TabakGrishaVers2.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/db/scripts/uploads/bacio sunset.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="40dba1e8-ed36-4cd0-9b97-019cbff1421c" name="Changes" comment="Landing app. wip: seed rework (probably breaking)">
+      <change afterPath="$PROJECT_DIR$/app/db/scripts/mocked.Message.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/lib/messageStatuses.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/lib/uploadBucketData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/33317314-f05d-4073-9f26-8ce698f0cec1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/33317314-f05d-4073-9f26-8ce698f0cec1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/33317314-f05d-4073-9f26-8ce698f0cec1/storage_v2/_src_/database/production_slovakia.iKHnig/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/33317314-f05d-4073-9f26-8ce698f0cec1/storage_v2/_src_/database/production_slovakia.iKHnig/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/actions/authentication.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/authentication.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/actions/sendEmail.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/sendEmail.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/db/schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/schema.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/db/scripts/mocked.Products.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/scripts/mocked.Products.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/db/scripts/seed.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/scripts/seed.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/emailTeamplates/IncomingMessage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/emailTeamplates/IncomingMessage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/lib/messages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/messages.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/lib/s3Client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/s3Client.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/landing/sections/Contacts/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/sections/Contacts/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,34 +60,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Node.js.postcss.config.mjs.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/iliyasavchenko/Desktop/Programming/Projects/VK Projects/Finest-Tobacco-International",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/Users/savchenkoi/Documents/Work/FZE/Trading/finest-tobacco-ig/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "/Users/savchenkoi/Documents/Work/FZE/Trading/finest-tobacco-ig/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.postcss.config.mjs.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/iliyasavchenko/Desktop/Programming/Projects/VK Projects/Finest-Tobacco-International&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/savchenkoi/Documents/Work/FZE/Trading/finest-tobacco-ig/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/savchenkoi/Documents/Work/FZE/Trading/finest-tobacco-ig/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app" />
@@ -112,7 +115,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-WS-243.21565.180" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.26053.12" />
       </set>
     </attachedChunks>
   </component>
@@ -143,6 +146,7 @@
       <workItem from="1747812595399" duration="9000" />
       <workItem from="1747822670091" duration="870000" />
       <workItem from="1747865863574" duration="28972000" />
+      <workItem from="1748771471016" duration="10471000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit for finest-tobacco-ig">
       <option name="closed" value="true" />
@@ -264,7 +268,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747780682024</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Landing app. wip: seed rework (probably breaking)">
+      <option name="closed" value="true" />
+      <created>1748736926607</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1748736926607</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +307,8 @@
     <MESSAGE value="Landing app. wip: schema rework - wip" />
     <MESSAGE value="Landing app. wip: schema rework" />
     <MESSAGE value="Landing app. wip: minor visual fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Landing app. wip: minor visual fixes" />
+    <MESSAGE value="Landing app. wip: seed rework (probably breaking)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Landing app. wip: seed rework (probably breaking)" />
     <option name="NON_MODAL_COMMIT_POSTPONE_SLOW_CHECKS" value="false" />
   </component>
 </project>

@@ -1,4 +1,5 @@
 import { integer, pgTable, text, varchar, boolean } from "drizzle-orm/pg-core";
+import { MessageStatuses } from "@/app/lib/messageStatuses";
 
 export const usersTable = pgTable("users", {
   id: integer().primaryKey().generatedAlwaysAsIdentity(),
@@ -45,4 +46,13 @@ export const contactsTable = pgTable("contacts", {
   name: varchar({ length: 255 }).notNull(),
   link: varchar({ length: 255 }).notNull(),
   active: boolean().default(true),
+});
+
+export const messagesTable = pgTable("messages", {
+  id: integer().primaryKey().generatedAlwaysAsIdentity(),
+  name: varchar({ length: 255 }).notNull(),
+  phone: varchar({ length: 255 }).notNull(),
+  email: varchar({ length: 255 }).notNull(),
+  status: varchar({ length: 255 }).notNull().default(MessageStatuses.NOT_READ),
+  details: text(),
 });

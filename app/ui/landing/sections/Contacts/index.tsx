@@ -2,13 +2,13 @@
 import { LandingSections } from "@/app/lib";
 import { ContactsList, Input, Textarea } from "@/app/ui";
 import { MapComponent } from "@/app/ui/landing/components/Map";
-import {useActionState} from "react";
-import {sendEmail} from "@/app/actions/sendEmail";
+import { useActionState } from "react";
+import { sendEmail } from "@/app/actions/sendEmail";
 
 export const ContactsSection = () => {
   const [formState, formAction, isPending] = useActionState(
-      sendEmail,
-      undefined,
+    sendEmail,
+    undefined,
   );
 
   return (
@@ -26,10 +26,7 @@ export const ContactsSection = () => {
             "w-full md:flex-grow border-accent border-b-2 md:border-r-2 md:border-b-0"
           }
         >
-          <form
-            action={formAction}
-            className={"space-y-4 p-4 md:p-8"}
-          >
+          <form action={formAction} className={"space-y-4 p-4 md:p-8"}>
             <div className={"flex flex-col md:flex-row items-center gap-2"}>
               <Input
                 placeholder={"Name"}
@@ -40,7 +37,7 @@ export const ContactsSection = () => {
                 error={formState?.errors?.["name"]}
               />
               <Input
-                  placeholder={"Phone"}
+                placeholder={"Phone"}
                 variant={"black"}
                 type={"phone"}
                 onChange={() => {}}
@@ -57,19 +54,23 @@ export const ContactsSection = () => {
               error={formState?.errors?.["email"]}
             />
             <Textarea
-                inputProps={{
-                  name: "details"
-                }}
-                variant={"black"}
-                onChange={() => {}}
-                error={formState?.errors?.["details"]}
+              inputProps={{
+                name: "details",
+              }}
+              variant={"black"}
+              onChange={() => {}}
+              error={formState?.errors?.["details"]}
             />
 
-            {formState?.errors?.["server"]?.map((error)=> (
-                <p key={"details-"+error} className={"text-red-500"}>{error}</p>
+            {formState?.errors?.["server"]?.map((error) => (
+              <p key={"details-" + error} className={"text-red-500"}>
+                {error}
+              </p>
             ))}
 
-            {formState?.successMessage && <p className={"text-emerald-500"}>{formState?.successMessage}</p>}
+            {formState?.successMessage && (
+              <p className={"text-emerald-500"}>{formState?.successMessage}</p>
+            )}
 
             <button
               type={"submit"}

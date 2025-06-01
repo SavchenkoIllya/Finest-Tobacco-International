@@ -30,3 +30,8 @@ export type ProductsWithLocales = {
     locales?: ProductTranslation["select"][];
   };
 };
+
+export type Messages = {
+  select: typeof tables.messagesTable.$inferSelect;
+  insert: typeof tables.messagesTable.$inferInsert;
+};
