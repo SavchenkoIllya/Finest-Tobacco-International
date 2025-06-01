@@ -12,13 +12,14 @@ RUN npm install --global pm2
 COPY ./package*.json ./
 
 # Install dependencies
-RUN npm install
-
-# Change ownership to the non-root user
-RUN chown -R node:node /usr/app
+RUN npm config set unsafe-perm true
+RUN npm install --silent
 
 # Copy all files
-COPY --chown=node:node . .
+COPY . .
+
+# Change ownership to the non-root user
+RUN chown -R node /app
 
 # Build app
 RUN npm run build
@@ -26,8 +27,6 @@ RUN npm run build
 # Expose the listening port
 EXPOSE 3000
 
-# Run container as non-root (unprivileged) user
-# The "node" user is provided in the Node.js Alpine base image
 USER node
 
 # Launch app with PM2
