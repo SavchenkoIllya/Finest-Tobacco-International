@@ -1,7 +1,7 @@
 import { LandingSections } from "@/app/lib";
 import { ScrollButton } from "@/app/ui/landing/sections/Hero/components/ScrollButton";
 
-const VIDEO_NAME="TabakGrishaVers2.mp4"
+const VIDEO_NAME = "TabakGrishaVers2.mp4";
 
 export const Hero = () => {
   return (
@@ -13,7 +13,7 @@ export const Hero = () => {
         loop
         playsInline
         preload="auto"
-        src={`http://localhost:${process.env.NEXT_PUBLIC_MINIO_PORT!}/${process.env.NEXT_PUBLIC_VIDEO_BUCKET_NAME!}/${VIDEO_NAME}`}
+        src={`${process.env.BASE_URL!}:${process.env.NEXT_PUBLIC_MINIO_PORT!}/${process.env.NEXT_PUBLIC_VIDEO_BUCKET_NAME!}/${VIDEO_NAME}`}
       />
       <div
         className={
