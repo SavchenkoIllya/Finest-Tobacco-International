@@ -10,10 +10,12 @@ import {
 } from "@/app/ui";
 import { StaticCataloguePage } from "@/app/ui/landing/sections/StaticCataogue";
 
-export default function Home(props: {
+export type HomePageProps = {
   searchParams?: Promise<HomePageSearchParams>;
-  params: { lang: string };
-}) {
+  params: Promise<{ lang: string }>;
+};
+
+export default function Home(props: HomePageProps) {
   const isCatalogueEnabled = false;
 
   return (
