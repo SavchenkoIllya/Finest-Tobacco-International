@@ -6,6 +6,7 @@ import {
   getProductsById,
 } from "@/app/actions";
 import { Product, ProductTranslation } from "@/app/db/types";
+import { unknown } from "zod";
 
 // eslint-disable
 interface ProductFormModalProps {
@@ -20,7 +21,7 @@ export const FormProduct = ({ id }: ProductFormModalProps) => {
 
   const [errorMessage, formAction, isPending] = useActionState(
     addProduct,
-    undefined,
+    undefined as any,
   );
 
   useEffect(() => {
@@ -30,7 +31,7 @@ export const FormProduct = ({ id }: ProductFormModalProps) => {
         const locales = await getLocalesByProductId(id);
 
         setDefaultFormValues({
-          product,
+          product: product as any,
           locales: locales || [],
         });
       };
@@ -40,13 +41,16 @@ export const FormProduct = ({ id }: ProductFormModalProps) => {
   }, [id]);
 
   const handleProductChange = (key: string, value: string) => {
-    setDefaultFormValues((prev) => ({
-      ...prev,
-      product: {
-        ...prev.product,
-        [key]: value,
-      },
-    }));
+    setDefaultFormValues(
+      (prev) =>
+        ({
+          ...prev,
+          product: {
+            ...prev.product,
+            [key]: value,
+          },
+        }) as any,
+    );
   };
 
   const handleLocaleChange = (
@@ -67,21 +71,24 @@ export const FormProduct = ({ id }: ProductFormModalProps) => {
   };
 
   const addLocale = () => {
-    setDefaultFormValues((prev) => ({
-      ...prev,
-      locales: [
-        ...prev.locales,
-        {
-          id: undefined,
-          product_id: id ?? 0,
-          locale: "",
-          title: "",
-          subtitle: "",
-          description: "",
-          blend: "",
-        },
-      ],
-    }));
+    setDefaultFormValues(
+      (prev) =>
+        ({
+          ...prev,
+          locales: [
+            ...prev.locales,
+            {
+              id: undefined,
+              product_id: id ?? 0,
+              locale: "",
+              title: "",
+              subtitle: "",
+              description: "",
+              blend: "",
+            },
+          ],
+        }) as any,
+    );
   };
 
   const removeLocale = (index: number) => {
@@ -104,7 +111,7 @@ export const FormProduct = ({ id }: ProductFormModalProps) => {
               <input
                 type="text"
                 name={`product.${key}`}
-                defaultValue={value ?? ""}
+                defaultValue={(value as string) ?? ""}
               />
             </div>
           ))}
@@ -158,7 +165,7 @@ export const FormProduct = ({ id }: ProductFormModalProps) => {
               <label>Description</label>
               <textarea
                 name={`locales[${index}].description`}
-                defaultValue={locale.description}
+                defaultValue={locale.description as string}
               />
             </div>
             <div>
@@ -166,7 +173,7 @@ export const FormProduct = ({ id }: ProductFormModalProps) => {
               <input
                 type="text"
                 name={`locales[${index}].blend`}
-                defaultValue={locale.blend}
+                defaultValue={locale.blend as string}
               />
             </div>
             <button type="button" onClick={() => removeLocale(index)}>
