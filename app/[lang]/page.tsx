@@ -10,10 +10,10 @@ import {
 } from "@/app/ui";
 import { StaticCataloguePage } from "@/app/ui/landing/sections/StaticCataogue";
 
-export type HomePageProps = Readonly<{
+export type HomePageProps = {
   searchParams?: Promise<HomePageSearchParams>;
   params: { lang: string };
-}>;
+};
 
 export default function Home(props: HomePageProps) {
   const isCatalogueEnabled = false;
