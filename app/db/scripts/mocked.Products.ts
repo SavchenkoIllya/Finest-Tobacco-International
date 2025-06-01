@@ -12,6 +12,7 @@ export const products: Product["insert"][] = [
     tar: "10mg",
     filter_parameters: "Standard filter",
     image_url: "https://example.com/product1.jpg",
+    active: true,
   },
   {
     category: "Cigarettes",
@@ -24,6 +25,7 @@ export const products: Product["insert"][] = [
     tar: "12mg",
     filter_parameters: "Premium filter",
     image_url: "https://example.com/product2.jpg",
+    active: true,
   },
   {
     category: "Cigars",
@@ -36,6 +38,7 @@ export const products: Product["insert"][] = [
     tar: "15mg",
     filter_parameters: "Special filter",
     image_url: "https://example.com/product3.jpg",
+    active: true,
   },
   {
     category: "Cigars",
@@ -48,6 +51,7 @@ export const products: Product["insert"][] = [
     tar: "18mg",
     filter_parameters: "Luxury filter",
     image_url: "https://example.com/product4.jpg",
+    active: true,
   },
 ];
 

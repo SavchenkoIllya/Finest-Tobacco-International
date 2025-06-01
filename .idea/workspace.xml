@@ -5,26 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40dba1e8-ed36-4cd0-9b97-019cbff1421c" name="Changes" comment="Landing app. wip: minor visual fixes">
-      <change afterPath="$PROJECT_DIR$/app/utils/validation/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/utils/validation/messageValidation.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/scripts/mocked.Contacts.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/scripts/mocked.Features.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/scripts/uploads/TabakGrishaVers2.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/scripts/uploads/bacio sunset.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/actions/sendEmail.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/sendEmail.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/emailTeamplates/IncomingMessage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/emailTeamplates/IncomingMessage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/resendClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/resendClient.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/landing/components/AgeModal/AgeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/components/AgeModal/AgeModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/landing/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/landing/components/inputs/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/components/inputs/Input.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/landing/components/inputs/TextArea.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/components/inputs/TextArea.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/landing/sections/Contacts/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/sections/Contacts/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/landing/sections/Hero/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/sections/Hero/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/utils/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/actions/authentication.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/authentication.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/scripts/mocked.Products.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/scripts/mocked.Products.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/scripts/seed.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/scripts/seed.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/messages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/messages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/s3Client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/s3Client.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +76,7 @@
     "npm.dev.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "/Users/savchenkoi/Documents/Work/FZE/Trading/finest-tobacco-ig/node_modules/prettier",
     "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "/Users/iliyasavchenko/Desktop/Programming/Projects/VK Projects/Finest-Tobacco-International/node_modules/typescript/lib",
+    "ts.external.directory.path": "/Users/savchenkoi/Documents/Work/FZE/Trading/finest-tobacco-ig/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -98,11 +90,11 @@
       <recent name="$PROJECT_DIR$/app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/db/scripts/uploads" />
       <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/app/[lang]" />
       <recent name="$PROJECT_DIR$/app/ui/admin/sections/Products/components" />
       <recent name="$PROJECT_DIR$/app/dashboard/admin/products" />
-      <recent name="$PROJECT_DIR$/public/video" />
     </key>
   </component>
   <component name="RunManager">

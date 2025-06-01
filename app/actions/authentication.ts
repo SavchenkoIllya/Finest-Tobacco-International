@@ -2,7 +2,7 @@
 import { db } from "@/app/db";
 import { usersTable } from "@/app/db/schema";
 import { User } from "@/app/db/types";
-import { COOKIES_NAMES, ERROR_MESSAGE } from "@/app/lib";
+import { COOKIES_NAMES, ERROR_MESSAGES } from "@/app/lib";
 import bcrypt from "bcryptjs";
 import { eq } from "drizzle-orm";
 import jwt from "jsonwebtoken";
@@ -21,13 +21,13 @@ async function authUser(
   const user = users[0];
 
   if (!user) {
-    return { error: ERROR_MESSAGE.USER_NOT_FOUND };
+    return { error: ERROR_MESSAGES.USER_NOT_FOUND };
   }
 
   const passwordMatch = await bcrypt.compare(password, user.password);
 
   if (!passwordMatch) {
-    return { error: ERROR_MESSAGE.PASSWORD_NOT_MATCH };
+    return { error: ERROR_MESSAGES.PASSWORD_NOT_MATCH };
   }
 
   const token = jwt.sign(
@@ -56,7 +56,7 @@ export async function login(prevState: string | undefined, formData: FormData) {
   const redirectTo = formData.get("redirectTo") as string;
 
   if (!email || !password) {
-    return ERROR_MESSAGE.INVALID_CREDENTIALS;
+    return ERROR_MESSAGES.INVALID_CREDENTIALS;
   }
 
   const result = await authUser(email, password);

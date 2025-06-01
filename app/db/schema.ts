@@ -19,7 +19,7 @@ export const productsTable = pgTable("products", {
   tar: varchar({ length: 255 }),
   filter_parameters: varchar({ length: 255 }),
   image_url: text(),
-  // active: boolean().default(true),
+  active: boolean().default(true),
 });
 
 export const productTranslationsTable = pgTable("product_translations", {
