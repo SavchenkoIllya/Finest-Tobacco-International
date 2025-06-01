@@ -18,7 +18,7 @@ RUN npm install
 RUN chown -R node:node /usr/app
 
 # Copy all files
-COPY ./ ./
+COPY --chown=node:node . .
 
 # Build app
 #RUN npm run build

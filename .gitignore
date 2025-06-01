@@ -37,3 +37,6 @@ yarn-error.log*
 
 /minio-data-slovakia
 /public/video
+
+/nginx/ssl
+/nginx/certbot
