@@ -26,7 +26,7 @@ export const ProductPopover = ({ open, onClose }: ProductPopoverProps) => {
       const productResponse = await getProductWithLocalesById(
         Number(productId),
       );
-      setProduct(productResponse as any);
+      setProduct(productResponse as ProductsWithLocales["select"]);
     };
 
     void getProductByIdRequest();
