@@ -4,39 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40dba1e8-ed36-4cd0-9b97-019cbff1421c" name="Changes" comment="Landing app. wip: minor docker upgrades">
-      <change afterPath="$PROJECT_DIR$/app/ui/admin/components/Overview/_generic/ContentRenderer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ui/admin/components/Overview/_generic/ContentWrapper.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ui/admin/components/Overview/_generic/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ui/admin/components/Overview/_generic/renderers/Item.Renderer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ui/admin/components/Overview/_generic/renderers/String.Renderer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ui/admin/components/Overview/_generic/renderers/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ui/admin/components/Overview/_generic/renderers/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ui/admin/components/Overview/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ui/admin/configs/productOverviewConfig.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ui/admin/pages/Product/index.tsx" afterDir="false" />
+    <list default="true" id="40dba1e8-ed36-4cd0-9b97-019cbff1421c" name="Changes" comment="Admin app. wip: Overviews base structures">
+      <change afterPath="$PROJECT_DIR$/app/ui/admin/components/Overview/_generic/renderers/Boolean.Renderer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/actions/products/products.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/products/products.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/admin/products/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/admin/products/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/admin/products/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/admin/products/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/admin/components/Table/Table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/components/Table/Table.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/admin/components/Table/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/components/Table/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/admin/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/admin/configs/productTableConfig.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/configs/productTableConfig.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/admin/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/Dashboard/components/Dashboard.InfoCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/pages/Dashboard/components/Dashboard.InfoCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/Dashboard/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/pages/Dashboard/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/Dashboard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/pages/Dashboard/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/Products/components/Form.Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/pages/Products/components/Form.Product.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/Products/components/Product.Form.Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/pages/Products/components/Product.Form.Modal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/Products/components/ProductsTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/pages/Products/components/ProductsTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/Products/components/TableAction.Add.Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/pages/Products/components/TableAction.Add.Button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/Products/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/pages/Products/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/Products/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/pages/Products/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/pages/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nginx/conf.d/finest-tobacco.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nginx/nginx.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/admin/components/Overview/_generic/ContentRenderer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/components/Overview/_generic/ContentRenderer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/admin/components/Overview/_generic/renderers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/components/Overview/_generic/renderers/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/admin/pages/Product/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/pages/Product/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +139,7 @@
       <workItem from="1748771471016" duration="10471000" />
       <workItem from="1750028467560" duration="1122000" />
       <workItem from="1750065245084" duration="604000" />
-      <workItem from="1750533988689" duration="8535000" />
+      <workItem from="1750533988689" duration="9522000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit for finest-tobacco-ig">
       <option name="closed" value="true" />
@@ -496,7 +469,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748808210795</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Admin app. wip: Overviews base structures">
+      <option name="closed" value="true" />
+      <created>1750543061993</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1750543061993</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +497,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CODE_SMELLS_PROFILE" value="Project Default" />
-    <MESSAGE value="Landing app. wip: schema rework" />
     <MESSAGE value="Landing app. wip: minor visual fixes" />
     <MESSAGE value="Landing app. wip: seed rework (probably breaking)" />
     <MESSAGE value="Landing app. wip: ngnix configuration" />
@@ -541,7 +521,8 @@
     <MESSAGE value="Landing app. wip: ignore ts build lint" />
     <MESSAGE value="Landing app. wip: ignore ts build lint 2" />
     <MESSAGE value="Landing app. wip: minor docker upgrades" />
-    <option name="LAST_COMMIT_MESSAGE" value="Landing app. wip: minor docker upgrades" />
+    <MESSAGE value="Admin app. wip: Overviews base structures" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin app. wip: Overviews base structures" />
     <option name="NON_MODAL_COMMIT_POSTPONE_SLOW_CHECKS" value="false" />
   </component>
 </project>

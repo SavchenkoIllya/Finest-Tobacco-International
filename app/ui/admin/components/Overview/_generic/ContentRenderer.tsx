@@ -1,6 +1,9 @@
 import { ReactNode } from "react";
 import { ContentWrapper } from "@/app/ui/admin";
-import { StringRenderer } from "@/app/ui/admin/components/Overview/_generic/renderers";
+import {
+  BooleanRenderer,
+  StringRenderer,
+} from "@/app/ui/admin/components/Overview/_generic/renderers";
 
 export type BasicOverViewContentType = Record<string, any>;
 
@@ -49,8 +52,12 @@ export const OverviewItemRenderer = <T extends BasicOverViewContentType>({
       return (
         <StringRenderer value={value} size={item.size} title={item.title} />
       );
+
     case "boolean":
-      return value;
+      return (
+        <BooleanRenderer value={value} size={item.size} title={item.title} />
+      );
+
     case "number":
       return value;
     case "date":

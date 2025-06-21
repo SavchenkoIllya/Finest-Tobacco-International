@@ -14,6 +14,7 @@ export async function ProductViewPage({ id }: { id?: number }) {
       items={[
         { key: "id", title: "ID", type: "string" },
         { key: "brand", title: "Brand", type: "string" },
+        { key: "active", title: "Active", type: "boolean" },
       ]}
     />
   );
