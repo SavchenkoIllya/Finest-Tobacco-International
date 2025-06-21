@@ -35,10 +35,8 @@ export function Table<T extends DataWithId>({
   onRefresh,
   enableGlobalSearch = true,
 }: Readonly<DataGridProps<T>>) {
-  // Вычисляем общее количество страниц
   const totalPages = Math.max(1, Math.ceil(totalCount / pageSize));
 
-  // Обработчик изменения сортировки
   const handleSortChange = (key: keyof T) => {
     const column = columns.find((col) => col.key === key);
     if (!column?.sortable && column?.sortable !== undefined) return;
@@ -46,7 +44,6 @@ export function Table<T extends DataWithId>({
     let direction = sortConfig.direction;
 
     if (sortConfig.key === key) {
-      // Циклическая смена направления: null -> asc -> desc -> null
       if (direction === null) {
         direction = "asc";
       } else if (direction === "asc") {
@@ -55,7 +52,6 @@ export function Table<T extends DataWithId>({
         direction = null;
       }
     } else {
-      // Если выбран новый столбец, начинаем с asc
       direction = "asc";
     }
 
@@ -64,7 +60,6 @@ export function Table<T extends DataWithId>({
       direction,
     };
 
-    // Передаем изменения вверх через обработчик
     onSortChange(newSortConfig);
   };
   const toolbarProps: RenderToolbarProps = {
@@ -79,7 +74,6 @@ export function Table<T extends DataWithId>({
 
   return (
     <div className={`flex flex-col space-y-4 ${className}`}>
-      {/* Панель инструментов */}
       {renderToolbar ? (
         renderToolbar(toolbarProps)
       ) : (
@@ -93,7 +87,6 @@ export function Table<T extends DataWithId>({
         />
       )}
 
-      {/* Контейнер таблицы */}
       <div className="overflow-x-auto rounded-lg">
         {loading && loadingIndicator}
         {error && <div className="p-4 text-center text-red-500">{error}</div>}
@@ -113,7 +106,6 @@ export function Table<T extends DataWithId>({
         )}
       </div>
 
-      {/* Пагинация */}
       {data.length > 0 && !loading && !error && (
         <TablePagination
           currentPage={page}

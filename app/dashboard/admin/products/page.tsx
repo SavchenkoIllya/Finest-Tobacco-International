@@ -1,4 +1,4 @@
-import { AdminProducts } from "@/app/ui/admin/sections/Products";
+import { AdminProducts } from "@/app/ui/admin/pages/Products";
 
 export default async function ProductsPage() {
   return <AdminProducts />;

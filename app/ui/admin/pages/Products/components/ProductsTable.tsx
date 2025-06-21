@@ -4,14 +4,16 @@ import { adminAppConfig, Table } from "@/app/ui/admin";
 
 export const ProductsTable = ({
   data,
+  count,
 }: {
   data: ProductsWithLocales["select"][];
+  count: number;
 }) => {
   return (
     <Table
       data={data}
       columns={adminAppConfig.products.table}
-      totalCount={99}
+      totalCount={count}
       pageSize={10}
       page={1}
       onPageChange={console.log}

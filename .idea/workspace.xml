@@ -4,22 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40dba1e8-ed36-4cd0-9b97-019cbff1421c" name="Changes" comment="Landing app. wip: seed rework (probably breaking)">
-      <change afterPath="$PROJECT_DIR$/app/db/scripts/mocked.Message.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/lib/messageStatuses.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/lib/uploadBucketData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/33317314-f05d-4073-9f26-8ce698f0cec1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/33317314-f05d-4073-9f26-8ce698f0cec1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/33317314-f05d-4073-9f26-8ce698f0cec1/storage_v2/_src_/database/production_slovakia.iKHnig/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/33317314-f05d-4073-9f26-8ce698f0cec1/storage_v2/_src_/database/production_slovakia.iKHnig/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="40dba1e8-ed36-4cd0-9b97-019cbff1421c" name="Changes" comment="Landing app. wip: minor docker upgrades">
+      <change afterPath="$PROJECT_DIR$/app/ui/admin/components/Overview/_generic/ContentRenderer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/admin/components/Overview/_generic/ContentWrapper.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/admin/components/Overview/_generic/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/admin/components/Overview/_generic/renderers/Item.Renderer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/admin/components/Overview/_generic/renderers/String.Renderer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/admin/components/Overview/_generic/renderers/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/admin/components/Overview/_generic/renderers/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/admin/components/Overview/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/admin/configs/productOverviewConfig.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/admin/pages/Product/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/actions/sendEmail.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/sendEmail.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/scripts/mocked.Products.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/scripts/mocked.Products.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/scripts/seed.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/scripts/seed.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/emailTeamplates/IncomingMessage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/emailTeamplates/IncomingMessage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/messages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/messages.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/s3Client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/s3Client.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/landing/sections/Contacts/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/landing/sections/Contacts/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/actions/products/products.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/products/products.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/admin/products/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/admin/products/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/admin/products/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/admin/products/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/admin/components/Table/Table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/components/Table/Table.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/admin/components/Table/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/components/Table/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/admin/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/admin/configs/productTableConfig.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/configs/productTableConfig.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/admin/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/Dashboard/components/Dashboard.InfoCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/pages/Dashboard/components/Dashboard.InfoCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/Dashboard/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/pages/Dashboard/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/Dashboard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/pages/Dashboard/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/Products/components/Form.Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/pages/Products/components/Form.Product.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/Products/components/Product.Form.Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/pages/Products/components/Product.Form.Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/Products/components/ProductsTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/pages/Products/components/ProductsTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/Products/components/TableAction.Add.Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/pages/Products/components/TableAction.Add.Button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/Products/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/pages/Products/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/Products/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/pages/Products/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/admin/sections/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/admin/pages/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx/conf.d/finest-tobacco.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx/nginx.conf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,11 +110,11 @@
       <recent name="$PROJECT_DIR$/app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/ui/admin/components/Overview" />
       <recent name="$PROJECT_DIR$/app/db/scripts/uploads" />
       <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/app/[lang]" />
       <recent name="$PROJECT_DIR$/app/ui/admin/sections/Products/components" />
-      <recent name="$PROJECT_DIR$/app/dashboard/admin/products" />
     </key>
   </component>
   <component name="RunManager">
@@ -147,6 +164,9 @@
       <workItem from="1747822670091" duration="870000" />
       <workItem from="1747865863574" duration="28972000" />
       <workItem from="1748771471016" duration="10471000" />
+      <workItem from="1750028467560" duration="1122000" />
+      <workItem from="1750065245084" duration="604000" />
+      <workItem from="1750533988689" duration="8535000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit for finest-tobacco-ig">
       <option name="closed" value="true" />
@@ -276,7 +296,207 @@
       <option name="project" value="LOCAL" />
       <updated>1748736926607</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Landing app. wip: ngnix configuration">
+      <option name="closed" value="true" />
+      <created>1748789535790</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1748789535790</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Landing app. wip: minor content routes update">
+      <option name="closed" value="true" />
+      <created>1748790224705</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1748790224705</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Landing app. wip: ngnix conf updates">
+      <option name="closed" value="true" />
+      <created>1748799018979</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1748799018979</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Landing app. wip: folders update">
+      <option name="closed" value="true" />
+      <created>1748799260029</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1748799260029</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Landing app. wip: minor dockerfiles update">
+      <option name="closed" value="true" />
+      <created>1748800208350</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1748800208350</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Landing app. wip: minor dockerfiles update">
+      <option name="closed" value="true" />
+      <created>1748800524334</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1748800524334</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Landing app. wip: minor dockerfiles update">
+      <option name="closed" value="true" />
+      <created>1748800948385</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1748800948385</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Landing app. wip: docker tests">
+      <option name="closed" value="true" />
+      <created>1748801604008</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1748801604008</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Landing app. wip: docker tests 2">
+      <option name="closed" value="true" />
+      <created>1748801723762</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1748801723762</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Landing app. wip: minor eslint fixes">
+      <option name="closed" value="true" />
+      <created>1748802679729</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1748802679729</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Landing app. wip: minor eslint fixes">
+      <option name="closed" value="true" />
+      <created>1748802948505</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1748802948505</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Landing app. wip: minor test">
+      <option name="closed" value="true" />
+      <created>1748803472874</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1748803472874</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Landing app. wip: page types fix">
+      <option name="closed" value="true" />
+      <created>1748803743804</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1748803743804</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Landing app. wip: page types fix 2">
+      <option name="closed" value="true" />
+      <created>1748803907002</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1748803907002</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Landing app. wip: page types fix3">
+      <option name="closed" value="true" />
+      <created>1748804122286</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1748804122286</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Landing app. wip: page types fix4">
+      <option name="closed" value="true" />
+      <created>1748804291791</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1748804291791</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Landing app. wip: page types fix5">
+      <option name="closed" value="true" />
+      <created>1748804420271</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1748804420272</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Landing app. wip: page types fix6">
+      <option name="closed" value="true" />
+      <created>1748805329214</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1748805329214</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Landing app. wip: page types fix7">
+      <option name="closed" value="true" />
+      <created>1748805523162</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1748805523162</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Landing app. wip: temporal type fixes">
+      <option name="closed" value="true" />
+      <created>1748805899037</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1748805899037</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Landing app. wip: temporal type fixes 2">
+      <option name="closed" value="true" />
+      <created>1748806017775</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1748806017775</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Landing app. wip: temporal type fixes 3">
+      <option name="closed" value="true" />
+      <created>1748806258824</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1748806258824</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Landing app. wip: ignore ts build lint">
+      <option name="closed" value="true" />
+      <created>1748806492042</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1748806492042</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Landing app. wip: ignore ts build lint 2">
+      <option name="closed" value="true" />
+      <created>1748806652553</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1748806652553</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Landing app. wip: minor docker upgrades">
+      <option name="closed" value="true" />
+      <created>1748808210795</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1748808210795</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,19 +516,32 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CODE_SMELLS_PROFILE" value="Project Default" />
-    <MESSAGE value="initial commit for finest-tobacco-ig" />
-    <MESSAGE value="Landing layout. wip: minor fixes and upgrades" />
-    <MESSAGE value="Landing layout. wip: minio fix, catalogue rework" />
-    <MESSAGE value="Landing layout. wip: minio fixes" />
-    <MESSAGE value="Landing layout and Admin app. wip: minor fixes and products form" />
-    <MESSAGE value="Admin app. wip: Product form basic view" />
-    <MESSAGE value="Admin app. wip: token verification update" />
-    <MESSAGE value="Landing app. wip: about us rework" />
-    <MESSAGE value="Landing app. wip: schema rework - wip" />
     <MESSAGE value="Landing app. wip: schema rework" />
     <MESSAGE value="Landing app. wip: minor visual fixes" />
     <MESSAGE value="Landing app. wip: seed rework (probably breaking)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Landing app. wip: seed rework (probably breaking)" />
+    <MESSAGE value="Landing app. wip: ngnix configuration" />
+    <MESSAGE value="Landing app. wip: minor content routes update" />
+    <MESSAGE value="Landing app. wip: ngnix conf updates" />
+    <MESSAGE value="Landing app. wip: folders update" />
+    <MESSAGE value="Landing app. wip: minor dockerfiles update" />
+    <MESSAGE value="Landing app. wip: docker tests" />
+    <MESSAGE value="Landing app. wip: docker tests 2" />
+    <MESSAGE value="Landing app. wip: minor eslint fixes" />
+    <MESSAGE value="Landing app. wip: minor test" />
+    <MESSAGE value="Landing app. wip: page types fix" />
+    <MESSAGE value="Landing app. wip: page types fix 2" />
+    <MESSAGE value="Landing app. wip: page types fix3" />
+    <MESSAGE value="Landing app. wip: page types fix4" />
+    <MESSAGE value="Landing app. wip: page types fix5" />
+    <MESSAGE value="Landing app. wip: page types fix6" />
+    <MESSAGE value="Landing app. wip: page types fix7" />
+    <MESSAGE value="Landing app. wip: temporal type fixes" />
+    <MESSAGE value="Landing app. wip: temporal type fixes 2" />
+    <MESSAGE value="Landing app. wip: temporal type fixes 3" />
+    <MESSAGE value="Landing app. wip: ignore ts build lint" />
+    <MESSAGE value="Landing app. wip: ignore ts build lint 2" />
+    <MESSAGE value="Landing app. wip: minor docker upgrades" />
+    <option name="LAST_COMMIT_MESSAGE" value="Landing app. wip: minor docker upgrades" />
     <option name="NON_MODAL_COMMIT_POSTPONE_SLOW_CHECKS" value="false" />
   </component>
 </project>

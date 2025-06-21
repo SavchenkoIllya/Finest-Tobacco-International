@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Modal } from "@/app/ui";
-import { ProductModal } from "@/app/ui/admin/sections/Products/components/Product.Form.Modal";
+import { ProductModal } from "@/app/ui/admin/pages/Products/components/Product.Form.Modal";
 
 export const TableActionAddButton = () => {
   const [open, setOpen] = useState(false);

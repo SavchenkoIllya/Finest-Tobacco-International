@@ -51,7 +51,6 @@ const formatFilterQuery = (filters?: ProductFilters) => {
       or(
         ilike(productTranslationsTable.title, queryPattern),
         ilike(productTranslationsTable.subtitle, queryPattern),
-        // Add more fields here if needed
       ) as SQL<unknown>,
     );
   }

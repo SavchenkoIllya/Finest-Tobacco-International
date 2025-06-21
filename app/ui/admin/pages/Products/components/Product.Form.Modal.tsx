@@ -1,5 +1,5 @@
 import { Modal, ModalProps } from "@/app/ui";
-import { FormProduct } from "@/app/ui/admin/sections/Products/components/Form.Product";
+import { FormProduct } from "@/app/ui/admin/pages/Products/components/Form.Product";
 
 interface ProductFormModalProps {
   open: ModalProps["open"];

@@ -15,7 +15,7 @@ export interface ColumnDef<T extends DataWithId, K extends keyof T = keyof T> {
   key: K;
   label: string;
   sortable?: boolean;
-  render?: (value: T[K], row: T) => ReactNode;
+  render?: (value: any, row: T) => ReactNode;
   width?: string;
   className?: string;
 }
@@ -31,7 +31,7 @@ export interface PaginationConfig {
   totalCount: number;
 }
 
-export type FiltersType<T> = { [K in keyof T]?: unknown };
+// export type FiltersType<T> = { [K in keyof T]?: unknown };
 
 export type RenderToolbarProps = {
   searchTerm: string;

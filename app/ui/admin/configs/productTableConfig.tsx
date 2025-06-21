@@ -3,14 +3,14 @@ import { ProductsWithLocales } from "@/app/db/types";
 import { ColumnDef } from "@/app/ui/admin";
 import { ImageProduct, LinkProduct } from "@/app/ui/admin/components/fields";
 
-// TODO: fix types of ColDef
-
 export const productTableConfig: ColumnDef<ProductsWithLocales["select"]>[] = [
   {
     key: "id",
     label: "ID",
     sortable: true,
-    render: (value) => <LinkProduct id={value as number} />,
+    render: (value: ProductsWithLocales["select"]["id"]) => (
+      <LinkProduct id={value} />
+    ),
   },
   {
     key: "brand",
