@@ -1,9 +1,27 @@
 "use client";
 import { cn, LanguageSwitch } from "@/app/ui";
 import { ContactsList, SliderNavigation } from "@/app/ui/landing/components";
+import { SharedHeader } from "@/app/types";
+import { getStrapiURL } from "@/app/utils/getStrapiUrl";
+import { useEffect, useState } from "react";
+import { getFeatureEnabled } from "@/app/actions";
 
-export function Header() {
-  const isLanguageEnabled = false;
+export function Header({
+  header_content,
+}: Readonly<{ header_content?: SharedHeader | null }>) {
+  const [isLanguageEnabled, setIsLanguageEnabled] = useState(false);
+
+  useEffect(() => {
+    const req = async () => {
+      const feature = await getFeatureEnabled("localisation");
+
+      if (feature?.data?.[0]) {
+        setIsLanguageEnabled(feature.data[0].active);
+      }
+    };
+
+    void req();
+  }, []);
 
   return (
     <header
@@ -15,12 +33,14 @@ export function Header() {
         <div className="flex items-center justify-between mx-8 my-4">
           <SliderNavigation />
           <div>
-            <img
-              src="/logo.svg"
-              alt="Tobacco & cigarettes trading logo"
-              height={60}
-              width={200}
-            />
+            {header_content?.logo?.url && (
+              <img
+                src={`${getStrapiURL()}${header_content.logo.url}`}
+                alt="Tobacco & cigarettes trading logo"
+                height={60}
+                width={200}
+              />
+            )}
           </div>
           <div className={"flex gap-4"}>
             <div className={"hidden md:block"}>

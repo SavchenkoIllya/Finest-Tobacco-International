@@ -9,26 +9,32 @@ import {
   ScrollIndicator,
 } from "@/app/ui";
 import { StaticCataloguePage } from "@/app/ui/landing/sections/StaticCataogue";
-import { getGlobal } from "@/app/actions/strapi";
+import { notFound } from "next/navigation";
+import { getGlobal } from "@/app/actions";
+import { Global } from "@/app/types";
 
 export type HomePageProps = {
   searchParams?: Promise<HomePageSearchParams>;
   params: Promise<{ lang: string }>;
 };
 
-export default async function Home(props: HomePageProps) {
-  const global = await getGlobal();
-  const isCatalogueEnabled = false;
+async function loader() {
+  const data = await getGlobal();
+  if (!data) notFound();
+  return { ...data.data } as Global;
+}
 
-  console.log(global);
+export default async function Home(props: Readonly<HomePageProps>) {
+  const data = await loader();
+  const isCatalogueEnabled = false;
 
   return (
     <main className={"overflow-hidden"}>
       <AgeModal />
       <ScrollIndicator />
       <div className={"relative "}>
-        <Header />
-        <Hero video_url={global?.data?.video?.url} />
+        <Header header_content={data?.Header} />
+        <Hero video_url={data?.video?.url} />
         <About />
         {isCatalogueEnabled && (
           <StaticCataloguePage
@@ -42,4 +48,3 @@ export default async function Home(props: HomePageProps) {
     </main>
   );
 }
-// http://localhost:1337/uploads/bacio_sunset_527dbd7de5.jpg
