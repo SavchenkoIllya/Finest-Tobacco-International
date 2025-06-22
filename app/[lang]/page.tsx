@@ -9,14 +9,18 @@ import {
   ScrollIndicator,
 } from "@/app/ui";
 import { StaticCataloguePage } from "@/app/ui/landing/sections/StaticCataogue";
+import { getGlobal } from "@/app/actions/strapi";
 
 export type HomePageProps = {
   searchParams?: Promise<HomePageSearchParams>;
   params: Promise<{ lang: string }>;
 };
 
-export default function Home(props: HomePageProps) {
+export default async function Home(props: HomePageProps) {
+  const global = await getGlobal();
   const isCatalogueEnabled = false;
+
+  console.log(global);
 
   return (
     <main className={"overflow-hidden"}>
@@ -24,7 +28,7 @@ export default function Home(props: HomePageProps) {
       <ScrollIndicator />
       <div className={"relative "}>
         <Header />
-        <Hero />
+        <Hero video_url={global?.data?.video?.url} />
         <About />
         {isCatalogueEnabled && (
           <StaticCataloguePage
@@ -38,3 +42,4 @@ export default function Home(props: HomePageProps) {
     </main>
   );
 }
+// http://localhost:1337/uploads/bacio_sunset_527dbd7de5.jpg

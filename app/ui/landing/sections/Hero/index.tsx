@@ -1,9 +1,9 @@
 import { LandingSections } from "@/app/lib";
 import { ScrollButton } from "@/app/ui/landing/sections/Hero/components/ScrollButton";
 
-const VIDEO_NAME = "TabakGrishaVers2.mp4";
+export const Hero = ({ video_url }: { video_url?: string }) => {
+  if (!video_url) return null;
 
-export const Hero = () => {
   return (
     <section id={LandingSections.HERO} className="relative min-h-screen">
       <video
@@ -13,7 +13,7 @@ export const Hero = () => {
         loop
         playsInline
         preload="auto"
-        src={`${process.env.BASE_URL!}:${process.env.NEXT_PUBLIC_MINIO_PORT!}/${process.env.NEXT_PUBLIC_VIDEO_BUCKET_NAME!}/${VIDEO_NAME}`}
+        src={`http://localhost:1337${video_url}`}
       />
       <div
         className={
