@@ -8,21 +8,37 @@ services:
       - app-network
     restart: unless-stopped
 
-  minio:
-    image: minio/minio:latest
-    container_name: slovakia_products_minio
-    ports:
-      - "${NEXT_PUBLIC_MINIO_PORT}:${NEXT_PUBLIC_MINIO_PORT}"
-      - "${MINIO_ADMIN_PORT}:${MINIO_ADMIN_PORT}"
+  strapi:
+    image: strapi/strapi
+    container_name: strapi
     environment:
-      MINIO_ROOT_USER: ${MINIO_USERNAME}
-      MINIO_ROOT_PASSWORD: ${MINIO_PASSWORD}
-    command: server --address ":${NEXT_PUBLIC_MINIO_PORT}" --console-address ":${MINIO_ADMIN_PORT}" /data
+      DATABASE_CLIENT: ${STRAPI_DATABASE_CLIENT}
+      DATABASE_NAME: ${STRAPI_DATABASE_NAME}
+      DATABASE_HOST: ${STRAPI_DATABASE_HOST}
+      DATABASE_PORT: ${STRAPI_DATABASE_PORT}
+      DATABASE_USERNAME: ${STRAPI_DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${STRAPI_DATABASE_PASSWORD}
+      NODE_ENV: ${STRAPI_NODE_ENV}
+    ports:
+      - '${STRAPI_OWN_PORT}:${STRAPI_OWN_PORT}'
     volumes:
-      - ${MINIO_DATA_DIR}:/data
-    networks:
-      - app-network
-    restart: unless-stopped
+      - ./strapi:/srv/app
+
+  strapi:
+    image: strapi/strapi
+    container_name: strapi
+    environment:
+      DATABASE_CLIENT: ${STRAPI_DATABASE_CLIENT}
+      DATABASE_NAME: ${STRAPI_DATABASE_NAME}
+      DATABASE_HOST: ${STRAPI_DATABASE_HOST}
+      DATABASE_PORT: ${STRAPI_DATABASE_PORT}
+      DATABASE_USERNAME: ${STRAPI_DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${STRAPI_DATABASE_PASSWORD}
+      NODE_ENV: ${STRAPI_NODE_ENV}
+    ports:
+      - '${STRAPI_OWN_PORT}:${STRAPI_OWN_PORT}'
+    volumes:
+      - ./strapi:/srv/app
 
 networks:
   app-network:

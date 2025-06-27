@@ -3,4 +3,4 @@ export * from "./Catalogue";
 export * from "./Contacts";
 export * from "./Hero";
 export * from "./Production";
-export * from "./StaticCataogue";
+export * from "./StaticCatalogue";

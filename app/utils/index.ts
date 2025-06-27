@@ -1,2 +1,2 @@
-export * from "./hash";
-export * from "./validation"
+export * from "./validation";
+export * from "./fetchApi";
