@@ -44,6 +44,20 @@ export interface Product {
   tobacco_part_length?: number;
 }
 
+export interface Message {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  name: string;
+  phone?: string;
+  email?: string;
+  details?: string;
+  work_status?: "read" | "unread" | "pending" | "answered";
+}
+
 export interface Brand {
   id?: number;
   documentId?: string;

@@ -8,7 +8,7 @@ import {
   Production,
   ScrollIndicator,
 } from "@/app/ui";
-import { StaticCataloguePage } from "@/app/ui/landing/sections/StaticCataogue";
+import { StaticCataloguePage } from "../ui/landing/sections/StaticCatalogue";
 import { notFound } from "next/navigation";
 import { getGlobal } from "@/app/actions";
 import { Global } from "@/app/types";
@@ -26,7 +26,7 @@ async function loader() {
 
 export default async function Home(props: Readonly<HomePageProps>) {
   const data = await loader();
-  const isCatalogueEnabled = false;
+  // const isCatalogueEnabled = false;
 
   return (
     <main className={"overflow-hidden"}>
@@ -36,12 +36,12 @@ export default async function Home(props: Readonly<HomePageProps>) {
         <Header header_content={data?.Header} />
         <Hero video_url={data?.video?.url} />
         <About />
-        {isCatalogueEnabled && (
-          <StaticCataloguePage
-            searchParams={props.searchParams}
-            params={props.params}
-          />
-        )}
+        {/*{isCatalogueEnabled && (*/}
+        {/*  <StaticCataloguePage*/}
+        {/*    searchParams={props.searchParams}*/}
+        {/*    params={props.params}*/}
+        {/*  />*/}
+        {/*)}*/}
         <Production />
         <ContactsSection />
       </div>

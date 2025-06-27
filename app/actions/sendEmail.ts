@@ -1,6 +1,7 @@
 import { IncomingMessage } from "@/app/emailTeamplates";
 import { resend } from "@/app/lib/resendClient";
 import { MessageValidator } from "@/app/utils";
+import { sendMessage } from "@/app/actions/sendMessage";
 
 type FormResponse = {
   errors: Record<string, string[]>;
@@ -27,9 +28,9 @@ export async function sendEmail(
     };
   }
 
-  console.log(data);
-
   try {
+    await sendMessage(data);
+
     await resend.emails.send({
       from: "onboarding@resend.dev",
       to: "nfo@finest-tobacco.com",
