@@ -8,25 +8,31 @@ import {
   Production,
   ScrollIndicator,
 } from "@/app/ui";
-import { StaticCataloguePage } from "../ui/landing/sections/StaticCatalogue";
-import { notFound } from "next/navigation";
-import { getGlobal } from "@/app/actions";
 import { Global } from "@/app/types";
+import { axiosClient, StrapiRoutes } from "@/app/lib";
+import { globalQuery } from "@/app/actions";
 
 export type HomePageProps = {
   searchParams?: Promise<HomePageSearchParams>;
   params: Promise<{ lang: string }>;
 };
 
-async function loader() {
-  const data = await getGlobal();
-  if (!data) notFound();
-  return { ...data.data } as Global;
+export async function generateStaticParams() {
+  return [{ lang: "en" }, { lang: "ru" }];
 }
 
-export default async function Home(props: Readonly<HomePageProps>) {
-  const data = await loader();
-  // const isCatalogueEnabled = false;
+export default async function Home() {
+  let data: Global | null = null;
+
+  try {
+    const res = await axiosClient(
+      `${StrapiRoutes.GET_GLOBALS}?${globalQuery}`,
+      { method: "GET" },
+    );
+    data = await res.data.data;
+  } catch (e) {
+    console.error(e);
+  }
 
   return (
     <main className={"overflow-hidden"}>
@@ -36,12 +42,6 @@ export default async function Home(props: Readonly<HomePageProps>) {
         <Header header_content={data?.Header} />
         <Hero video_url={data?.video?.url} />
         <About />
-        {/*{isCatalogueEnabled && (*/}
-        {/*  <StaticCataloguePage*/}
-        {/*    searchParams={props.searchParams}*/}
-        {/*    params={props.params}*/}
-        {/*  />*/}
-        {/*)}*/}
         <Production />
         <ContactsSection />
       </div>

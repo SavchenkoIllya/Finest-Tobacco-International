@@ -1,20 +1,41 @@
+"use client";
 import { LandingSections } from "@/app/lib";
 import { ScrollButton } from "@/app/ui/landing/sections/Hero/components/ScrollButton";
-import { getStrapiURL } from "@/app/utils/getStrapiUrl";
+import { useEffect, useRef } from "react";
 
 export const Hero = ({ video_url }: { video_url?: string }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const tryPlay = () => {
+      video.play().catch(() => {
+        // Optional: лог для отладки
+      });
+    };
+
+    document.addEventListener("touchstart", tryPlay, { once: true });
+
+    return () => {
+      document.removeEventListener("touchstart", tryPlay);
+    };
+  }, []);
+
   if (!video_url) return null;
 
   return (
     <section id={LandingSections.HERO} className="relative min-h-screen">
       <video
+        ref={videoRef}
         className={`absolute top-0 left-0 w-full h-full object-cover z-[-1] transition-opacity duration-1000`}
         autoPlay
         muted
         loop
         playsInline
         preload="auto"
-        src={`${getStrapiURL()}${video_url}`}
+        src={video_url}
       />
       <div
         className={

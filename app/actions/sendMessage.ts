@@ -1,9 +1,8 @@
 import { Message } from "@/app/types";
-import { getStrapiURL } from "@/app/utils/getStrapiUrl";
 
 export async function sendMessage(message: Message) {
   const path = "/api/messages";
-  const strapiURL = getStrapiURL();
+  const strapiURL = process.env.NEXT_PUBLIC_STRAPI_URL;
   const url = new URL(path, strapiURL);
 
   try {

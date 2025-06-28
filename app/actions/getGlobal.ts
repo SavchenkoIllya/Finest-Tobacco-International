@@ -1,9 +1,6 @@
-"use server";
-import { fetchAPI } from "@/app/utils";
-import { getStrapiURL } from "@/app/utils/getStrapiUrl";
 import qs from "qs";
 
-const globalQuery = qs.stringify(
+export const globalQuery = qs.stringify(
   {
     populate: [
       "video",
@@ -15,14 +12,3 @@ const globalQuery = qs.stringify(
   },
   { encodeValuesOnly: true },
 );
-
-export async function getGlobal() {
-  const path = "/api/global";
-  const strapiURL = getStrapiURL();
-  const url = new URL(path, strapiURL);
-  url.search = globalQuery;
-
-  return fetchAPI(url.href, {
-    method: "GET",
-  });
-}

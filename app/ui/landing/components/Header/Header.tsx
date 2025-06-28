@@ -2,7 +2,6 @@
 import { cn, LanguageSwitch } from "@/app/ui";
 import { ContactsList, SliderNavigation } from "@/app/ui/landing/components";
 import { SharedHeader } from "@/app/types";
-import { getStrapiURL } from "@/app/utils/getStrapiUrl";
 import { useEffect, useState } from "react";
 import { getFeatureEnabled } from "@/app/actions";
 
@@ -35,7 +34,7 @@ export function Header({
           <div>
             {header_content?.logo?.url && (
               <img
-                src={`${getStrapiURL()}${header_content.logo.url}`}
+                src={header_content.logo.url}
                 alt="Tobacco & cigarettes trading logo"
                 height={60}
                 width={200}

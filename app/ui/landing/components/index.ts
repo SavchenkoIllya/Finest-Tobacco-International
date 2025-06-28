@@ -4,7 +4,6 @@ export * from "./inputs";
 
 export * from "./AgeModal";
 export * from "./BackgroundImage";
-export * from "./Card";
 export * from "./Contacts.List";
 export * from "./Header";
 export * from "./InfoCard";
