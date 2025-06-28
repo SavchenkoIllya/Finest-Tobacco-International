@@ -59,3 +59,19 @@ jobs:
           local_path: './out/*'
           remote_path: '/web/htdocs/www.finest-tobacco.com/home/www/'
           sftp_only: true
+
+      - name: Clear server cache (if applicable)
+        run: |
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > /tmp/ssh_key
+          chmod 600 /tmp/ssh_key
+          
+          ssh -i /tmp/ssh_key -p 2222 -o StrictHostKeyChecking=no \
+          b992k7w-ssh@finest-tobacco.com "
+          find ~/domains -name '.htaccess' -exec touch {} \; 2>/dev/null || true
+          
+          echo 'Deploy completed at: $(date)'
+          echo 'Latest files:'
+          ls -lat ~/domains/*/public_html/ 2>/dev/null | head -10 || ls -lat ~/public_html/ 2>/dev/null | head -10 || echo 'Could not list files'
+          "
+          
+          rm /tmp/ssh_key
