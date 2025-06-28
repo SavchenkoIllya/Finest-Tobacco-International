@@ -1,6 +1,5 @@
 import { LandingSections } from "@/app/lib";
 import { ScrollButton } from "@/app/ui/landing/sections/Hero/components/ScrollButton";
-import { getStrapiURL } from "@/app/utils/getStrapiUrl";
 
 export const Hero = ({ video_url }: { video_url?: string }) => {
   if (!video_url) return null;
@@ -14,7 +13,7 @@ export const Hero = ({ video_url }: { video_url?: string }) => {
         loop
         playsInline
         preload="auto"
-        src={`${getStrapiURL()}${video_url}`}
+        src={video_url}
       />
       <div
         className={
