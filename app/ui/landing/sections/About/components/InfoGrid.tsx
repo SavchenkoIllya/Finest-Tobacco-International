@@ -13,7 +13,7 @@ export const InfoGrid = () => {
   const cards = pillars.map((pillar, i) => (
     <div
       key={`${pillar.title}-${i}`}
-      className={"relative border-wrapper w-[250px] h-[172px]"}
+      className={"relative border-wrapper w-[150px] md:w-[250px] h-[172px]"}
     >
       <InfoCard title={pillar.title} label={pillar.label} />
     </div>

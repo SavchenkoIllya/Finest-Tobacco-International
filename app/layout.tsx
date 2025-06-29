@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import "./globals.css";
-import { Bebas_Neue, Montserrat } from "next/font/google";
+import { Bebas_Neue, Montserrat, Merriweather } from "next/font/google";
 import type { Metadata } from "next";
 
 const bebas = Bebas_Neue({
@@ -12,6 +12,12 @@ const bebas = Bebas_Neue({
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
+});
+
+const merriweather = Merriweather({
+  subsets: ["latin"],
+  weight: "700",
+  variable: "--font-merriweather",
 });
 
 export const metadata: Metadata = {
@@ -32,7 +38,7 @@ export default async function GlobalLayout({
     <html lang={lang ?? "en"}>
       <body>
         <main
-          className={`${bebas.variable} ${montserrat.variable} antialiased overflow-hidden`}
+          className={`${bebas.variable} ${montserrat.variable} ${merriweather.variable} antialiased overflow-hidden`}
         >
           {children}
         </main>

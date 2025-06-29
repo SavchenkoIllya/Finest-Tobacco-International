@@ -91,21 +91,18 @@ export const ContactsSection = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 items-center m-8 w-[100%]">
-        {/* Левая часть — контакты */}
-        <div className="justify-self-start">
+      <div className="grid max-md:grid-cols-1 max-md: grid-cols-3 items-center m-8 w-[100%]">
+        <div className="max-md:justify-self-center justify-self-start">
           <ContactsList
             wrapperClasses="flex gap-2 items-center"
             showFull={false}
           />
         </div>
 
-        {/* Центр — копирайт */}
         <h5 className="h1 uppercase !text-sm text-center justify-self-center">
           Copyright © 24 All rights reserved - Finest Tobacco
         </h5>
 
-        {/* Правая часть — пустая, выравнивает остальное */}
         <div></div>
       </div>
     </section>
