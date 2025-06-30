@@ -28,6 +28,8 @@ export default async function Home() {
     console.error(e);
   }
 
+  console.log(process.env.NODE_ENV);
+
   return (
     <>
       <AgeModal />
