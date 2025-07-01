@@ -9,6 +9,7 @@ export const About = ({
 }) => {
   return (
     <section id={LandingSections.ABOUT} className="container mx-auto my-20">
+      <h1 className={"h1 text-center my-12"}>{about_content.heading}</h1>
       <div
         className={"max-lg:flex-col flex gap-8 max-md:px-4 mb-20 items-center"}
       >
@@ -21,8 +22,6 @@ export const About = ({
           <p>{about_content.description}</p>
         </div>
       </div>
-
-      {about_content?.pillars && <InfoGrid pillars={about_content.pillars} />}
     </section>
   );
 };

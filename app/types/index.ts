@@ -52,6 +52,7 @@ export interface SharedAgeModal {
 
 export interface SharedAboutContent {
   id?: number;
+  heading: string;
   main_title: string;
   secondary_title: string;
   description: string;

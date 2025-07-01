@@ -11,6 +11,5 @@ export * from "./labels";
 export * from "./LanguageSwitch";
 export * from "./Loader";
 export * from "./Menu";
-export * from "./ScrollIndicator";
 export * from "./Slider";
 export * from "./Catchphrase";

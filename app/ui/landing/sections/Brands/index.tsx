@@ -16,11 +16,11 @@ export const BrandsSection = ({
   };
 
   return (
-    <section id={LandingSections.BRANDS} className="w-full">
+    <section id={LandingSections.BRANDS} className="bg-primary w-full">
       <div className={"container mx-auto"}>
         <div className={"flex flex-col items-center p-8"}>
-          <h1 className="h1">{brands_section_data.title}</h1>
-          <p>{brands_section_data.subtitle}</p>
+          <h1 className="h1 !text-secondary">{brands_section_data.title}</h1>
+          <p className={"text-secondary"}>{brands_section_data.subtitle}</p>
           <div className={"flex gap-8 m-8"}>
             {brands_section_data.brands?.map((brand) => (
               <button
