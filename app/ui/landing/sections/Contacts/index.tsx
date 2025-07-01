@@ -2,13 +2,14 @@
 import { LandingSections } from "@/app/lib";
 import { ContactsList, Input, Textarea } from "@/app/ui";
 import { MapComponent } from "@/app/ui/landing/components/Map";
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import { sendEmail } from "@/app/actions/sendEmail";
 import {
   SharedContact,
   SharedContactsSection,
   SharedMapLocation,
 } from "@/app/types";
+import { useGetSubscribers } from "@/app/hooks";
 
 export const ContactsSection = ({
   contacts_content,
@@ -21,10 +22,15 @@ export const ContactsSection = ({
   copyright?: string;
   contacts?: SharedContact[] | null;
 }) => {
+  const { query, data } = useGetSubscribers();
   const [formState, formAction, isPending] = useActionState(
     sendEmail,
     undefined,
   );
+
+  useEffect(() => {
+    query();
+  }, []);
 
   return (
     <section
@@ -77,6 +83,11 @@ export const ContactsSection = ({
                 }
               })}
             </div>
+            <input
+              type={"hidden"}
+              name={"receivers"}
+              value={data?.map((receivers) => receivers.email) ?? []}
+            />
 
             {formState?.errors?.["server"]?.map((error) => (
               <p key={"details-" + error} className={"text-red-500"}>

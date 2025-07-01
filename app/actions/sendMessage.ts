@@ -1,23 +1,16 @@
 import { Message } from "@/app/types";
+import { axiosClient, StrapiRoutes } from "@/app/lib";
 
 export async function sendMessage(message: Message) {
-  const path = "/api/messages";
-  const strapiURL = process.env.NEXT_PUBLIC_STRAPI_URL;
-  const url = new URL(path, strapiURL);
-
   try {
-    const response = await fetch(url, {
+    const response = await axiosClient(StrapiRoutes.POST_SEND_MESSAGES, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_POST_MESSAGES_API_KEY}`,
-      },
-      body: JSON.stringify({
+      data: {
         data: message,
-      }),
+      },
     });
 
-    return response.json();
+    return response;
   } catch (error) {
     console.error("Subscribe Service Error:", error);
   }

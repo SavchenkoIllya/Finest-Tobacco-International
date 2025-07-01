@@ -96,6 +96,17 @@ export interface SharedInput {
   type: "field" | "textarea";
 }
 
+export interface Subscriber {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  name: string;
+  email: string;
+}
+
 export interface Product {
   id?: number;
   documentId?: string;

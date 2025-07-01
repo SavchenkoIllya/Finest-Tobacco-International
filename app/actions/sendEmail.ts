@@ -15,8 +15,14 @@ export async function sendEmail(
 ): Promise<FormResponse> {
   const entries = formData.entries();
   const payload = Object.fromEntries(entries);
+  const receivers = (payload.receivers as string).split(",") ?? "";
 
-  const { success, data, error } = MessageValidator.safeParse(payload);
+  const { success, data, error } = MessageValidator.safeParse({
+    name: payload.name,
+    phone: payload.phone,
+    email: payload.email,
+    details: payload.details,
+  });
 
   if (!success) {
     console.log(error?.flatten().fieldErrors);
@@ -29,13 +35,15 @@ export async function sendEmail(
   }
 
   try {
-    await sendMessage(data);
+    void sendMessage(data);
 
-    await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: "nfo@finest-tobacco.com",
-      subject: "New message",
-      react: IncomingMessage({ content: data }),
+    receivers.forEach((receiver) => {
+      resend.emails.send({
+        from: "onboarding@resend.dev",
+        to: receiver,
+        subject: "New message",
+        react: IncomingMessage({ content: data }),
+      });
     });
 
     return {
