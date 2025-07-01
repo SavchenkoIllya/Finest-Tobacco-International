@@ -31,7 +31,11 @@ export function Header({
           </div>
           <div className={"flex gap-4"}>
             <div className={"hidden md:block"}>
-              <ContactsList showFull={false} wrapperClasses={"flex gap-2"} />
+              <ContactsList
+                contacts={header_content?.Contacts}
+                showFull={false}
+                wrapperClasses={"flex gap-2"}
+              />
             </div>
             <LanguageSwitch />
           </div>

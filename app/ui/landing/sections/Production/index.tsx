@@ -1,7 +1,12 @@
 import { LandingSections } from "@/app/lib";
 import { Catchphrase } from "@/app/ui";
+import { SharedAdditionalAboutSection } from "@/app/types";
 
-export const Production = () => {
+export const Production = ({
+  production_content,
+}: {
+  production_content: SharedAdditionalAboutSection;
+}) => {
   return (
     <section
       id={LandingSections.PRODUCTION}
@@ -9,23 +14,19 @@ export const Production = () => {
     >
       <div className={"container mx-auto"}>
         <div className={"flex flex-col items-center p-8"}>
-          <h1 className="h1 !text-secondary">Our Mission</h1>
+          <h1 className="h1 !text-secondary">
+            {production_content.title_main}
+          </h1>
           <p className="text-lg mb-6 text-secondary text-justify">
-            To combine tradition with innovation in crafting high-quality,
-            affordable cigarettes for adult smokers worldwide. We are dedicated
-            to excellence in every step — from sourcing the finest tobacco to
-            delivering products that meet the highest standards of taste,
-            consistency, and value.
+            {production_content.description_main}
           </p>
-          <h1 className="h1 !text-secondary">Our Vision</h1>
+          <h1 className="h1 !text-secondary">
+            {production_content.title_secondary}
+          </h1>
           <p className="text-lg mb-6 text-secondary text-justify">
-            To be respected and enduring brand — driven by tradition, defined by
-            quality, and committed to responsible growth. We proudly serve with
-            products crafted to the highest standards, stan ding firm in our
-            belief that choice, authenticity, and legacy matter in a changing
-            world.
+            {production_content.description_secondary}
           </p>
-          <Catchphrase />
+          <Catchphrase phrase={production_content.catchphrase} />
         </div>
       </div>
     </section>

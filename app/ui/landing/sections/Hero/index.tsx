@@ -45,7 +45,6 @@ export const Hero = ({ video_url }: { video_url?: string }) => {
         }
       >
         <ScrollButton text={"↓"} />
-        <p className={"text-secondary"}>Explore</p>
       </div>
     </section>
   );

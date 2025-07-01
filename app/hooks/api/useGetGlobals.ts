@@ -9,6 +9,17 @@ const getGlobalQuery = (lang: Locale) =>
     {
       populate: [
         "video",
+        "age_modal",
+        "about_content",
+        "about_content.pillars",
+        "brands_section",
+        "brands_section.brands",
+        "brands_section.brands.logo",
+        "additional_about_section",
+        "scroll_labels",
+        "contacts_section",
+        "contacts_section.form_inputs",
+        "map_location",
         "Header",
         "Header.logo",
         "Header.Contacts",

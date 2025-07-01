@@ -1,4 +1,5 @@
 import { InfoCard, InfoCardProps } from "@/app/ui";
+import { SharedPillar } from "@/app/types";
 
 export const pillars: InfoCardProps[] = [
   { title: "15+", label: "years of experience" },
@@ -9,7 +10,7 @@ export const pillars: InfoCardProps[] = [
   { title: "300+", label: "employees around the world" },
 ];
 
-export const InfoGrid = () => {
+export const InfoGrid = ({ pillars }: { pillars: SharedPillar[] }) => {
   const cards = pillars.map((pillar, i) => (
     <div
       key={`${pillar.title}-${i}`}
@@ -20,7 +21,7 @@ export const InfoGrid = () => {
   ));
 
   return (
-    <div className="mx-auto grid max-md:grid-cols-2 max-lg:grid-cols-3 grid-cols-4 w-fit place-items-center">
+    <div className="mx-auto grid max-md:grid-cols-2 grid-cols-3 w-fit place-items-center">
       {cards}
     </div>
   );

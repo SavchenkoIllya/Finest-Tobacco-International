@@ -1,27 +1,17 @@
 "use client";
 import { LandingSections } from "@/app/lib";
-import { useGetBrands } from "@/app/hooks";
-import { useEffect, useState } from "react";
-import { Brand } from "@/app/types";
-import { cn, Loader } from "@/app/ui";
-import { useLanguageStore } from "@/app/stores";
+import { useState } from "react";
+import { Brand, SharedBrandsSection } from "@/app/types";
+import { cn } from "@/app/ui";
 
-export const BrandsSection = () => {
-  const currentLanguage = useLanguageStore((state) => state.current);
-
-  const [active, setActive] = useState<Brand | null>();
-  const { query, data, isPending, isSuccess, isError } = useGetBrands();
-
-  useEffect(() => {
-    query();
-  }, []);
-
-  useEffect(() => {
-    switch (true) {
-      case Boolean(isSuccess && data?.length):
-        setActive(data![0]);
-    }
-  }, [isPending, isSuccess, isError, currentLanguage]);
+export const BrandsSection = ({
+  brands_section_data,
+}: {
+  brands_section_data: SharedBrandsSection;
+}) => {
+  const [active, setActive] = useState<Brand | null>(
+    brands_section_data.brands?.[0] ?? null,
+  );
 
   const handleClick = (brand: Brand) => {
     setActive(brand);
@@ -31,10 +21,9 @@ export const BrandsSection = () => {
     <section id={LandingSections.BRANDS} className="w-full">
       <div className={"container mx-auto"}>
         <div className={"flex flex-col items-center p-8"}>
-          <h1 className="h1">BRANDS</h1>
-          {isPending && <Loader />}
+          <h1 className="h1">{brands_section_data.title}</h1>
           <div className={"flex gap-8 mx-8"}>
-            {data?.map((brand) => (
+            {brands_section_data.brands?.map((brand) => (
               <button
                 className={cn(
                   "cursor-pointer h1",

@@ -4,8 +4,23 @@ import { ContactsList, Input, Textarea } from "@/app/ui";
 import { MapComponent } from "@/app/ui/landing/components/Map";
 import { useActionState } from "react";
 import { sendEmail } from "@/app/actions/sendEmail";
+import {
+  SharedContact,
+  SharedContactsSection,
+  SharedMapLocation,
+} from "@/app/types";
 
-export const ContactsSection = () => {
+export const ContactsSection = ({
+  contacts_content,
+  location,
+  copyright,
+  contacts,
+}: {
+  contacts_content: SharedContactsSection;
+  location?: SharedMapLocation | null;
+  copyright?: string;
+  contacts?: SharedContact[] | null;
+}) => {
   const [formState, formAction, isPending] = useActionState(
     sendEmail,
     undefined,
@@ -18,7 +33,7 @@ export const ContactsSection = () => {
         "relative container mx-auto flex flex-col justify-center items-center w-full"
       }
     >
-      <h1 className={"h1 mt-8"}>Contact us</h1>
+      <h1 className={"h1 mt-8"}>{contacts_content.heading}</h1>
 
       <div className={"flex flex-col md:flex-row w-full max-w-6xl px-4"}>
         <div
@@ -27,40 +42,41 @@ export const ContactsSection = () => {
           }
         >
           <form action={formAction} className={"space-y-4 p-4 md:p-8"}>
-            <div className={"flex flex-col md:flex-row items-center gap-2"}>
-              <Input
-                placeholder={"Name"}
-                variant={"black"}
-                onChange={() => {}}
-                type={"text"}
-                name={"name"}
-                error={formState?.errors?.["name"]}
-              />
-              <Input
-                placeholder={"Phone"}
-                variant={"black"}
-                type={"phone"}
-                onChange={() => {}}
-                name={"phone"}
-                error={formState?.errors?.["phone"]}
-              />
+            <div className={"flex flex-wrap items-center gap-2"}>
+              {contacts_content?.form_inputs?.map((input) => {
+                switch (input.type) {
+                  case "field":
+                    return (
+                      <Input
+                        placeholder={input.placeholder}
+                        variant={"black"}
+                        onChange={() => {}}
+                        type={"text"}
+                        name={input.field_name}
+                        error={formState?.errors?.[input.field_name]}
+                        width={
+                          input.field_name === "phone" ||
+                          input.field_name === "name"
+                            ? "lg:w-[49.3%]"
+                            : undefined
+                        }
+                      />
+                    );
+                  case "textarea":
+                    return (
+                      <Textarea
+                        placeholder={input.placeholder}
+                        inputProps={{
+                          name: input.field_name,
+                        }}
+                        variant={"black"}
+                        onChange={() => {}}
+                        error={formState?.errors?.[input.field_name]}
+                      />
+                    );
+                }
+              })}
             </div>
-            <Input
-              placeholder={"Email"}
-              type={"email"}
-              variant={"black"}
-              onChange={() => {}}
-              name={"email"}
-              error={formState?.errors?.["email"]}
-            />
-            <Textarea
-              inputProps={{
-                name: "details",
-              }}
-              variant={"black"}
-              onChange={() => {}}
-              error={formState?.errors?.["details"]}
-            />
 
             {formState?.errors?.["server"]?.map((error) => (
               <p key={"details-" + error} className={"text-red-500"}>
@@ -77,7 +93,7 @@ export const ContactsSection = () => {
               className={"button !w-full !bg-primary !text-secondary"}
               disabled={isPending}
             >
-              Contact us
+              {contacts_content.send_button}
             </button>
           </form>
         </div>
@@ -87,7 +103,7 @@ export const ContactsSection = () => {
             "w-full mt-8 md:mt-0 md:w-auto md:ml-6 flex-shrink-0 flex justify-center"
           }
         >
-          <MapComponent />
+          {location && <MapComponent location={location} />}
         </div>
       </div>
 
@@ -96,11 +112,12 @@ export const ContactsSection = () => {
           <ContactsList
             wrapperClasses="flex gap-2 items-center"
             showFull={false}
+            contacts={contacts}
           />
         </div>
 
         <h5 className="h1 uppercase !text-sm text-center justify-self-center">
-          Copyright © 24 All rights reserved - Finest Tobacco
+          {copyright}
         </h5>
 
         <div></div>

@@ -11,6 +11,7 @@ interface SearchInputProps {
   type?: HTMLInputElement["type"];
   name?: string;
   error?: string[];
+  width?: string;
 }
 
 export const Input = ({
@@ -20,43 +21,43 @@ export const Input = ({
   icon,
   defaultValue,
   error,
+  width,
   ...props
 }: SearchInputProps) => {
-  const variantStyles =
-      {
-       black: "text-primary border-primary placeholder-primary",
-       white: "text-secondary border-secondary placeholder-secondary",
-       error:"text-red-500 border-red-500 placeholder-red-300",
-      }
+  const variantStyles = {
+    black: "text-primary border-primary placeholder-primary",
+    white: "text-secondary border-secondary placeholder-secondary",
+    error: "text-red-500 border-red-500 placeholder-red-300",
+  };
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value);
   };
 
   return (
-      <div className={"w-full flex flex-col gap-2"}>
-    <div
-      className={cn(
-        "border flex px-4 py-2 gap-2 w-full",
-        variantStyles[variant],
-        error && variantStyles.error
-      )}
-    >
-      <input
-        type="text"
-        placeholder={placeholder}
-        onChange={handleInputChange}
-        className="bg-transparent outline-none flex-1 w-full"
-        defaultValue={defaultValue}
-        {...props}
-      />
-      {icon}
-    </div>
-        {error?.map((error, i) => (
-            <p key={error + i} className={"text-red-500"}>
-              {error}
-            </p>
-        ))}
+    <div className={cn("w-full flex flex-col gap-2", width)}>
+      <div
+        className={cn(
+          "border flex px-4 py-2 gap-2 w-full",
+          variantStyles[variant],
+          error && variantStyles.error,
+        )}
+      >
+        <input
+          type="text"
+          placeholder={placeholder}
+          onChange={handleInputChange}
+          className="bg-transparent outline-none flex-1 w-full"
+          defaultValue={defaultValue}
+          {...props}
+        />
+        {icon}
       </div>
+      {error?.map((error, i) => (
+        <p key={error + i} className={"text-red-500"}>
+          {error}
+        </p>
+      ))}
+    </div>
   );
 };

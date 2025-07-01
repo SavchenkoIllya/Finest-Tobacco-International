@@ -2,8 +2,13 @@
 import { LocalStorageNames } from "@/app/lib";
 import { cn, EXPIRATION_DAYS } from "@/app/ui";
 import { useEffect, useLayoutEffect, useState } from "react";
+import { SharedAgeModal } from "@/app/types";
 
-export const AgeModal = () => {
+export const AgeModal = ({
+  age_modal_content,
+}: {
+  age_modal_content: SharedAgeModal;
+}) => {
   const [open, setOpen] = useState(false);
 
   useLayoutEffect(() => {
@@ -62,8 +67,8 @@ export const AgeModal = () => {
           )}
         >
           <div className={"max-w-2xl"}>
-            <h1 className={"h1 !text-accent"}>Age Verification Required</h1>
-            <p>To access this web page you must be 18+ old.</p>
+            <h1 className={"h1 !text-accent"}>{age_modal_content.heading}</h1>
+            <p>{age_modal_content.main_text}</p>
             <div
               className={cn(
                 "mt-4 flex justify-between",
@@ -74,7 +79,7 @@ export const AgeModal = () => {
                 onClick={handleClose}
                 className={"button !bg-primary !text-secondary !w-full"}
               >
-                Go
+                {age_modal_content.confirm_button}
               </button>
               <button
                 onClick={() => {
@@ -82,7 +87,7 @@ export const AgeModal = () => {
                 }}
                 className={"cursor-pointer hover:underline w-full"}
               >
-                Cancel
+                {age_modal_content.cancel_button}
               </button>
             </div>
           </div>

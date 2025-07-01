@@ -18,7 +18,7 @@ import { useLanguageStore } from "@/app/stores";
 export default function Home() {
   const currentLanguage = useLanguageStore((state) => state.current);
 
-  const { query, data, isPending, isSuccess, isError } = useGetGlobals();
+  const { query, data, isPending } = useGetGlobals();
 
   useEffect(() => {
     query();
@@ -28,15 +28,26 @@ export default function Home() {
     <>
       {isPending && <LoaderSection />}
       <LocalesInitializer />
-      <AgeModal />
+      {data?.age_modal && <AgeModal age_modal_content={data.age_modal} />}
       <ScrollIndicator />
       <div className="relative">
         <Header header_content={data?.Header} />
         <Hero video_url={data?.video?.url} />
-        <About />
-        <BrandsSection />
-        <Production />
-        <ContactsSection />
+        {data?.about_content && <About about_content={data.about_content} />}
+        {data?.brands_section && (
+          <BrandsSection brands_section_data={data.brands_section} />
+        )}
+        {data?.additional_about_section && (
+          <Production production_content={data?.additional_about_section} />
+        )}
+        {data?.contacts_section && (
+          <ContactsSection
+            contacts_content={data.contacts_section}
+            location={data?.map_location}
+            copyright={data?.copyrights_text}
+            contacts={data.Header?.Contacts}
+          />
+        )}
       </div>
     </>
   );
