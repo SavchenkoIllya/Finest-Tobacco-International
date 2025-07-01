@@ -21,18 +21,6 @@ export const Modal = ({
     onClose();
   };
 
-  useEffect(() => {
-    if (open) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
-
-    return () => {
-      document.body.classList.remove("overflow-hidden");
-    };
-  }, [open]);
-
   return (
     <div
       onClick={handleClose}

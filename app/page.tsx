@@ -3,12 +3,14 @@ import {
   About,
   AgeModal,
   BrandsSection,
+  Catchphrase,
   ContactsSection,
   Header,
   Hero,
   LoaderSection,
   LocalesInitializer,
-  Production,
+  MissionSection,
+  ProductionSection,
   ScrollIndicator,
 } from "@/app/ui";
 import { useEffect } from "react";
@@ -38,7 +40,15 @@ export default function Home() {
           <BrandsSection brands_section_data={data.brands_section} />
         )}
         {data?.additional_about_section && (
-          <Production production_content={data?.additional_about_section} />
+          <MissionSection production_content={data?.additional_about_section} />
+        )}
+        {data?.catchphrase && (
+          <section className={"w-full flex justify-center text-center"}>
+            <Catchphrase phrase={data.catchphrase} />
+          </section>
+        )}
+        {data?.production_section && (
+          <ProductionSection production_content={data.production_section} />
         )}
         {data?.contacts_section && (
           <ContactsSection

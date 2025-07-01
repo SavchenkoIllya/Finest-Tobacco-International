@@ -21,7 +21,7 @@ export const ContactIcon = ({ contact }: { contact: SharedContact }) => {
           <img alt={contact.name} src={iconUrl} className={style} />
         </a>
       );
-    case "whatsapp":
+    default:
       return (
         <a href={contact.link}>
           <img alt={contact.name} src={iconUrl} className={style} />

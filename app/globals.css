@@ -58,11 +58,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @layer components {
+  .header-line {
+    width: 90%;
+    height: 2px;
+    background-color: theme('colors.accent');
+  }
+}
+
+@layer components {
   .border-wrapper {
     position: relative;
   }
 
-  /* Верхняя граница */
   .border-wrapper::before {
     content: "";
     position: absolute;
@@ -73,7 +80,6 @@ h1, h2, h3, h4, h5, h6 {
     background-color: theme('colors.accent');
   }
 
-  /* Левая граница */
   .border-wrapper::after {
     content: "";
     position: absolute;
@@ -84,14 +90,21 @@ h1, h2, h3, h4, h5, h6 {
     background-color: theme('colors.accent');
   }
 
-  /* Правая граница — нужна ещё одна обёртка внутри или use inline element */
-  .border-wrapper-right {
+  .border-wrapper .border-right {
     position: absolute;
     top: 10px;
     bottom: 10px;
     right: 0;
     width: 2px;
     background-color: theme('colors.accent');
-    content: "";
+  }
+
+  .border-wrapper .border-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    height: 2px;
+    background-color: theme('colors.accent');
   }
 }

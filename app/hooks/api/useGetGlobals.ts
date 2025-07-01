@@ -19,6 +19,7 @@ const getGlobalQuery = (lang: Locale) =>
         "scroll_labels",
         "contacts_section",
         "contacts_section.form_inputs",
+        "production_section",
         "map_location",
         "Header",
         "Header.logo",

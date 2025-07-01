@@ -2,16 +2,14 @@
 import { LandingSections } from "@/app/lib";
 import { useState } from "react";
 import { Brand, SharedBrandsSection } from "@/app/types";
-import { cn } from "@/app/ui";
+import { cn, Modal } from "@/app/ui";
 
 export const BrandsSection = ({
   brands_section_data,
 }: {
   brands_section_data: SharedBrandsSection;
 }) => {
-  const [active, setActive] = useState<Brand | null>(
-    brands_section_data.brands?.[0] ?? null,
-  );
+  const [active, setActive] = useState<Brand | null>(null);
 
   const handleClick = (brand: Brand) => {
     setActive(brand);
@@ -22,35 +20,53 @@ export const BrandsSection = ({
       <div className={"container mx-auto"}>
         <div className={"flex flex-col items-center p-8"}>
           <h1 className="h1">{brands_section_data.title}</h1>
-          <div className={"flex gap-8 mx-8"}>
+          <p>{brands_section_data.subtitle}</p>
+          <div className={"flex gap-8 m-8"}>
             {brands_section_data.brands?.map((brand) => (
               <button
                 className={cn(
-                  "cursor-pointer h1",
-                  brand.name === active?.name && "underline underline-offset-8",
+                  "cursor-pointer border-wrapper p-20 relative hover:scale-101 hover:opacity-60 transition-all",
                 )}
                 key={brand.id}
                 onClick={() => handleClick(brand)}
               >
-                {brand.name}
+                <div className="border-right" />
+                <div className="border-bottom" />
+                <img
+                  className={"w-md"}
+                  alt={brand.name}
+                  src={
+                    process.env.NODE_ENV === "development"
+                      ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${brand.logo?.url}`
+                      : brand.logo?.url
+                  }
+                />
               </button>
             ))}
           </div>
 
-          {active && (
-            <div className={"my-8 flex flex-col items-center gap-8"}>
+          <Modal open={Boolean(active)} onClose={() => setActive(null)}>
+            <div className={"m-12 flex flex-col items-center gap-8 max-w-xl"}>
+              <div className={"self-end"}>
+                <button
+                  className={"cursor-pointer p-2"}
+                  onClick={() => setActive(null)}
+                >
+                  X
+                </button>
+              </div>
               <img
-                alt={active.name}
+                className={"w-md"}
+                alt={active?.name}
                 src={
                   process.env.NODE_ENV === "development"
-                    ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${active.logo?.url}`
-                    : active.logo?.url
+                    ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${active?.logo?.url}`
+                    : active?.logo?.url
                 }
-                className={"w-md"}
               />
-              <p>{active.description}</p>
+              <p>{active?.description}</p>
             </div>
-          )}
+          </Modal>
         </div>
       </div>
     </section>

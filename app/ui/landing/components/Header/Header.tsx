@@ -9,10 +9,10 @@ export function Header({
   return (
     <header
       className={cn(
-        "fixed top-0 w-[100dvw] z-30 transition-all duration-300 bg-secondary border-b-2 border-primary",
+        "fixed top-0 w-[100dvw] z-30 transition-all duration-300 bg-secondary",
       )}
     >
-      <div className="relative z-10">
+      <div className="relative z-10v">
         <div className="flex items-center justify-between mx-8 my-4">
           <SliderNavigation />
           <div>
@@ -40,6 +40,7 @@ export function Header({
             <LanguageSwitch />
           </div>
         </div>
+        <div className="header-line mx-auto" />
       </div>
     </header>
   );

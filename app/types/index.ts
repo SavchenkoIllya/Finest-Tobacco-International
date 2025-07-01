@@ -17,6 +17,15 @@ export interface Global {
   contacts_section?: SharedContactsSection | null;
   copyrights_text?: string;
   map_location?: SharedMapLocation | null;
+  production_section?: SharedProductionSection | null;
+  catchphrase?: string;
+}
+
+export interface SharedProductionSection {
+  id?: number;
+  title?: string;
+  description?: string;
+  catchphrase?: string;
 }
 
 export interface SharedHeader {
@@ -58,12 +67,12 @@ export interface SharedPillar {
 export interface SharedBrandsSection {
   id?: number;
   title: string;
+  subtitle?: string;
   brands?: Brand[] | null;
 }
 
 export interface SharedAdditionalAboutSection {
   id?: number;
-  catchphrase: string;
   title_main: string;
   description_main: string;
   title_secondary?: string;
