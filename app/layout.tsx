@@ -2,9 +2,6 @@ import { ReactNode } from "react";
 import "./globals.css";
 import { Bebas_Neue, Montserrat, Merriweather } from "next/font/google";
 import type { Metadata } from "next";
-import { Locale } from "@/app/types";
-import { axiosClient, LocalStorageNames, StrapiRoutes } from "@/app/lib";
-import { globalQuery } from "@/app/actions";
 
 const bebas = Bebas_Neue({
   weight: "400",
