@@ -16,12 +16,12 @@ html {
   @apply font-(family-name:--font-montserrat)
 }
 
-h1, h2, h3, h4, h5, h6 {
-  @apply font-(family-name:--font-bebas)
-}
-
 .catchphrase {
   @apply font-(family-name:--font-merriweather)
+}
+
+.button {
+  @apply font-semibold px-6 py-3 w-fit hover:scale-105 hover:bg-gray-100 transition-all duration-300 ease-in-out uppercase tracking-wider leading-[24px] cursor-pointer;
 }
 
 .h1 {
@@ -32,8 +32,8 @@ h1, h2, h3, h4, h5, h6 {
   @apply text-accent font-bold text-4xl tracking-wider leading-[4.5rem];
 }
 
-.button {
-  @apply font-semibold px-6 py-3 w-fit hover:scale-105 hover:bg-gray-100 transition-all duration-300 ease-in-out uppercase tracking-wider leading-[24px] cursor-pointer;
+h1, h2, h3, h4, h5, h6 {
+  @apply font-(family-name:--font-bebas)
 }
 
 .scrollbar-hide::-webkit-scrollbar {

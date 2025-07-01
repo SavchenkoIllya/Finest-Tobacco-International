@@ -6,7 +6,6 @@ import {
   ContactsSection,
   Header,
   Hero,
-  Loader,
   LoaderSection,
   LocalesInitializer,
   Production,
@@ -18,11 +17,12 @@ import { useLanguageStore } from "@/app/stores";
 
 export default function Home() {
   const currentLanguage = useLanguageStore((state) => state.current);
+
   const { query, data, isPending, isSuccess, isError } = useGetGlobals();
 
   useEffect(() => {
-    query({ lang: currentLanguage });
-  }, []);
+    query();
+  }, [currentLanguage]);
 
   return (
     <>

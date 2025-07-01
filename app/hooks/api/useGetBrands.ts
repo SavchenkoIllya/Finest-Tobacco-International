@@ -1,28 +1,22 @@
 import { useCallback, useState } from "react";
-import qs from "qs";
-import { Global, Locale } from "@/app/types";
+import { Brand, Locale } from "@/app/types";
 import { axiosClient, StrapiRoutes } from "@/app/lib";
+import qs from "qs";
 import { useLanguageStore } from "@/app/stores";
 
-const getGlobalQuery = (lang: Locale) =>
+const getBrandsQuery = (lang: Locale) =>
   qs.stringify(
     {
-      populate: [
-        "video",
-        "Header",
-        "Header.logo",
-        "Header.Contacts",
-        "Header.Contacts.icon",
-      ],
+      populate: ["logo"],
       locale: lang,
     },
     { encodeValuesOnly: true },
   );
 
-export const useGetGlobals = () => {
+export const useGetBrands = () => {
   const currentLanguage = useLanguageStore((state) => state.current);
 
-  const [data, setData] = useState<Global | null>(null);
+  const [data, setData] = useState<Brand[] | null>(null);
   const [error, setError] = useState<Error | null>(null);
   const [isPending, setIsPending] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -34,7 +28,7 @@ export const useGetGlobals = () => {
     setError(null);
 
     axiosClient(
-      `${StrapiRoutes.GET_GLOBALS}?${getGlobalQuery(currentLanguage ?? "en")}`,
+      `${StrapiRoutes.GET_BRANDS}?${getBrandsQuery(currentLanguage ?? "en")}`,
       {
         method: "GET",
       },

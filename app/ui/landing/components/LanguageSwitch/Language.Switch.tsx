@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "@/app/ui";
 import { useLanguageStore } from "@/app/stores";
 import { useShallow } from "zustand/shallow";
+import { Locale } from "@/app/types";
 
 export const LanguageSwitch = () => {
   const [open, setOpen] = useState(false);
@@ -31,6 +32,11 @@ export const LanguageSwitch = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  const handleLanguageChange = (language: Locale) => {
+    setOpen(false);
+    changeLocale(language);
+  };
 
   return (
     <div className="relative" ref={dropdownRef}>
@@ -65,7 +71,7 @@ export const LanguageSwitch = () => {
             <button
               key={language}
               disabled={currentLanguage === language}
-              onClick={() => changeLocale(language)}
+              onClick={() => handleLanguageChange(language)}
               role="menuitem"
               className={cn(
                 "cursor-pointer block w-full text-left px-4 py-2 text-sm text-white hover:bg-accent/80",
