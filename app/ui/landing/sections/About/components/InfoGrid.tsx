@@ -1,4 +1,4 @@
-import { InfoCard, InfoCardProps } from "@/app/ui";
+import { InfoCard } from "@/app/ui";
 import { SharedPillar } from "@/app/types";
 
 export const InfoGrid = ({ pillars }: { pillars: SharedPillar[] }) => {

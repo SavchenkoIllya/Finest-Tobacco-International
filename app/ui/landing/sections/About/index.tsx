@@ -1,5 +1,4 @@
 import { LandingSections } from "@/app/lib";
-import { InfoGrid } from "@/app/ui/landing/sections/About/components/InfoGrid";
 import { SharedAboutContent } from "@/app/types";
 
 export const About = ({

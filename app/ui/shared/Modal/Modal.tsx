@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/app/ui";
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 
 export interface ModalProps {
   children: ReactNode;
