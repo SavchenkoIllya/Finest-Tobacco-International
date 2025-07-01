@@ -63,14 +63,13 @@ export const AgeModal = () => {
         >
           <div className={"max-w-2xl"}>
             <h1 className={"h1 !text-accent"}>Age Verification Required</h1>
-            <p>
-              This website contains information about tobacco products and is
-              intended only for adults. You must be 18 years of age or older to
-              enter. By clicking &#34;Enter,&#34; you confirm that you are at
-              least 18 years old and agree to comply with your local laws
-              regarding tobacco use.
-            </p>
-            <div className={cn("mt-4 flex justify-between", "max-md:flex-col max-md:gap-4")}>
+            <p>To access this web page you must be 18+ old.</p>
+            <div
+              className={cn(
+                "mt-4 flex justify-between",
+                "max-md:flex-col max-md:gap-4",
+              )}
+            >
               <button
                 onClick={handleClose}
                 className={"button !bg-primary !text-secondary !w-full"}

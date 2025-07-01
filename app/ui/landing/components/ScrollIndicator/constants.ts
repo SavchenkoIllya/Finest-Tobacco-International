@@ -10,8 +10,8 @@ export const sections = [
     label: LandingSections.ABOUT,
   },
   {
-    id: LandingSections.CATALOGUE,
-    label: LandingSections.CATALOGUE,
+    id: LandingSections.BRANDS,
+    label: LandingSections.BRANDS,
   },
   {
     id: LandingSections.PRODUCTION,

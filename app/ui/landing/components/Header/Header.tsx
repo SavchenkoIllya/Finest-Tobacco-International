@@ -2,26 +2,10 @@
 import { cn, LanguageSwitch } from "@/app/ui";
 import { ContactsList, SliderNavigation } from "@/app/ui/landing/components";
 import { SharedHeader } from "@/app/types";
-import { useEffect, useState } from "react";
-import { getFeatureEnabled } from "@/app/actions";
 
 export function Header({
   header_content,
 }: Readonly<{ header_content?: SharedHeader | null }>) {
-  const [isLanguageEnabled, setIsLanguageEnabled] = useState(false);
-
-  useEffect(() => {
-    const req = async () => {
-      const feature = await getFeatureEnabled("localisation");
-
-      if (feature?.data?.[0]) {
-        setIsLanguageEnabled(feature.data[0].active);
-      }
-    };
-
-    void req();
-  }, []);
-
   return (
     <header
       className={cn(
@@ -34,7 +18,11 @@ export function Header({
           <div>
             {header_content?.logo?.url && (
               <img
-                src={header_content.logo.url}
+                src={
+                  process.env.NODE_ENV === "development"
+                    ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${header_content?.logo?.url}`
+                    : header_content?.logo.url
+                }
                 alt="Tobacco & cigarettes trading logo"
                 height={60}
                 width={200}
@@ -45,7 +33,7 @@ export function Header({
             <div className={"hidden md:block"}>
               <ContactsList showFull={false} wrapperClasses={"flex gap-2"} />
             </div>
-            {isLanguageEnabled && <LanguageSwitch />}
+            <LanguageSwitch />
           </div>
         </div>
       </div>

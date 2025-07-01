@@ -1,5 +1,5 @@
 export enum LandingSections {
-  CATALOGUE = "catalogue",
+  BRANDS = "brands",
   HERO = "hero",
   CONTACTS = "contacts",
   ABOUT = "about",

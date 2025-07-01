@@ -1,3 +1,5 @@
+export type Locale = "en" | "de" | "sk" | "pl";
+
 export interface Global {
   id?: number;
   documentId?: string;
@@ -66,6 +68,8 @@ export interface Brand {
   publishedAt?: Date | string;
   locale?: string | null;
   name?: string;
+  description?: string;
+  logo?: Media | null;
 }
 
 export interface Category {

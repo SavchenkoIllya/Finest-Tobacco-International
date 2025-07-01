@@ -11,9 +11,7 @@ export const Hero = ({ video_url }: { video_url?: string }) => {
     if (!video) return;
 
     const tryPlay = () => {
-      video.play().catch(() => {
-        // Optional: лог для отладки
-      });
+      video.play();
     };
 
     document.addEventListener("touchstart", tryPlay, { once: true });
@@ -35,7 +33,11 @@ export const Hero = ({ video_url }: { video_url?: string }) => {
         loop
         playsInline
         preload="auto"
-        src={video_url}
+        src={
+          process.env.NODE_ENV === "development"
+            ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${video_url}`
+            : video_url
+        }
       />
       <div
         className={
