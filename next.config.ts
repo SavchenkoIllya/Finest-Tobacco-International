@@ -8,6 +8,19 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   output: "export",
+  async headers() {
+    return [
+      {
+        source: "/:path*.html",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "no-cache, no-store, must-revalidate",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

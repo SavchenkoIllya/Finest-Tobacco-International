@@ -32,6 +32,14 @@ export default async function GlobalLayout({
 }>) {
   return (
     <html lang={"en"}>
+      <head>
+        <meta
+          httpEquiv="Cache-Control"
+          content="no-cache, no-store, must-revalidate"
+        />
+        <meta httpEquiv="Pragma" content="no-cache" />
+        <meta httpEquiv="Expires" content="0" />
+      </head>
       <body>
         <main
           className={`${bebas.variable} ${montserrat.variable} ${merriweather.variable} antialiased overflow-hidden`}

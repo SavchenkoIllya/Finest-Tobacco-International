@@ -5,6 +5,9 @@ import { useEffect, useRef } from "react";
 
 export const Hero = ({ video_url }: { video_url?: string }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const handleLoadStart = () => console.log("Loading starts");
+  const handleCanPlay = () => console.log("Video ready");
+  const handleError = (e) => console.error("Error:", e);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -33,6 +36,9 @@ export const Hero = ({ video_url }: { video_url?: string }) => {
         loop
         playsInline
         preload="auto"
+        onLoadStart={handleLoadStart}
+        onCanPlay={handleCanPlay}
+        onError={handleError}
         src={
           process.env.NODE_ENV === "development"
             ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${video_url}`
