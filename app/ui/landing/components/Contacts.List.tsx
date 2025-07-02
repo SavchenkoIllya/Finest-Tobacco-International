@@ -4,11 +4,9 @@ import { SharedContact } from "@/app/types";
 export const ContactsList = ({
   contacts,
   wrapperClasses = "flex gap-4",
-  showFull = true,
 }: {
   contacts?: SharedContact[] | null;
   wrapperClasses?: string;
-  showFull?: boolean;
 }) => {
   if (!contacts) return null;
 

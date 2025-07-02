@@ -6,6 +6,7 @@ import {
   CatalogueSection,
   Catchphrase,
   ContactsSection,
+  FooterSection,
   Header,
   Hero,
   LoaderSection,
@@ -72,8 +73,13 @@ export default function Home() {
           <ContactsSection
             contacts_content={data.contacts_section}
             location={data?.map_location}
-            copyright={data?.copyrights_text}
-            contacts={data.Header?.Contacts}
+          />
+        )}
+
+        {data?.footer_section && data.Header?.Contacts && (
+          <FooterSection
+            contacts={data.Header.Contacts}
+            footer_content={data.footer_section}
           />
         )}
       </div>

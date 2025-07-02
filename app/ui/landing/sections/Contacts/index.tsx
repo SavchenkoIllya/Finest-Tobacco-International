@@ -14,13 +14,9 @@ import { useGetSubscribers } from "@/app/hooks";
 export const ContactsSection = ({
   contacts_content,
   location,
-  copyright,
-  contacts,
 }: {
   contacts_content: SharedContactsSection;
   location?: SharedMapLocation | null;
-  copyright?: string;
-  contacts?: SharedContact[] | null;
 }) => {
   const { query, data } = useGetSubscribers();
   const [formState, formAction, isPending] = useActionState(
@@ -118,22 +114,6 @@ export const ContactsSection = ({
         >
           {location && <MapComponent location={location} />}
         </div>
-      </div>
-
-      <div className="grid max-md:grid-cols-1 max-md: grid-cols-3 items-center m-8 w-[100%]">
-        <div className="max-md:justify-self-center justify-self-start">
-          <ContactsList
-            wrapperClasses="flex gap-2 items-center"
-            showFull={false}
-            contacts={contacts}
-          />
-        </div>
-
-        <h5 className="h1 uppercase !text-sm text-center justify-self-center">
-          {copyright}
-        </h5>
-
-        <div></div>
       </div>
     </section>
   );
