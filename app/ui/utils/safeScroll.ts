@@ -1,4 +1,8 @@
-export const safeScroll = (id: string) => {
+import { SharedNavItem } from "@/app/types";
+
+export const safeScroll = (id: SharedNavItem["section_id"]) => {
+  if (!id) return;
+
   const el = document.getElementById(id);
   if (el) {
     const rect = el.getBoundingClientRect();

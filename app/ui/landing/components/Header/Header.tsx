@@ -1,5 +1,5 @@
 "use client";
-import { cn, LanguageSwitch } from "@/app/ui";
+import { cn, LanguageSwitch, NavigationItem } from "@/app/ui";
 import { ContactsList, SliderNavigation } from "@/app/ui/landing/components";
 import { SharedHeader } from "@/app/types";
 
@@ -29,11 +29,23 @@ export function Header({
               />
             )}
           </div>
+          <div>
+            <nav>
+              <ul className={"max-md:hidden flex justify-center gap-4"}>
+                {header_content?.navbar?.navitems?.map((item) => (
+                  <NavigationItem
+                    key={item.id}
+                    section={item.section_id}
+                    label={item.name}
+                  />
+                ))}
+              </ul>
+            </nav>
+          </div>
           <div className={"flex gap-4"}>
             <div className={"hidden md:block"}>
               <ContactsList
                 contacts={header_content?.Contacts}
-                showFull={false}
                 wrapperClasses={"flex gap-2"}
               />
             </div>
