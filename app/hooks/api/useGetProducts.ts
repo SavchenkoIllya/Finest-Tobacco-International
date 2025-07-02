@@ -1,43 +1,22 @@
-import { useCallback, useState } from "react";
 import qs from "qs";
-import { Global, Locale } from "@/app/types";
-import { axiosClient, StrapiRoutes } from "@/app/lib";
 import { useLanguageStore } from "@/app/stores";
+import { useCallback, useState } from "react";
+import { Locale, Product } from "@/app/types";
+import { axiosClient, StrapiRoutes } from "@/app/lib";
 
-const getGlobalQuery = (lang: Locale) =>
+const getBrandsQuery = (lang: Locale) =>
   qs.stringify(
     {
-      populate: [
-        "video",
-        "age_modal",
-        "about_content",
-        "about_content.pillars",
-        "brands_section",
-        "brands_section.brands",
-        "brands_section.brands.logo",
-        "additional_about_section",
-        "scroll_labels",
-        "contacts_section",
-        "contacts_section.form_inputs",
-        "production_section",
-        "map_location",
-        "Header",
-        "Header.logo",
-        "Header.Contacts",
-        "Header.Contacts.icon",
-        "catalogue",
-        "catalogue.formats",
-        "catalogue.brands",
-      ],
+      populate: ["image", "category", "brand", "format"],
       locale: lang,
     },
     { encodeValuesOnly: true },
   );
 
-export const useGetGlobals = () => {
+export const useGetProducts = () => {
   const currentLanguage = useLanguageStore((state) => state.current);
 
-  const [data, setData] = useState<Global | null>(null);
+  const [data, setData] = useState<Product[] | null>(null);
   const [error, setError] = useState<Error | null>(null);
   const [isPending, setIsPending] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -49,7 +28,7 @@ export const useGetGlobals = () => {
     setError(null);
 
     axiosClient(
-      `${StrapiRoutes.GET_GLOBALS}?${getGlobalQuery(currentLanguage ?? "en")}`,
+      `${StrapiRoutes.GET_PRODUCTS}?${getBrandsQuery(currentLanguage ?? "en")}`,
       {
         method: "GET",
       },

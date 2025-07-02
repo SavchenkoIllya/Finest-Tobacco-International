@@ -54,6 +54,7 @@ export const ContactsSection = ({
                   case "field":
                     return (
                       <Input
+                        key={input.id}
                         placeholder={input.placeholder}
                         variant={"black"}
                         onChange={() => {}}
@@ -71,6 +72,7 @@ export const ContactsSection = ({
                   case "textarea":
                     return (
                       <Textarea
+                        key={input.id}
                         placeholder={input.placeholder}
                         inputProps={{
                           name: input.field_name,

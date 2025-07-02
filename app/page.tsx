@@ -3,6 +3,7 @@ import {
   About,
   AgeModal,
   BrandsSection,
+  CatalogueSection,
   Catchphrase,
   ContactsSection,
   Header,
@@ -19,7 +20,6 @@ import { PillarsSection } from "@/app/ui/landing/sections/Pilars";
 
 export default function Home() {
   const currentLanguage = useLanguageStore((state) => state.current);
-
   const { query, data, isPending } = useGetGlobals();
 
   useEffect(() => {
@@ -59,6 +59,13 @@ export default function Home() {
 
         {data?.brands_section && (
           <BrandsSection brands_section_data={data.brands_section} />
+        )}
+
+        {data?.catalogue && (
+          <CatalogueSection
+            brands={data.catalogue?.brands}
+            formats={data.catalogue?.formats}
+          />
         )}
 
         {data?.contacts_section && (

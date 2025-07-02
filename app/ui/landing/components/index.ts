@@ -13,3 +13,4 @@ export * from "./Loader";
 export * from "./Menu";
 export * from "./Slider";
 export * from "./Catchphrase";
+export * from "./Card";

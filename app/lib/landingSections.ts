@@ -4,4 +4,6 @@ export enum LandingSections {
   CONTACTS = "contacts",
   ABOUT = "about",
   PRODUCTION = "production",
+  CATALOGUE = "catalogue",
+  MISSION = "mission",
 }

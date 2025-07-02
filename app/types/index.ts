@@ -19,6 +19,7 @@ export interface Global {
   map_location?: SharedMapLocation | null;
   production_section?: SharedProductionSection | null;
   catchphrase?: string;
+  catalogue?: SharedCatalogue | null;
 }
 
 export interface SharedProductionSection {
@@ -26,6 +27,23 @@ export interface SharedProductionSection {
   title?: string;
   description?: string;
   catchphrase?: string;
+}
+
+export interface SharedCatalogue {
+  id?: number;
+  title: string;
+  brands?: Brand[] | null;
+  formats?: Format[] | null;
+}
+
+export interface Format {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  name: string;
 }
 
 export interface SharedHeader {
@@ -124,9 +142,7 @@ export interface Product {
   updatedAt?: Date | string;
   publishedAt?: Date | string;
   locale?: string | null;
-  title?: string;
-  description?: string;
-  subtitle?: string;
+  title: string;
   filter_part_length?: number;
   nicotine?: number;
   tar?: number;
@@ -136,6 +152,9 @@ export interface Product {
   category?: Category | null;
   image?: Media | null;
   tobacco_part_length?: number;
+  format?: Format | null;
+  blend?: string;
+  filter_parameters?: string;
 }
 
 export interface Message {

@@ -1,24 +1,53 @@
 "use client";
-import { MenuFilterKeys, SearchParamsNames } from "@/app/lib";
-import { FilterLabel, useUrlParams } from "@/app/ui";
+import { FilterLabel } from "@/app/ui";
+import { CatalogueFilters, useCatalogueStore } from "@/app/stores";
+import { useShallow } from "zustand/shallow";
 
 export const FilterLabelContainer = () => {
-  const { getAllParams } = useUrlParams(0);
-  const params = getAllParams();
-
+  const [filters, setFilters] = useCatalogueStore(
+    useShallow((state) => [state.filters, state.setFilters]),
+  );
   return (
     <div className={"w-full flex flex-wrap gap-2"}>
-      {[
-        SearchParamsNames.QUERY,
-        MenuFilterKeys.BRANDS,
-        MenuFilterKeys.CATEGORIES,
-        MenuFilterKeys.FILTER_PARAMS,
-      ].map(
-        (filter) =>
-          params[filter] && (
-            <FilterLabel key={filter} title={filter} value={params[filter]} />
-          ),
-      )}
+      {Object.keys(filters).map((filterKey) => {
+        switch (true) {
+          case filterKey === "brand":
+            return (
+              <FilterLabel
+                key={filterKey}
+                title={filterKey}
+                value={filters.brand?.name}
+                onRemove={() => {
+                  setFilters({ ...filters, brand: null });
+                }}
+              />
+            );
+
+          case filterKey === "query":
+            return (
+              <FilterLabel
+                key={filterKey}
+                title={filterKey}
+                value={filters.query}
+                onRemove={() => {
+                  setFilters({ ...filters, query: "" });
+                }}
+              />
+            );
+
+          case filterKey === "format":
+            return (
+              <FilterLabel
+                key={filterKey}
+                title={filterKey}
+                value={filters.format?.name}
+                onRemove={() => {
+                  setFilters({ ...filters, format: null });
+                }}
+              />
+            );
+        }
+      })}
     </div>
   );
 };

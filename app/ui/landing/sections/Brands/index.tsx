@@ -21,7 +21,7 @@ export const BrandsSection = ({
         <div className={"flex flex-col items-center p-8"}>
           <h1 className="h1 !text-secondary">{brands_section_data.title}</h1>
           <p className={"text-secondary"}>{brands_section_data.subtitle}</p>
-          <div className={"flex gap-8 m-8"}>
+          <div className={"flex max-lg:flex-col gap-8 m-8"}>
             {brands_section_data.brands?.map((brand) => (
               <button
                 className={cn(

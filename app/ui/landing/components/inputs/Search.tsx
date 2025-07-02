@@ -1,12 +1,15 @@
 "use client";
-import { Input, Lookup, useUrlParams } from "@/app/ui";
+import { Input, Lookup } from "@/app/ui";
+import { useCatalogueStore } from "@/app/stores";
+import { useShallow } from "zustand/shallow";
 
 export const Search = () => {
-  const { setParamDebounced, getParam } = useUrlParams(500);
-  const searchValue = getParam("query") ?? "";
+  const [filters, setFilters] = useCatalogueStore(
+    useShallow((state) => [state.filters, state.setFilters]),
+  );
 
   const handleSearch = (term: string) => {
-    setParamDebounced("query", term);
+    setFilters({ ...filters, query: term });
   };
 
   return (
@@ -16,7 +19,7 @@ export const Search = () => {
       }}
       variant={"black"}
       icon={<Lookup />}
-      defaultValue={searchValue}
+      defaultValue={filters.query}
     />
   );
 };

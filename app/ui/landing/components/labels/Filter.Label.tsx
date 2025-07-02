@@ -4,15 +4,17 @@ import { useUrlParams } from "@/app/ui";
 export const FilterLabel = ({
   title,
   value,
+  onRemove,
 }: {
   title: string;
-  value: string;
+  onRemove: () => void;
+  value?: string;
 }) => {
-  const { removeParam } = useUrlParams(0);
-
   const handleRemove = () => {
-    removeParam(title);
+    onRemove();
   };
+
+  if (!value) return null;
 
   return (
     <div className="flex items-center gap-2 rounded-full bg-black px-4 py-1 text-white text-sm font-medium capitalize">
