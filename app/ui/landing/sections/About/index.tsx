@@ -17,7 +17,7 @@ export const About = ({
           <h2 className={"h1"}>{about_content.secondary_title}</h2>
         </div>
 
-        <div className="columns-2 gap-8 text-justify">
+        <div className="columns-2 gap-8">
           <p>{about_content.description}</p>
         </div>
       </div>

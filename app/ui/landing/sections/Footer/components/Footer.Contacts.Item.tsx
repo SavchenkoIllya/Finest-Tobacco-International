@@ -31,6 +31,17 @@ export const FooterContactsItem = ({
           <p>{full && contact.link}</p>
         </a>
       );
+    case "whatsapp":
+      return (
+        <a
+          href={`https://wa.me/${contact.link}`}
+          target="_blank"
+          className={wrapperStyles}
+        >
+          <img alt={contact.name} src={iconUrl} className={style} />
+          <p>{full && contact.link}</p>
+        </a>
+      );
     default:
       return (
         <a href={contact.link} className={wrapperStyles}>
