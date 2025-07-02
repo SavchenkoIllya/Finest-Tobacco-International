@@ -1,4 +1,3 @@
-import { ContactsList } from "@/app/ui";
 import { SharedContact, SharedFooter } from "@/app/types";
 import { FooterContactsSection } from "@/app/ui/landing/sections/Footer/components";
 import { FooterDocument } from "@/app/ui/landing/sections/Footer/components/Footer.Document";
@@ -38,7 +37,7 @@ export const FooterSection = ({
       </div>
       <h2
         className={
-          " h1 uppercase !text-secondary !text-sm text-center justify-self-center"
+          "mt-8 h1 uppercase !text-secondary !text-sm text-center justify-self-center !leading-1"
         }
       >
         {footer_content.copyrights}

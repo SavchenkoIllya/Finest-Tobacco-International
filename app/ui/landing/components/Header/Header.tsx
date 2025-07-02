@@ -9,12 +9,17 @@ export function Header({
   return (
     <header
       className={cn(
-        "fixed top-0 w-[100dvw] z-30 transition-all duration-300 bg-secondary",
+        "fixed top-0 w-[100dvw] z-90 transition-all duration-300 bg-secondary",
       )}
     >
       <div className="relative z-10v">
         <div className="flex items-center justify-between mx-8 my-4">
-          <SliderNavigation />
+          {header_content?.navbar?.navitems && header_content?.Contacts && (
+            <SliderNavigation
+              navitems={header_content.navbar.navitems}
+              contacts={header_content.Contacts}
+            />
+          )}
           <div>
             {header_content?.logo?.url && (
               <img

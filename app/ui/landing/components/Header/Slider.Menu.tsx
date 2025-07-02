@@ -1,8 +1,15 @@
 "use client";
 import { Burger, ContactsList, Navigation, Slider } from "@/app/ui";
 import { useState } from "react";
+import { SharedContact, SharedNavItem } from "@/app/types";
 
-export const SliderNavigation = () => {
+export const SliderNavigation = ({
+  navitems,
+  contacts,
+}: {
+  navitems: SharedNavItem[];
+  contacts: SharedContact[];
+}) => {
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
@@ -16,8 +23,15 @@ export const SliderNavigation = () => {
         <div className={"p-8"}>
           <Burger open={open} onClick={handleClick} />
           <div className="flex flex-col p-4 gap-20">
-            <Navigation onNavigate={handleClick} variant="flex-col" />
-            <ContactsList wrapperClasses={"flex flex-col gap-4"} />
+            <Navigation
+              onNavigate={handleClick}
+              variant="flex-col"
+              navitems={navitems}
+            />
+            <ContactsList
+              wrapperClasses={"flex flex-row gap-4"}
+              contacts={contacts}
+            />
           </div>
         </div>
       </Slider>

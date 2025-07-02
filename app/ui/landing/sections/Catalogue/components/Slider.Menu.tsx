@@ -1,5 +1,5 @@
 "use client";
-import { Filter, Menu, MenuFilterProps, Slider } from "@/app/ui";
+import { Filter, Menu, Slider } from "@/app/ui";
 import { useState } from "react";
 
 export const SliderMenu = () => {
@@ -10,7 +10,7 @@ export const SliderMenu = () => {
   };
 
   return (
-    <div className={"z-90"}>
+    <div>
       <Filter onClick={handleClick} />
       <Slider open={open}>
         <div className={"p-8"}>{<Menu variant={"light"} />}</div>
