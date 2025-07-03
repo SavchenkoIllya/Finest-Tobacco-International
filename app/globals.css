@@ -109,5 +109,5 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 video {
-     @apply absolute top-0 left-0 w-full h-full object-cover z-[-1] transition-opacity duration-1000;
+  @apply h-full object-fill w-[auto];
 }
