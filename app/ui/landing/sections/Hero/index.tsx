@@ -11,10 +11,7 @@ export const Hero = ({ video_url }: { video_url?: string }) => {
       id={LandingSections.HERO}
       className="relative min-h-screen overflow-hidden"
     >
-      <BackgroundPlayer
-        className="w-full h-full min-w-full min-h-full z-[-1]"
-        src={"https://youtu.be/RTTXmx9E6Z8"}
-      />
+      <iframe width="678" height="381" src="https://www.youtube.com/embed/RTTXmx9E6Z8" title="TabakGrishaVers2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       <div className="z-20 absolute bottom-0 mb-10 left-[50%] transform -translate-x-1/2 flex flex-col justify-center gap-2">
         <ScrollButton text={"↓"} />
       </div>
