@@ -45,14 +45,17 @@ export const LanguageSwitch = () => {
         className="flex items-center space-x-1  text-primary cursor-pointer font-medium uppercase transition-colors duration-200"
         aria-expanded={open}
         aria-haspopup="true"
+        disabled={!availableLanguages || availableLanguages.length <= 1}
       >
         <span>{currentLanguage}</span>
-        <Image
-          width={10}
-          height={10}
-          src={"/icons/chevron.svg"}
-          alt={"chevron icon"}
-        />
+        {(availableLanguages?.length ?? 0) > 1 && (
+          <Image
+            width={10}
+            height={10}
+            src={"/icons/chevron.svg"}
+            alt={"chevron icon"}
+          />
+        )}
       </button>
 
       <div
@@ -74,7 +77,7 @@ export const LanguageSwitch = () => {
               onClick={() => handleLanguageChange(language)}
               role="menuitem"
               className={cn(
-                "cursor-pointer block w-full text-left px-4 py-2 text-sm text-white hover:bg-accent/80",
+                "cursor-pointer uppercase block w-full text-left px-4 py-2 text-sm text-white hover:bg-accent/80",
                 currentLanguage === language ? "bg-accent" : "bg-accent/40",
               )}
             >

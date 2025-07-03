@@ -8,7 +8,7 @@ interface FilterProps {
 export const Filter = ({ onClick }: FilterProps) => {
   return (
     <button
-      className="md:hidden rounded-full p-2 bg-secondary flex justify-center items-center cursor-pointer"
+      className="md:hidden rounded-full p-2 bg-primary flex justify-center items-center cursor-pointer"
       onClick={onClick}
     >
       <img

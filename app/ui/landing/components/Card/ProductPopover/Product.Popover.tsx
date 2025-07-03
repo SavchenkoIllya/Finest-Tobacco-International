@@ -29,7 +29,7 @@ export const ProductPopover = ({ open, onClose }: ProductPopoverProps) => {
 
         <div
           className={
-            "max-md:fixed max-md:bottom-0 max-md:p-8 max-md:w-full max-md:shadow-3xl"
+            "max-md:bg-secondary max-md:fixed max-md:bottom-0 max-md:p-8 max-md:w-full max-md:shadow-3xl"
           }
         >
           <button

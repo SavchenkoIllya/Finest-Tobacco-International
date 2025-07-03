@@ -35,7 +35,7 @@ export const Input = ({
   };
 
   return (
-    <div className={cn("w-full flex flex-col gap-2", width)}>
+    <div className={cn("min-h-[66px] w-full flex flex-col gap-2", width)}>
       <div
         className={cn(
           "border flex px-4 py-2 gap-2 w-full",
@@ -54,7 +54,7 @@ export const Input = ({
         {icon}
       </div>
       {error?.map((error, i) => (
-        <p key={error + i} className={"text-red-500"}>
+        <p key={error + i} className={"text-xs text-red-500"}>
           {error}
         </p>
       ))}

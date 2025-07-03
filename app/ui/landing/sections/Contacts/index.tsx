@@ -1,14 +1,10 @@
 "use client";
 import { LandingSections } from "@/app/lib";
-import { ContactsList, Input, Textarea } from "@/app/ui";
+import { Input, Textarea } from "@/app/ui";
 import { MapComponent } from "@/app/ui/landing/components/Map";
 import { useActionState, useEffect } from "react";
 import { sendEmail } from "@/app/actions/sendEmail";
-import {
-  SharedContact,
-  SharedContactsSection,
-  SharedMapLocation,
-} from "@/app/types";
+import { SharedContactsSection, SharedMapLocation } from "@/app/types";
 import { useGetSubscribers } from "@/app/hooks";
 
 export const ContactsSection = ({
@@ -88,7 +84,7 @@ export const ContactsSection = ({
             />
 
             {formState?.errors?.["server"]?.map((error) => (
-              <p key={"details-" + error} className={"text-red-500"}>
+              <p key={"details-" + error} className={"text-xs text-red-500"}>
                 {error}
               </p>
             ))}

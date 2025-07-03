@@ -69,7 +69,7 @@ export default function Home() {
         )}
 
         {data?.catchphrase && (
-          <section className={"w-full flex justify-center text-center"}>
+          <section className={"w-full flex justify-center text-center mb-12"}>
             <Catchphrase phrase={data.catchphrase} />
           </section>
         )}
