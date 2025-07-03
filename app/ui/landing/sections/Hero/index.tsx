@@ -14,7 +14,7 @@ export const Hero = ({ video_url }: { video_url?: string }) => {
       <BackgroundPlayer
         className="w-full h-full min-w-full min-h-full z-[-1]"
         src={
-          https://youtu.be/RTTXmx9E6Z8
+          "https://youtu.be/RTTXmx9E6Z8"
 {/*           process.env.NODE_ENV === "development"
             ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${video_url}`
             : video_url */}
