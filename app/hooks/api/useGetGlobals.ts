@@ -8,7 +8,6 @@ const getGlobalQuery = (lang: Locale) =>
   qs.stringify(
     {
       populate: [
-        "video",
         "age_modal",
         "about_content",
         "about_content.pillars",
@@ -16,7 +15,6 @@ const getGlobalQuery = (lang: Locale) =>
         "brands_section.brands",
         "brands_section.brands.logo",
         "additional_about_section",
-        "scroll_labels",
         "contacts_section",
         "contacts_section.form_inputs",
         "production_section",

@@ -3,6 +3,8 @@ import { LandingSections } from "@/app/lib";
 import { ScrollButton } from "@/app/ui/landing/sections/Hero/components/ScrollButton";
 
 export const Hero = ({ video_url }: { video_url?: string }) => {
+  if (!video_url) return null;
+
   return (
     <section
       id={LandingSections.HERO}
@@ -11,7 +13,7 @@ export const Hero = ({ video_url }: { video_url?: string }) => {
       <div className="absolute inset-0 z-0">
         <video
           className="w-full h-full min-w-full min-h-full z-[-1]"
-          src="https://customer-835voqu02pldhkl9.cloudflarestream.com/563571594c01d35726747f61578d03f3/downloads/default.mp4"
+          src={video_url}
           muted
           autoPlay
           loop

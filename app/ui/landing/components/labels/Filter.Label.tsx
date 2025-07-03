@@ -1,5 +1,5 @@
 "use client";
-import { useUrlParams } from "@/app/ui";
+import { cn } from "@/app/ui";
 
 export const FilterLabel = ({
   title,
@@ -14,10 +14,15 @@ export const FilterLabel = ({
     onRemove();
   };
 
-  if (!value) return null;
-
   return (
-    <div className="flex items-center gap-2 rounded-full bg-black px-4 py-1 text-white text-sm font-medium capitalize">
+    <div
+      className={cn(
+        "flex items-center gap-2 rounded-full bg-black px-4 py-1 text-white text-sm font-medium capitalize transition-all duration-200",
+        value
+          ? "opacity-100 pointer-events-auto"
+          : "opacity-0 pointer-events-none",
+      )}
+    >
       <span>
         {title.replaceAll("_", " ")}: {value}
       </span>

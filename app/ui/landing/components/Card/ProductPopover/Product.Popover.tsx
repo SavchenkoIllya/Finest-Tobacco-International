@@ -28,10 +28,12 @@ export const ProductPopover = ({ open, onClose }: ProductPopoverProps) => {
         <ProductPopoverContent product={activeProduct} />
 
         <div
-          className={"max-md:fixed max-md:bottom-0 max-md:p-8 max-md:w-full"}
+          className={
+            "max-md:fixed max-md:bottom-0 max-md:p-8 max-md:w-full max-md:shadow-3xl"
+          }
         >
           <button
-            className={"button bg-black text-white hover:bg-black! !w-full"}
+            className={"button bg-primary text-white hover:bg-primary! !w-full"}
             onClick={handleClose}
           >
             {close_text ?? "X"}

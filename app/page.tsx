@@ -52,7 +52,7 @@ export default function Home() {
 
       <div className="relative">
         <Header header_content={data?.Header} />
-        <Hero video_url={data?.video?.url} />
+        <Hero video_url={data?.video_url} />
 
         {data?.about_content && <About about_content={data.about_content} />}
 
