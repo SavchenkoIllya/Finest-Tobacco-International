@@ -8,10 +8,6 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   output: "export",
-  assetPrefix: process.env.NODE_ENV === "production" ? "/assets" : "",
-  generateBuildId: async () => {
-    return Date.now().toString();
-  },
   async headers() {
     return [
       {
