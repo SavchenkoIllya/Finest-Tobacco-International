@@ -16,13 +16,13 @@ export const MissionSection = ({
           <h1 className="h1 !text-secondary">
             {production_content.title_main}
           </h1>
-          <p className="text-lg mb-6 text-secondary text-justify">
+          <p className="text-lg mb-6 text-secondary">
             {production_content.description_main}
           </p>
           <h1 className="h1 !text-secondary">
             {production_content.title_secondary}
           </h1>
-          <p className="text-lg mb-6 text-secondary text-justify">
+          <p className="text-lg mb-6 text-secondary">
             {production_content.description_secondary}
           </p>
         </div>
