@@ -12,6 +12,7 @@ interface SearchInputProps {
   name?: string;
   error?: string[];
   width?: string;
+  value?: string | null;
 }
 
 export const Input = ({
@@ -22,6 +23,7 @@ export const Input = ({
   defaultValue,
   error,
   width,
+  value,
   ...props
 }: SearchInputProps) => {
   const variantStyles = {
@@ -38,7 +40,7 @@ export const Input = ({
     <div className={cn("min-h-[66px] w-full flex flex-col gap-2", width)}>
       <div
         className={cn(
-          "border flex px-4 py-2 gap-2 w-full",
+          "border border-primary flex px-4 py-2 gap-2 w-full",
           variantStyles[variant],
           error && variantStyles.error,
         )}
@@ -49,6 +51,7 @@ export const Input = ({
           onChange={handleInputChange}
           className="bg-transparent outline-none flex-1 w-full"
           defaultValue={defaultValue}
+          value={value ?? ""}
           {...props}
         />
         {icon}

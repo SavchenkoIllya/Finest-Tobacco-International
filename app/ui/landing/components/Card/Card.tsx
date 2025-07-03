@@ -36,10 +36,10 @@ export const ProductCard = ({
               title={product?.title}
             />
           </div>
-          <h4 className={"h2 !text-black !text-xl !leading-6 truncate"}>
+          <h4 className={"h2 !text-xl !leading-6 truncate"}>
             {product?.title}
           </h4>
-          <p>{product.category?.name}</p>
+          <p className={"text-primary"}>{product.category?.name}</p>
         </div>
         <div className={"mt-4"}>
           <ProductProperty

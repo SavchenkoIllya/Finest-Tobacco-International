@@ -21,8 +21,8 @@ export const ProductPopoverContent = ({ product }: { product: Product }) => {
 
       <div className="flex flex-col gap-4 w-full">
         <div className="border-b-2 border-accent pb-2">
-          <h4 className="text-4xl font-bold text-black">{product.title}</h4>
-          <p className="text-lg">{product?.category?.name}</p>
+          <h4 className="text-4xl font-bold text-primary">{product.title}</h4>
+          <p className="text-lg text-primary">{product?.category?.name}</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">

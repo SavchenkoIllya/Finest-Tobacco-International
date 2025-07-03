@@ -19,7 +19,7 @@ export const Search = () => {
       }}
       variant={"black"}
       icon={<Lookup />}
-      defaultValue={filters.query}
+      value={filters.query}
     />
   );
 };

@@ -14,7 +14,7 @@ export const ProductProperty = ({ text, icon }: ProductPropertyProps) => {
   return (
     <div className={"flex gap-2"}>
       {iconUrl && <img src={iconUrl} alt={icon?.name} />}
-      <p>{text}</p>
+      <p className={"text-primary"}>{text}</p>
     </div>
   );
 };
