@@ -11,7 +11,7 @@ export const Hero = ({ video_url }: { video_url?: string }) => {
       className="relative min-h-screen overflow-hidden"
     >
       <video autoplay muted loop playsinline className={"object-cover, w-full h-full"}>
-        <source src={"https://customer-835voqu02pldhkl9.cloudflarestream.com/563571594c01d35726747f61578d03f3/watch"} type={"video/mp4"} />
+        <source src="https://customer-835voqu02pldhk19.cloudflarestream.com/56357159dc01d35726747f61578d03f3/manifest/video.m3u8" type="application/x-mpegURL">
       </video>
       <div className="z-20 absolute bottom-0 mb-10 left-[50%] transform -translate-x-1/2 flex flex-col justify-center gap-2">
         <ScrollButton text={"↓"} />
