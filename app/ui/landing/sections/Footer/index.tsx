@@ -37,7 +37,7 @@ export const FooterSection = ({
       </div>
       <h2
         className={
-          "mt-8 h1 uppercase !text-secondary !text-sm text-center justify-self-center !leading-1"
+          "mt-8 h1 uppercase !text-secondary !text-sm text-center justify-self-center !leading-4"
         }
       >
         {footer_content.copyrights}
