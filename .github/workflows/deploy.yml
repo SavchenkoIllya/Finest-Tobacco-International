@@ -27,14 +27,6 @@ jobs:
       - name: Install dependencies
         run: npm i
 
-      # 1. ГЕНЕРАЦИЯ ВЕРСИИ - сразу после установки зависимостей
-      - name: Generate version info
-        run: |
-          echo "DEPLOY_VERSION=$(date +%Y%m%d_%H%M%S)" >> $GITHUB_ENV
-          echo "BUILD_HASH=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
-          echo "BUILD_NUMBER=${{ github.run_number }}" >> $GITHUB_ENV
-          echo "Generated version: $(date +%Y%m%d_%H%M%S)"
-
       - name: Create environment file
         run: |
           echo "BASE_URL=${{ secrets.BASE_URL }}" >> .env
@@ -44,34 +36,9 @@ jobs:
           echo "NEXT_PUBLIC_RESEND_API_KEY=${{ secrets.NEXT_PUBLIC_RESEND_API_KEY }}" >> .env
           echo "NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=${{ secrets.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY }}" >> .env
           echo "NEXT_PUBLIC_GOOGLE_MAP_ID=${{ secrets.NEXT_PUBLIC_GOOGLE_MAP_ID }}" >> .env
-          # Добавляем версию в переменные окружения для Next.js
-          echo "NEXT_PUBLIC_APP_VERSION=${{ env.DEPLOY_VERSION }}" >> .env
-          echo "NEXT_PUBLIC_BUILD_HASH=${{ env.BUILD_HASH }}" >> .env
 
       - name: Build project
         run: npm run build
-
-      # 2. ДОБАВЛЕНИЕ ВЕРСИИ В СБОРКУ - сразу после билда
-      - name: Add version info to build
-        run: |
-          # Создаем файл с информацией о версии
-          cat > ./out/version.json << EOF
-          {
-            "version": "${{ env.DEPLOY_VERSION }}",
-            "buildHash": "${{ env.BUILD_HASH }}",
-            "buildNumber": "${{ env.BUILD_NUMBER }}",
-            "buildDate": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
-            "repository": "${{ github.repository }}",
-            "branch": "${{ github.ref_name }}"
-          }
-          EOF
-          
-          # Создаем JavaScript файл с версией
-          echo "window.APP_VERSION = '${{ env.DEPLOY_VERSION }}';" > ./out/version.js
-          echo "window.BUILD_HASH = '${{ env.BUILD_HASH }}';" >> ./out/version.js
-          echo "window.BUILD_DATE = '$(date -u +"%Y-%m-%dT%H:%M:%SZ")';" >> ./out/version.js
-          
-          echo "Version files created successfully"
 
       - name: Verify build output
         run: |
@@ -81,10 +48,7 @@ jobs:
           fi
           echo "Build output contents:"
           ls -la ./out
-          echo "Version info:"
-          cat ./out/version.json
 
-      # 3. ДЕПЛОЙ С ВЕРСИЕЙ - с улучшенной очисткой кеша
       - name: Deploy via SFTP
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
@@ -96,35 +60,18 @@ jobs:
           remote_path: '/web/htdocs/www.finest-tobacco.com/home/www/'
           sftp_only: true
 
-      # 4. ОЧИСТКА КЕША С ВЕРСИОНИРОВАНИЕМ
-      - name: Clear server cache and add cache headers
+      - name: Clear server cache
         run: |
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > /tmp/ssh_key
           chmod 600 /tmp/ssh_key
           
           ssh -i /tmp/ssh_key -p 2222 -o StrictHostKeyChecking=no \
           b992k7w-ssh@finest-tobacco.com "
-          # Обновляем время модификации файлов для сброса кеша
-          find ~/domains/*/public_html -name '*.html' -exec touch {} \; 2>/dev/null || true
-          find ~/domains/*/public_html -name '*.css' -exec touch {} \; 2>/dev/null || true
-          find ~/domains/*/public_html -name '*.js' -exec touch {} \; 2>/dev/null || true
+          find ~/domains -name '.htaccess' -exec touch {} \; 2>/dev/null || true
           
           echo 'Deploy completed at: $(date)'
-          echo 'Deployed version: ${{ env.DEPLOY_VERSION }}'
-          echo 'Build hash: ${{ env.BUILD_HASH }}'
           echo 'Latest files:'
           ls -lat ~/domains/*/public_html/ 2>/dev/null | head -10 || ls -lat ~/public_html/ 2>/dev/null | head -10 || echo 'Could not list files'
           "
           
           rm /tmp/ssh_key
-
-      # 5. ФИНАЛЬНАЯ ИНФОРМАЦИЯ О ДЕПЛОЕ
-      - name: Deployment summary
-        run: |
-          echo "🚀 Deployment completed successfully!"
-          echo "📦 Version: ${{ env.DEPLOY_VERSION }}"
-          echo "🔨 Build Hash: ${{ env.BUILD_HASH }}"
-          echo "🏗️ Build Number: ${{ env.BUILD_NUMBER }}"
-          echo "⏰ Deploy Time: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
-          echo "🌐 Site: https://www.finest-tobacco.com"
-          echo "📊 Version Info: https://www.finest-tobacco.com/version.json"
