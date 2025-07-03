@@ -30,7 +30,9 @@ export const ProductCard = ({
         type={"button"}
       >
         <div className={"border-b-2 border-accent"}>
-          <div className={"flex justify-center items-center p-4"}>
+          <div
+            className={"flex justify-center items-center p-4 overflow-hidden"}
+          >
             <ProductImage
               image_url={product?.image?.url ?? undefined}
               title={product?.title}

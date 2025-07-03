@@ -14,8 +14,7 @@ export const ProductPopoverContent = ({ product }: { product: Product }) => {
         <ProductImage
           image_url={product?.image?.url ?? undefined}
           title={product.title}
-          width={550}
-          height={250}
+          variant={"lg"}
         />
       </div>
 
