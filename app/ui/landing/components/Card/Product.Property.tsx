@@ -1,21 +1,19 @@
-export type PropertyValidIcons =
-  | "cigarette_length"
-  | "diameter"
-  | "filter_length"
-  | "leaf"
-  | "nicotine"
-  | "tar"
-  | "tobacco_length";
+import { Media } from "@/app/types";
 
 type ProductPropertyProps = {
   text?: string | number;
-  icon: PropertyValidIcons;
+  icon?: Media | null;
 };
 
 export const ProductProperty = ({ text, icon }: ProductPropertyProps) => {
+  const iconUrl =
+    process.env.NODE_ENV === "development"
+      ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${icon?.url}`
+      : icon?.url;
+
   return (
     <div className={"flex gap-2"}>
-      <img src={`/icons/products/${icon}.svg`} alt={`${icon} icon`} />
+      {iconUrl && <img src={iconUrl} alt={icon?.name} />}
       <p>{text}</p>
     </div>
   );

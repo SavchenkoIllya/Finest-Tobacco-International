@@ -1,7 +1,13 @@
 import { ProductImage, ProductValueWithTitle } from "@/app/ui";
 import { Product } from "@/app/types";
+import { useProductTranslationsStore } from "@/app/stores";
+import { useShallow } from "zustand/shallow";
 
 export const ProductPopoverContent = ({ product }: { product: Product }) => {
+  const [getProductDescriptionField] = useProductTranslationsStore(
+    useShallow((state) => [state.getProductDescriptionField]),
+  );
+
   return (
     <div className="flex flex-col lg:flex-row gap-6">
       <div className="flex justify-center lg:justify-start">
@@ -21,42 +27,38 @@ export const ProductPopoverContent = ({ product }: { product: Product }) => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
           <ProductValueWithTitle
-            title="Tobacco blend"
             text={product?.blend}
-            icon="leaf"
+            title={getProductDescriptionField("property", "blend")?.title}
+            icon={getProductDescriptionField("property", "blend")?.icon}
           />
           <ProductValueWithTitle
-            title="Diameter"
-            text={product?.diameter}
-            icon="diameter"
-          />
-          <ProductValueWithTitle
-            title="Cigarette length"
             text={product?.cigarette_length}
-            icon="cigarette_length"
+            title={
+              getProductDescriptionField("property", "cigarette_length")?.title
+            }
+            icon={
+              getProductDescriptionField("property", "cigarette_length")?.icon
+            }
           />
           <ProductValueWithTitle
-            title="Nicotine"
             text={product?.nicotine}
-            icon="nicotine"
+            title={getProductDescriptionField("property", "nicotine")?.title}
+            icon={getProductDescriptionField("property", "nicotine")?.icon}
           />
           <ProductValueWithTitle
-            title="Tobacco part length"
-            text={product?.tobacco_part_length}
-            icon="tobacco_length"
+            text={product?.tar}
+            title={getProductDescriptionField("property", "tar")?.title}
+            icon={getProductDescriptionField("property", "tar")?.icon}
           />
-          <ProductValueWithTitle title="Tar" text={product?.tar} icon="tar" />
           <ProductValueWithTitle
-            title="Filter length"
-            text={product?.filter_part_length}
-            icon="filter_length"
+            text={product?.filter_parameters}
+            title={
+              getProductDescriptionField("property", "filter_parameters")?.title
+            }
+            icon={
+              getProductDescriptionField("property", "filter_parameters")?.icon
+            }
           />
-          {/*TODO: add filter_parameters to DB */}
-          {/*<ProductValueWithTitle*/}
-          {/*  title="Filter Parameters"*/}
-          {/*  text={product?.filter_parameters}*/}
-          {/*  icon="filter_length"*/}
-          {/*/>*/}
         </div>
       </div>
     </div>

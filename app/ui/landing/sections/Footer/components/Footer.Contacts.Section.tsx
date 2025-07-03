@@ -9,7 +9,7 @@ export const FooterContactsSection = ({
   full?: boolean;
 }) => {
   return (
-    <div className={"flex flex-col items-start"}>
+    <div className={"flex flex-col gap-2 items-start"}>
       {contacts.map((contact) => (
         <FooterContactsItem key={contact.id} contact={contact} full={full} />
       ))}

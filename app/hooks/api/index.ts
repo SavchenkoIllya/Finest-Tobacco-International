@@ -4,3 +4,4 @@ export * from "./useGetBrands";
 export * from "./useGetSubscribers";
 export * from "./useGetProducts";
 export * from "./useGetFormats";
+export * from "./useGetProductTranslation";

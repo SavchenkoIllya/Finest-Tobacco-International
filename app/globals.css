@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-accent: #000000;
-  --color-primary: #000000;
+  --color-accent: #423b36;
+  --color-primary: #423b36;
   --color-secondary: #ede6d7;
 }
 
@@ -16,7 +16,7 @@ html {
 }
 
 .catchphrase {
-  @apply font-(family-name:--font-merriweather)
+  @apply font-(family-name:--font-merriweather) text-accent
 }
 
 .button {
@@ -106,4 +106,8 @@ h1, h2, h3, h4, h5, h6 {
     height: 2px;
     background-color: theme('colors.secondary');
   }
+}
+
+video {
+     @apply absolute top-0 left-0 w-full h-full object-cover z-[-1] transition-opacity duration-1000;
 }

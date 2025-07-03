@@ -1,6 +1,8 @@
 "use client";
 import { ProductImage, ProductPopover, ProductProperty } from "@/app/ui";
 import { Product } from "@/app/types";
+import { useProductTranslationsStore } from "@/app/stores";
+import { useShallow } from "zustand/shallow";
 
 export const ProductCard = ({
   product,
@@ -13,6 +15,10 @@ export const ProductCard = ({
   open?: boolean;
   onClose: () => void;
 }) => {
+  const [getProductDescriptionField] = useProductTranslationsStore(
+    useShallow((state) => [state.getProductDescriptionField]),
+  );
+
   return (
     <>
       <ProductPopover open={open} onClose={onClose} />
@@ -36,12 +42,18 @@ export const ProductCard = ({
           <p>{product.category?.name}</p>
         </div>
         <div className={"mt-4"}>
-          <ProductProperty text={product?.blend ?? undefined} icon={"leaf"} />
+          <ProductProperty
+            text={product?.blend ?? undefined}
+            icon={getProductDescriptionField("property", "blend")?.icon}
+          />
           <ProductProperty
             text={product.nicotine ?? undefined}
-            icon={"nicotine"}
+            icon={getProductDescriptionField("property", "nicotine")?.icon}
           />
-          <ProductProperty text={product.tar ?? undefined} icon={"tar"} />
+          <ProductProperty
+            text={product.tar ?? undefined}
+            icon={getProductDescriptionField("property", "tar")?.icon}
+          />
         </div>
       </button>
     </>

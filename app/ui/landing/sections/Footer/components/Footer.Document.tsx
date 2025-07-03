@@ -20,7 +20,7 @@ export const FooterDocument = ({ document }: { document: Media }) => {
         src={"/icons/document.svg"}
         className={"invert"}
       />
-      <p>{document.name}</p>
+      <p>{document.name.replace(document.ext, "")}</p>
     </a>
   );
 };

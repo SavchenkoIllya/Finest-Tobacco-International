@@ -42,3 +42,9 @@ yarn-error.log*
 /nginx/ssl
 /nginx/certbot
 /.idea/shelf/Uncommitted_changes_before_Update_at_22_06_25,_23_29_[Changes]/shelved.patch
+# next-video
+videos/*
+!videos/*.json
+!videos/*.js
+!videos/*.ts
+public/_next-video

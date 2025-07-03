@@ -6,4 +6,5 @@ export enum StrapiRoutes {
   POST_SEND_MESSAGES = "/api/messages",
   GET_FORMATS = "/api/formats",
   GET_PRODUCTS = "/api/products",
+  GET_PRODUCT_CARDS = "/api/product-card",
 }

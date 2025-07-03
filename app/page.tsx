@@ -15,17 +15,33 @@ import {
   ProductionSection,
 } from "@/app/ui";
 import { useEffect } from "react";
-import { useGetGlobals } from "@/app/hooks";
-import { useLanguageStore } from "@/app/stores";
+import { useGetGlobals, useGetProductTranslation } from "@/app/hooks";
+import { useLanguageStore, useProductTranslationsStore } from "@/app/stores";
 import { PillarsSection } from "@/app/ui/landing/sections/Pilars";
+import { useShallow } from "zustand/shallow";
 
 export default function Home() {
   const currentLanguage = useLanguageStore((state) => state.current);
-  const { query, data, isPending } = useGetGlobals();
+  const [setProductsTranslations] = useProductTranslationsStore(
+    useShallow((state) => [state.setProductsTranslations]),
+  );
+  const { query: getGlobals, data, isPending } = useGetGlobals();
+  const {
+    query: getProductTranslations,
+    data: translationsData,
+    isSuccess,
+  } = useGetProductTranslation();
 
   useEffect(() => {
-    query();
+    getGlobals();
+    getProductTranslations();
   }, [currentLanguage]);
+
+  useEffect(() => {
+    if (translationsData) {
+      setProductsTranslations(translationsData);
+    }
+  }, [currentLanguage, isSuccess]);
 
   return (
     <>
@@ -63,10 +79,7 @@ export default function Home() {
         )}
 
         {data?.catalogue && (
-          <CatalogueSection
-            brands={data.catalogue?.brands}
-            formats={data.catalogue?.formats}
-          />
+          <CatalogueSection catalogue_data={data.catalogue} />
         )}
 
         {data?.contacts_section && (

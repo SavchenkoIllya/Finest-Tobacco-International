@@ -1,7 +1,6 @@
 "use client";
-import { Modal, ProductPopoverContent, useUrlParams } from "@/app/ui";
-import { useEffect, useState } from "react";
-import { useCatalogueStore } from "@/app/stores";
+import { Modal, ProductPopoverContent } from "@/app/ui";
+import { useCatalogueStore, useProductTranslationsStore } from "@/app/stores";
 import { useShallow } from "zustand/shallow";
 
 type ProductPopoverProps = {
@@ -12,6 +11,9 @@ type ProductPopoverProps = {
 export const ProductPopover = ({ open, onClose }: ProductPopoverProps) => {
   const [activeProduct] = useCatalogueStore(
     useShallow((state) => [state.activeProduct]),
+  );
+  const [close_text] = useProductTranslationsStore(
+    useShallow((state) => [state.productsTranslations?.close_text]),
   );
 
   const handleClose = () => {
@@ -32,7 +34,7 @@ export const ProductPopover = ({ open, onClose }: ProductPopoverProps) => {
             className={"button bg-black text-white hover:bg-black! !w-full"}
             onClick={handleClose}
           >
-            X
+            {close_text ?? "X"}
           </button>
         </div>
       </div>

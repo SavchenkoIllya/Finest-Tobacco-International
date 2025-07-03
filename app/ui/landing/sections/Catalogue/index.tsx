@@ -3,16 +3,14 @@ import { Menu, Search, ProductsList } from "@/app/ui";
 import { SliderMenu } from "@/app/ui/landing/sections/Catalogue/components/Slider.Menu";
 import { useGetProducts } from "@/app/hooks";
 import { useEffect } from "react";
-import { Brand, Format } from "@/app/types";
+import { SharedCatalogue } from "@/app/types";
 import { useCatalogueStore, useLanguageStore } from "@/app/stores";
 import { useShallow } from "zustand/shallow";
 
 export const CatalogueSection = ({
-  brands,
-  formats,
+  catalogue_data,
 }: {
-  brands?: Brand[] | null;
-  formats?: Format[] | null;
+  catalogue_data: SharedCatalogue;
 }) => {
   const currentLang = useLanguageStore((state) => state.current);
   const [setCatalogueMenuItems, setProducts, filters] = useCatalogueStore(
@@ -27,7 +25,10 @@ export const CatalogueSection = ({
   useEffect(() => {
     query();
 
-    setCatalogueMenuItems({ brands: brands ?? null, formats: formats ?? null });
+    setCatalogueMenuItems({
+      brands: catalogue_data.brands ?? null,
+      formats: catalogue_data.formats ?? null,
+    });
   }, [currentLang, filters]);
 
   useEffect(() => {
@@ -38,6 +39,7 @@ export const CatalogueSection = ({
 
   return (
     <section id={LandingSections.CATALOGUE} className="py-10 w-full">
+      <h1 className={"h1 text-center mb-10"}>{catalogue_data.title}</h1>
       <div className="container mx-auto h-[80dvh]">
         <div className="justify-center md:justify-normal grid grid-cols-4 grid-rows-[auto_1fr] h-full">
           <div className="col-span-4 mx-4 md:col-start-3 md:col-span-2 mb-6">

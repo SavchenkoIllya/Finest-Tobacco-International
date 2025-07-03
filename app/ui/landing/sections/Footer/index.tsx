@@ -13,7 +13,7 @@ export const FooterSection = ({
     <section className={"bg-primary p-12 mt-12"}>
       <div className="flex flex-col lg:flex-row">
         <div className="w-full lg:w-1/3 mb-4 lg:mb-0">
-          <p className="text-secondary max-w-xs">
+          <p className="text-secondary max-w-xs leading-8">
             {footer_content.full_address}
           </p>
         </div>
@@ -24,7 +24,7 @@ export const FooterSection = ({
 
         <div className="w-full lg:w-1/3">
           <div className="flex flex-col space-x-4">
-            <div className={"flex flex-col items-start"}>
+            <div className={"flex flex-col gap-2 items-start"}>
               {footer_content.privacy_legal && (
                 <FooterDocument document={footer_content.privacy_legal} />
               )}
