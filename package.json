@@ -11,6 +11,7 @@
     "clean": "rm -rf node_modules"
   },
   "dependencies": {
+    "@cloudflare/stream-react": "^1.9.3",
     "@react-email/components": "^0.0.36",
     "@react-google-maps/api": "^2.20.6",
     "axios": "^1.10.0",
