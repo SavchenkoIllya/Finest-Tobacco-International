@@ -1,10 +1,10 @@
-import { Media } from "@/app/types";
+import { UploadItem } from "@/app/types";
 
-export const FooterDocument = ({ document }: { document: Media }) => {
+export const FooterDocument = ({ upload }: { upload: UploadItem }) => {
   const docUrl =
     process.env.NODE_ENV === "development"
-      ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${document.url}`
-      : document.url;
+      ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${upload.Document?.url}`
+      : upload.Document?.url;
 
   const wrapperStyles = "text-secondary flex justify-center gap-2";
 
@@ -16,11 +16,11 @@ export const FooterDocument = ({ document }: { document: Media }) => {
       rel="noopener noreferrer"
     >
       <img
-        alt={document.name}
+        alt={upload.title}
         src={"/icons/document.svg"}
         className={"invert"}
       />
-      <p>{document.name.replace(document.ext, "")}</p>
+      <p>{upload.title}</p>
     </a>
   );
 };

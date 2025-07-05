@@ -1,3 +1,5 @@
+import { type BlocksContent } from "@strapi/blocks-react-renderer";
+
 export type Locale = "en" | "de" | "sk" | "pl";
 
 export interface Global {
@@ -99,7 +101,7 @@ export interface Contact {
 export interface SharedLegalInfo {
   id?: number;
   title?: string;
-  full_address?: string;
+  full_address?: BlocksContent;
 }
 
 export interface SharedNavbar {

@@ -89,11 +89,8 @@ export default function Home() {
           />
         )}
 
-        {data?.footer_section && data.Header?.Contacts && (
-          <FooterSection
-            contacts={data.Header.Contacts}
-            footer_content={data.footer_section}
-          />
+        {data?.footer_section && (
+          <FooterSection footer_content={data.footer_section} />
         )}
       </div>
     </>

@@ -1,13 +1,15 @@
-import { SharedContact } from "@/app/types";
 import { FooterContactsItem } from "@/app/ui/landing/sections/Footer/components/Footer.Contacts.Item";
+import { Contact } from "@/app/types";
 
 export const FooterContactsSection = ({
   contacts,
   full,
 }: {
-  contacts: SharedContact[];
+  contacts?: Contact[] | null;
   full?: boolean;
 }) => {
+  if (!contacts) return null;
+
   return (
     <div className={"flex flex-col gap-2 items-start"}>
       {contacts.map((contact) => (
