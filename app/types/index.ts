@@ -53,10 +53,10 @@ export interface SharedProductionSection {
 
 export interface SharedFooter {
   id?: number;
+  legal_info?: SharedLegalInfo | null;
+  contact_list?: SharedContactList | null;
+  document_list?: SharedDocumentsList | null;
   copyrights?: string;
-  terms_conditions?: Media | null;
-  full_address?: string;
-  privacy_legal?: Media | null;
 }
 
 export interface SharedCatalogue {
@@ -79,8 +79,27 @@ export interface Format {
 export interface SharedHeader {
   id?: number;
   logo?: Media | null;
-  Contacts?: SharedContact[] | null;
   navbar?: SharedNavbar | null;
+  contacts?: Contact[] | null;
+}
+
+export interface Contact {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  type: "whatsapp" | "telegram" | "email" | "phone" | "viber";
+  link: string;
+  title: string;
+  icon: Media | null;
+}
+
+export interface SharedLegalInfo {
+  id?: number;
+  title?: string;
+  full_address?: string;
 }
 
 export interface SharedNavbar {
@@ -94,12 +113,28 @@ export interface SharedNavItem {
   section_id?: "about" | "brands" | "catalogue" | "contacts";
 }
 
-export interface SharedContact {
+export interface SharedContactList {
   id?: number;
-  name?: string;
-  link?: string;
+  title?: string;
+  contacts?: Contact[] | null;
+}
+
+export interface SharedDocumentsList {
+  id?: number;
+  title?: string;
+  upload_items?: UploadItem[] | null;
+}
+
+export interface UploadItem {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  Document?: Media | null;
   icon?: Media | null;
-  type?: "whatsapp" | "telegram" | "email" | "phone" | "viber";
+  title?: string;
 }
 
 export interface SharedAgeModal {
