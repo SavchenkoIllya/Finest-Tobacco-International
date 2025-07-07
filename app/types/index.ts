@@ -134,7 +134,7 @@ export interface UploadItem {
   updatedAt?: Date | string;
   publishedAt?: Date | string;
   locale?: string | null;
-  Document?: Media | null;
+  document?: Media | null;
   icon?: Media | null;
   title?: string;
 }
