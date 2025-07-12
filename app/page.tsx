@@ -14,13 +14,14 @@ import {
   MissionSection,
   ProductionSection,
 } from "@/app/ui";
-import { useEffect } from "react";
+import {useEffect, useState} from "react";
 import { useGetGlobals, useGetProductTranslation } from "@/app/hooks";
 import { useLanguageStore, useProductTranslationsStore } from "@/app/stores";
 import { PillarsSection } from "@/app/ui/landing/sections/Pilars";
 import { useShallow } from "zustand/shallow";
 
 export default function Home() {
+  const [isClient, setIsClient] = useState(false);
   const currentLanguage = useLanguageStore((state) => state.current);
   const [setProductsTranslations] = useProductTranslationsStore(
     useShallow((state) => [state.setProductsTranslations]),
@@ -32,19 +33,26 @@ export default function Home() {
     isSuccess,
   } = useGetProductTranslation();
 
+  useEffect(()=>{
+    setIsClient(true)
+  },[])
+
   useEffect(() => {
+    if(!isClient) return;
+
     getGlobals();
     getProductTranslations();
-  }, [currentLanguage]);
+  }, [currentLanguage, isClient]);
 
   useEffect(() => {
     if (translationsData) {
       setProductsTranslations(translationsData);
     }
-  }, [currentLanguage, isSuccess]);
+  }, [currentLanguage, isSuccess, isClient]);
 
   return (
     <>
+      {!isClient && <LoaderSection />}
       {isPending && <LoaderSection />}
       <LocalesInitializer />
 
